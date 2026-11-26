@@ -79,7 +79,7 @@ node tools/scan-secrets.mjs    # keys, tokens and direct prompt() calls
 
 `firebase.json` serves this folder with Firebase Hosting (`firebase deploy --only hosting`). `/` redirects to
 `/trip`. The `ignore` list keeps tools, tests and docs off the site; it also names files of earlier prototypes that
-are not part of the public repository.
+are not part of the public repository (earlier tries for this hackathon, written during the submission period).
 
 For a public site, register a reCAPTCHA Enterprise key for your domain in App Check, put it in
 `recaptchaSiteKey`, and leave `appCheckDebugToken` empty. `local/firebase-config.js` is uploaded with the site (the

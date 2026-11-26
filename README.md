@@ -114,7 +114,8 @@ For typed text read on this computer, that line shape is held with a regular exp
 | `app/src/engine/index.js:276-280` | A second Firebase app without App Check for on-device-only requests, so an offline page contacts no one |
 | `app/src/engine/index.js:290`, `:297`, `:300` | Guide: `getGenerativeModel(…)` with `InferenceMode.ONLY_ON_DEVICE`, `PREFER_ON_DEVICE` (`onDeviceParams` and `inCloudParams`) or `ONLY_IN_CLOUD`, all with the same JSON schema |
 | `app/src/engine/index.js:318`, `:324`, `:327` | Sign reader: the same three modes for plain text, with image input declared for photos |
-| `app/src/engine/index.js:80`, `:100` | `model.generateContentStream(…)` for every request (text, or text and an inline photo) |
+| `app/src/engine/index.js:80`, `:100` | `model.generateContentStream(…)` for every question and every sign reading (text, or text and an inline photo) |
+| `app/src/engine/index.js:251` | One short warm-up request through the same SDK call when the page opens and the on-device model is available |
 | `app/src/engine/index.js:93`, `:115` | Reads `response.inferenceSource` (`on_device` / `in_cloud`) for the badge |
 | `app/src/engine/index.js:346`, `:376`, `:420` | `decide()`, `askOnce()` (reading the question) and `process()` (the whole guide question) |
 | `app/src/engine/index.js:661` | `runText()`: the sign reader's order of tries |
@@ -150,6 +151,10 @@ a browser without the model.
   pack does not have. Typos, lower case, roundabout wording and two questions in one sentence are mixed in. The
   questions are in `app/test/data/guide-judge3.json`.
 - **Frozen code.** File hashes were recorded before the questions were opened. Both main runs had the network cut.
+- **Earlier rounds.** This was the third round that day. The first two, each with its own new set of 25 questions
+  and two runs, scored 15/20 and 15/20 on answer quality against the same bar of 16: **not passed** both times.
+  After the second we moved the reading of the question from word rules to the AI. Each round used questions the
+  code had not seen.
 
 | Check | Bar | Run 1 | Run 2 | Result |
 |---|---|---|---|---|
@@ -175,10 +180,10 @@ Since then we changed how questions are read (the "from A to B" order; words suc
 | Code | Bar | Run 1 | Run 2 | "Not in the pack" | Median | Result |
 |---|---|---|---|---|---|---|
 | 26 Nov, before the last fix | 23/25 in both runs | 24/25 | 24/25 | 5/5, 5/5 | 5.1 s, 4.6 s | passed |
-| 26 Nov, after the last of these fixes (v8) | 24/25 in both runs | 25/25 | 23/25 | 5/5, 5/5 | 4.8 s, 5.0 s | **not passed** (run 2 missed two questions that the code before the fix also missed) |
+| 26 Nov, after the last of these fixes (v7; v8, online until that evening, has the same engine) | 24/25 in both runs | 25/25 | 23/25 | 5/5, 5/5 | 4.8 s, 5.0 s | **not passed** (run 2 missed two questions that the code before the fix also missed) |
 
 New questions written before each fix, network cut: 6/6 "near me / from here" questions with both versions, and
-6/6 questions with a kind of place but no name ("is there an art museum somewhere close by?") with v8 (3/6 before
+6/6 questions with a kind of place but no name ("is there an art museum somewhere close by?") with v7 (3/6 before
 the last fix). These two small sets are not part of this repository. The version online now (v9) was measured
 again on these 25 questions; see "Both of Chrome's on-device models" below.
 
@@ -191,7 +196,7 @@ romanized Korean name counts as wrong.
 | Check | Bar | Result | |
 |---|---|---|---|
 | One line, on device, network cut | 18/20 right, median 5 s or less | 18/20, median 2.7 s, 0 requests out | passed |
-| Several lines, on device, network cut | 8/10 right | 5/10 (four gave dish names only in romanized Korean) | **not passed** |
+| Several lines, on device, network cut | 8/10 right | 5/10 (four gave dish names only in romanized Korean, one read a no-smoking notice the wrong way round) | **not passed** |
 | Several lines, cloud, on the hosted site, browser without the model | 8/10 right, median 6 s or less | 10/10, median 4.8 s | passed |
 | Photos, cloud | 8/10 right, no answer with invented lines, median 6 s or less | 8/10, 0 invented, median 1.7 s | passed |
 | Photos, on device, network cut | 6/10 right, at most 1 answer with invented lines | 4/10 with 2 invented; after one prompt fix 5/10 with 1 | **not passed** |
@@ -275,7 +280,7 @@ From the root of this repository:
 
 Useful switches: `?simulate=no-model` behaves as if the computer had no on-device model (to see the cloud path);
 the **Never use the cloud** switch (or `?deviceOnly=1`) keeps every request on the computer. `app/README.md` lists
-all switches.
+the switches of the trip page.
 
 Checks without AI, from the root of this repository:
 
@@ -298,7 +303,8 @@ for your domain in App Check, put it in `recaptchaSiteKey`, and leave `appCheckD
 `app/local/firebase-config.js` is uploaded with the site (the page needs the Firebase web settings), so anything
 in it is public once deployed: it must never hold a debug token. The page lives at `/trip`, and `/` redirects there.
 The `ignore` list keeps tools, tests and docs off the site; it also names files of earlier prototypes that are not
-in this repository.
+in this repository. Those prototypes were earlier tries for this hackathon, written during the submission period
+like everything here (the first commit of the project is from 16 Nov 2026).
 
 ## Known limits
 
@@ -321,8 +327,11 @@ in this repository.
 - The guide answers in English. Korean names are shown next to English ones to help match street signs.
 - With no on-device model and no internet, the question cannot be read; the app says so and shows a guess made by
   simple word rules, which the traveller can correct with the menus.
-- The app does not start the on-device model download; if Chrome reports the model as downloadable, the app uses
-  the cloud while online.
+- The app does not start the on-device model download (several GB); if Chrome reports the model as downloadable,
+  the pill says "On-device AI not installed" and the app uses the cloud while online. Chrome's documentation says
+  the download starts when a page creates a Prompt API session after a user action (`LanguageModel.create()`),
+  for example from the DevTools console; `LanguageModel.availability()` then returns "available" and the pill turns
+  to "ready" after a reload. Our test computer already had both models, so we did not test the download step.
 - A question with two parts gets an answer to the first part and a button to ask the second.
 
 ## Privacy
