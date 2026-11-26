@@ -1,0 +1,15 @@
+{
+ "packs": [
+  {
+   "id": "seoul-gogung",
+   "title": "Seoul: Gyeongbokgung, Bukchon and Insa-dong",
+   "url": "packs/seoul-gogung/pack.json",
+   "bytes": 4330425,
+   "packBytes": 324752,
+   "photos": 58,
+   "places": 61,
+   "version": "2588629ba56b",
+   "updated": "2026-11-23"
+  }
+ ]
+}

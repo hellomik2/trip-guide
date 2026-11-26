@@ -1,0 +1,1301 @@
+{
+ "made": "2026-11-23",
+ "status_meaning": {
+  "official": "official site read 2026-11-23",
+  "official-inside": "inside Gyeongbokgung; follows the palace's official hours",
+  "osm": "only OpenStreetMap opening_hours (copied as is)",
+  "wikivoyage": "only Wikivoyage 'hours' (copied as is)",
+  "outdoor": "outdoor public space (statue, square, street); no opening hours collected",
+  "unknown": "모름 (not found; not guessed)"
+ },
+ "places": {
+  "L01": {
+   "osm_opening_hours": "Jan-Feb,Nov-Dec 09:00-17:00; Mar-May,Sep-Oct 09:00-18:00; Jun-Aug 09:00-18:30",
+   "wikivoyage_hours": "Opens at 09:00, closes between 17:00 and 18:30 depending on the season, closed Tuesdays; last admission 1 hour before closing",
+   "wikivoyage_price": "₩3,000",
+   "official": {
+    "place": "Gyeongbokgung Palace",
+    "source_url": "https://royal.khs.go.kr/ENG/contents/E702000000.do",
+    "publisher": "Korea Heritage Service, Royal Palaces and Tombs Center (official)",
+    "read_date": "2026-11-23",
+    "hours": [
+     {
+      "period": "January through February",
+      "open": "09:00-17:00",
+      "last_admission": "16:00"
+     },
+     {
+      "period": "March through May",
+      "open": "09:00-18:00",
+      "last_admission": "17:00"
+     },
+     {
+      "period": "June through August",
+      "open": "09:00-18:30",
+      "last_admission": "17:30"
+     },
+     {
+      "period": "September through October",
+      "open": "09:00-18:00",
+      "last_admission": "17:00"
+     },
+     {
+      "period": "November through December",
+      "open": "09:00-17:00",
+      "last_admission": "16:00"
+     }
+    ],
+    "closed": "Closed on Tuesdays. When a public holiday or a substitute holiday falls on the regular closing day, open; closed the day after the holiday instead.",
+    "fee": "Adults (age 19-64) 3,000 won individual, 2,400 won group (10+). Free: aged 18 and below, seniors 65+, those wearing a Hanbok, Culture Day (last Wednesday of every month). Royal Palace Pass covers 4 palaces and Jongmyo Shrine within three months.",
+    "events": [
+     {
+      "name": "Free guided tour (English)",
+      "when": "Wed-Mon 11:00, 13:30, 15:30",
+      "note": "Starts in front of Gyeongbokgung Palace Information Center inside Heungnyemun Gate; about 1 to 1.5 hours; groups of 10+ reserve in advance"
+     },
+     {
+      "name": "Free guided tour (Japanese)",
+      "when": "10:00, 14:30"
+     },
+     {
+      "name": "Free guided tour (Chinese)",
+      "when": "10:30, 15:00"
+     },
+     {
+      "name": "Free guided tour (Spanish)",
+      "when": "Fri, Sat 10:30, 15:00"
+     },
+     {
+      "name": "Free guided tour (French)",
+      "when": "Wed, Thur 11:00, 15:00"
+     }
+    ],
+    "phone": "02-3700-3900"
+   },
+   "official_of": null,
+   "events": null,
+   "conflict": null,
+   "status": "official"
+  },
+  "L02": {
+   "osm_opening_hours": null,
+   "wikivoyage_hours": null,
+   "wikivoyage_price": null,
+   "official": null,
+   "official_of": null,
+   "events": {
+    "place": "Gyeongbokgung Palace / Gwanghwamun Gate - Royal Palace Guard Ceremony",
+    "source_url": "https://royal.khs.go.kr/ROYAL/contents/R403000000.do?schM=view&id=20260130142359664399&schBdcode=all",
+    "publisher": "Korea Heritage Service, Royal Palaces and Tombs Center (official notice '2026년 2월 수문장 교대의식 행사 안내', posted 2026-01-30)",
+    "read_date": "2026-11-23",
+    "events": [
+     {
+      "name": "Changing of the Royal Palace Guard Ceremony",
+      "when": "10:00 / 14:00"
+     },
+     {
+      "name": "Guard Duty Performance (광화문 파수의식)",
+      "when": "11:00 / 13:00"
+     },
+     {
+      "name": "Guard Training Session (수문군 공개훈련)",
+      "when": "09:35 / 13:35"
+     }
+    ],
+    "note": "This is the February 2026 notice, the latest schedule notice found on the official board. Ceremonial events can be cancelled due to weather (rain, heat wave; e.g. suspended 2026-08-05 for a heat-wave warning, resumed 2026-08-08). The notice does not say whether the ceremony runs on Tuesdays.",
+    "phone": "02-3011-7750"
+   },
+   "conflict": null,
+   "status": "unknown"
+  },
+  "L03": {
+   "osm_opening_hours": null,
+   "wikivoyage_hours": null,
+   "wikivoyage_price": null,
+   "official": {
+    "place": "Gyeongbokgung Palace",
+    "source_url": "https://royal.khs.go.kr/ENG/contents/E702000000.do",
+    "publisher": "Korea Heritage Service, Royal Palaces and Tombs Center (official)",
+    "read_date": "2026-11-23",
+    "hours": [
+     {
+      "period": "January through February",
+      "open": "09:00-17:00",
+      "last_admission": "16:00"
+     },
+     {
+      "period": "March through May",
+      "open": "09:00-18:00",
+      "last_admission": "17:00"
+     },
+     {
+      "period": "June through August",
+      "open": "09:00-18:30",
+      "last_admission": "17:30"
+     },
+     {
+      "period": "September through October",
+      "open": "09:00-18:00",
+      "last_admission": "17:00"
+     },
+     {
+      "period": "November through December",
+      "open": "09:00-17:00",
+      "last_admission": "16:00"
+     }
+    ],
+    "closed": "Closed on Tuesdays. When a public holiday or a substitute holiday falls on the regular closing day, open; closed the day after the holiday instead.",
+    "fee": "Adults (age 19-64) 3,000 won individual, 2,400 won group (10+). Free: aged 18 and below, seniors 65+, those wearing a Hanbok, Culture Day (last Wednesday of every month). Royal Palace Pass covers 4 palaces and Jongmyo Shrine within three months.",
+    "events": [
+     {
+      "name": "Free guided tour (English)",
+      "when": "Wed-Mon 11:00, 13:30, 15:30",
+      "note": "Starts in front of Gyeongbokgung Palace Information Center inside Heungnyemun Gate; about 1 to 1.5 hours; groups of 10+ reserve in advance"
+     },
+     {
+      "name": "Free guided tour (Japanese)",
+      "when": "10:00, 14:30"
+     },
+     {
+      "name": "Free guided tour (Chinese)",
+      "when": "10:30, 15:00"
+     },
+     {
+      "name": "Free guided tour (Spanish)",
+      "when": "Fri, Sat 10:30, 15:00"
+     },
+     {
+      "name": "Free guided tour (French)",
+      "when": "Wed, Thur 11:00, 15:00"
+     }
+    ],
+    "phone": "02-3700-3900"
+   },
+   "official_of": "L01",
+   "events": null,
+   "conflict": null,
+   "status": "official-inside"
+  },
+  "L04": {
+   "osm_opening_hours": null,
+   "wikivoyage_hours": null,
+   "wikivoyage_price": null,
+   "official": {
+    "place": "Gyeongbokgung Palace",
+    "source_url": "https://royal.khs.go.kr/ENG/contents/E702000000.do",
+    "publisher": "Korea Heritage Service, Royal Palaces and Tombs Center (official)",
+    "read_date": "2026-11-23",
+    "hours": [
+     {
+      "period": "January through February",
+      "open": "09:00-17:00",
+      "last_admission": "16:00"
+     },
+     {
+      "period": "March through May",
+      "open": "09:00-18:00",
+      "last_admission": "17:00"
+     },
+     {
+      "period": "June through August",
+      "open": "09:00-18:30",
+      "last_admission": "17:30"
+     },
+     {
+      "period": "September through October",
+      "open": "09:00-18:00",
+      "last_admission": "17:00"
+     },
+     {
+      "period": "November through December",
+      "open": "09:00-17:00",
+      "last_admission": "16:00"
+     }
+    ],
+    "closed": "Closed on Tuesdays. When a public holiday or a substitute holiday falls on the regular closing day, open; closed the day after the holiday instead.",
+    "fee": "Adults (age 19-64) 3,000 won individual, 2,400 won group (10+). Free: aged 18 and below, seniors 65+, those wearing a Hanbok, Culture Day (last Wednesday of every month). Royal Palace Pass covers 4 palaces and Jongmyo Shrine within three months.",
+    "events": [
+     {
+      "name": "Free guided tour (English)",
+      "when": "Wed-Mon 11:00, 13:30, 15:30",
+      "note": "Starts in front of Gyeongbokgung Palace Information Center inside Heungnyemun Gate; about 1 to 1.5 hours; groups of 10+ reserve in advance"
+     },
+     {
+      "name": "Free guided tour (Japanese)",
+      "when": "10:00, 14:30"
+     },
+     {
+      "name": "Free guided tour (Chinese)",
+      "when": "10:30, 15:00"
+     },
+     {
+      "name": "Free guided tour (Spanish)",
+      "when": "Fri, Sat 10:30, 15:00"
+     },
+     {
+      "name": "Free guided tour (French)",
+      "when": "Wed, Thur 11:00, 15:00"
+     }
+    ],
+    "phone": "02-3700-3900"
+   },
+   "official_of": "L01",
+   "events": null,
+   "conflict": null,
+   "status": "official-inside"
+  },
+  "L05": {
+   "osm_opening_hours": null,
+   "wikivoyage_hours": null,
+   "wikivoyage_price": null,
+   "official": {
+    "place": "Gyeongbokgung Palace",
+    "source_url": "https://royal.khs.go.kr/ENG/contents/E702000000.do",
+    "publisher": "Korea Heritage Service, Royal Palaces and Tombs Center (official)",
+    "read_date": "2026-11-23",
+    "hours": [
+     {
+      "period": "January through February",
+      "open": "09:00-17:00",
+      "last_admission": "16:00"
+     },
+     {
+      "period": "March through May",
+      "open": "09:00-18:00",
+      "last_admission": "17:00"
+     },
+     {
+      "period": "June through August",
+      "open": "09:00-18:30",
+      "last_admission": "17:30"
+     },
+     {
+      "period": "September through October",
+      "open": "09:00-18:00",
+      "last_admission": "17:00"
+     },
+     {
+      "period": "November through December",
+      "open": "09:00-17:00",
+      "last_admission": "16:00"
+     }
+    ],
+    "closed": "Closed on Tuesdays. When a public holiday or a substitute holiday falls on the regular closing day, open; closed the day after the holiday instead.",
+    "fee": "Adults (age 19-64) 3,000 won individual, 2,400 won group (10+). Free: aged 18 and below, seniors 65+, those wearing a Hanbok, Culture Day (last Wednesday of every month). Royal Palace Pass covers 4 palaces and Jongmyo Shrine within three months.",
+    "events": [
+     {
+      "name": "Free guided tour (English)",
+      "when": "Wed-Mon 11:00, 13:30, 15:30",
+      "note": "Starts in front of Gyeongbokgung Palace Information Center inside Heungnyemun Gate; about 1 to 1.5 hours; groups of 10+ reserve in advance"
+     },
+     {
+      "name": "Free guided tour (Japanese)",
+      "when": "10:00, 14:30"
+     },
+     {
+      "name": "Free guided tour (Chinese)",
+      "when": "10:30, 15:00"
+     },
+     {
+      "name": "Free guided tour (Spanish)",
+      "when": "Fri, Sat 10:30, 15:00"
+     },
+     {
+      "name": "Free guided tour (French)",
+      "when": "Wed, Thur 11:00, 15:00"
+     }
+    ],
+    "phone": "02-3700-3900"
+   },
+   "official_of": "L01",
+   "events": null,
+   "conflict": null,
+   "status": "official-inside"
+  },
+  "L06": {
+   "osm_opening_hours": null,
+   "wikivoyage_hours": null,
+   "wikivoyage_price": null,
+   "official": {
+    "place": "Gyeongbokgung Palace",
+    "source_url": "https://royal.khs.go.kr/ENG/contents/E702000000.do",
+    "publisher": "Korea Heritage Service, Royal Palaces and Tombs Center (official)",
+    "read_date": "2026-11-23",
+    "hours": [
+     {
+      "period": "January through February",
+      "open": "09:00-17:00",
+      "last_admission": "16:00"
+     },
+     {
+      "period": "March through May",
+      "open": "09:00-18:00",
+      "last_admission": "17:00"
+     },
+     {
+      "period": "June through August",
+      "open": "09:00-18:30",
+      "last_admission": "17:30"
+     },
+     {
+      "period": "September through October",
+      "open": "09:00-18:00",
+      "last_admission": "17:00"
+     },
+     {
+      "period": "November through December",
+      "open": "09:00-17:00",
+      "last_admission": "16:00"
+     }
+    ],
+    "closed": "Closed on Tuesdays. When a public holiday or a substitute holiday falls on the regular closing day, open; closed the day after the holiday instead.",
+    "fee": "Adults (age 19-64) 3,000 won individual, 2,400 won group (10+). Free: aged 18 and below, seniors 65+, those wearing a Hanbok, Culture Day (last Wednesday of every month). Royal Palace Pass covers 4 palaces and Jongmyo Shrine within three months.",
+    "events": [
+     {
+      "name": "Free guided tour (English)",
+      "when": "Wed-Mon 11:00, 13:30, 15:30",
+      "note": "Starts in front of Gyeongbokgung Palace Information Center inside Heungnyemun Gate; about 1 to 1.5 hours; groups of 10+ reserve in advance"
+     },
+     {
+      "name": "Free guided tour (Japanese)",
+      "when": "10:00, 14:30"
+     },
+     {
+      "name": "Free guided tour (Chinese)",
+      "when": "10:30, 15:00"
+     },
+     {
+      "name": "Free guided tour (Spanish)",
+      "when": "Fri, Sat 10:30, 15:00"
+     },
+     {
+      "name": "Free guided tour (French)",
+      "when": "Wed, Thur 11:00, 15:00"
+     }
+    ],
+    "phone": "02-3700-3900"
+   },
+   "official_of": "L01",
+   "events": null,
+   "conflict": null,
+   "status": "official-inside"
+  },
+  "L07": {
+   "osm_opening_hours": null,
+   "wikivoyage_hours": null,
+   "wikivoyage_price": null,
+   "official": null,
+   "official_of": null,
+   "events": null,
+   "conflict": null,
+   "status": "outdoor"
+  },
+  "L08": {
+   "osm_opening_hours": null,
+   "wikivoyage_hours": "10:00-18:00 (10:00-21:00 on Wed Sat)",
+   "wikivoyage_price": "Free",
+   "official": {
+    "place": "National Palace Museum of Korea",
+    "source_url": "https://www.gogung.go.kr/gogungEn/main/contents.do?menuNo=1000002",
+    "publisher": "National Palace Museum of Korea (official)",
+    "read_date": "2026-11-23",
+    "hours": [
+     {
+      "days": "Mon-Fri, Sun",
+      "open": "09:30-17:30",
+      "last_admission": "17:00"
+     },
+     {
+      "days": "Sat",
+      "open": "09:30-21:30",
+      "last_admission": "20:30"
+     },
+     {
+      "days": "Culture Day (last Wednesday of every month)",
+      "open": "09:30-21:00",
+      "last_admission": "20:30"
+     }
+    ],
+    "closed": "January 1st; February 17th (Seollal); September 25th (Chuseok); the last Monday of every month (if that is a public holiday, closed the following day).",
+    "fee": "Free",
+    "events": [
+     {
+      "name": "Korean-language exhibition tour",
+      "when": "Weekdays 10:00; weekends 10:00 and 15:00"
+     },
+     {
+      "name": "Guided tours for international visitors (English, Japanese, Chinese)",
+      "when": "Weekdays (Mon-Fri) 13:00-15:00; meeting point Information Desk, 2nd floor lobby; monthly language calendar on the page"
+     }
+    ]
+   },
+   "official_of": null,
+   "events": null,
+   "conflict": "Wikivoyage hours (10:00-18:00, Wed/Sat to 21:00) differ from the official page (09:30-17:30, Sat to 21:30).",
+   "status": "official"
+  },
+  "L09": {
+   "osm_opening_hours": null,
+   "wikivoyage_hours": "09:00-17:00",
+   "wikivoyage_price": "Free",
+   "official": {
+    "place": "National Folk Museum of Korea (Seoul)",
+    "source_url": "https://www.nfm.go.kr/english/subIndex/475.do",
+    "publisher": "National Folk Museum of Korea (official)",
+    "read_date": "2026-11-23",
+    "hours": [
+     {
+      "period": "March to October",
+      "open": "09:00-18:00",
+      "last_admission": "17:00",
+      "note": "Wednesday 09:00-20:00 (entrance until 19:00)"
+     },
+     {
+      "period": "November to February",
+      "open": "09:00-17:00",
+      "last_admission": "16:00"
+     }
+    ],
+    "closed": "January 1st; Seollal (Lunar New Year's Day); July 7 (Tue) 2026 temporary closure; Chuseok.",
+    "fee": "Free (all exhibitions). Note: the museum is inside the Gyeongbokgung grounds; the page says Gyeongbokgung admission is charged and bought at the Gyeongbokgung ticket office.",
+    "notice": "Temporary Closure of Permanent Exhibition Hall 1 (September 30 - December 21, 2026). Indoor access to the outdoor exhibition area is restricted for safety reasons on weekends and public holidays. Children's Museum needs online pre-reservation (Korean only).",
+    "events": [
+     {
+      "name": "English docent tour",
+      "when": "Mon, Fri 10:30, 14:30; Wed 14:30; Thu, Sun 10:30",
+      "note": "Meeting place: information desk, 1st floor lobby; free; foreign visitors only"
+     },
+     {
+      "name": "Chinese docent tour",
+      "when": "Fri 14:00"
+     },
+     {
+      "name": "Japanese docent tour",
+      "when": "Mon, Tue, Thu 11:00, 15:00; Wed, weekends 11:00"
+     },
+     {
+      "name": "Korean docent tour",
+      "when": "Mon-Fri 10:00, 11:00, 14:00, 15:00; weekends and holidays 10:00, 14:00"
+     }
+    ],
+    "phone": "+82-2-3704-3114"
+   },
+   "official_of": null,
+   "events": null,
+   "conflict": "Wikivoyage hours (09:00-17:00) are only the winter hours on the official page (Mar-Oct 09:00-18:00).",
+   "status": "official"
+  },
+  "L10": {
+   "osm_opening_hours": null,
+   "wikivoyage_hours": null,
+   "wikivoyage_price": null,
+   "official": null,
+   "official_of": null,
+   "events": null,
+   "conflict": null,
+   "status": "outdoor"
+  },
+  "L11": {
+   "osm_opening_hours": null,
+   "wikivoyage_hours": null,
+   "wikivoyage_price": null,
+   "official": null,
+   "official_of": null,
+   "events": null,
+   "conflict": null,
+   "status": "outdoor"
+  },
+  "L12": {
+   "osm_opening_hours": null,
+   "wikivoyage_hours": null,
+   "wikivoyage_price": null,
+   "official": null,
+   "official_of": null,
+   "events": null,
+   "conflict": null,
+   "status": "outdoor"
+  },
+  "L13": {
+   "osm_opening_hours": "Mo-Su 10:00-18:00; We 10:00-21:00; Sa 10:00-21:00",
+   "wikivoyage_hours": null,
+   "wikivoyage_price": "Free",
+   "official": {
+    "place": "National Museum of Korean Contemporary History",
+    "source_url": "https://www.much.go.kr/ENG/contents/E01010000000.do",
+    "publisher": "National Museum of Korean Contemporary History (official)",
+    "read_date": "2026-11-23",
+    "hours": [
+     {
+      "days": "Mon, Tue, Thu, Fri, Sun",
+      "open": "10:00-18:00"
+     },
+     {
+      "days": "Wed, Sat",
+      "open": "10:00-21:00"
+     }
+    ],
+    "last_admission": "Enter 30 minutes before closing",
+    "closed": "Page text: 'The Museum is closed on January 1, New Year's Day, Chuseok.' (New Year's Day here likely means Seollal, the Lunar New Year; not stated)",
+    "fee": "Entry is free.",
+    "events": [],
+    "phone": "+82-2-3703-9200",
+    "address": "198 Sejong-daero, Jongno-gu, Seoul"
+   },
+   "official_of": null,
+   "events": null,
+   "conflict": null,
+   "status": "official"
+  },
+  "L14": {
+   "osm_opening_hours": null,
+   "wikivoyage_hours": "Mon Tue Thu Fri Sun 10:00-18:00; Wed Sat 10:00-21:00 (18:00-21:00: free), closed on January 1st, Lunar New Year’s Day, Korean Thanksgiving Day",
+   "wikivoyage_price": "₩4,000. Free for ages under 24 or over 65, college students, and on the last Wednesday of each month",
+   "official": {
+    "place": "MMCA Seoul (National Museum of Modern and Contemporary Art, Korea)",
+    "source_url": "https://www.mmca.go.kr/eng/visitingInfo/seoulInfo.do",
+    "publisher": "MMCA (official)",
+    "read_date": "2026-11-23",
+    "hours": [
+     {
+      "days": "Mon, Tue, Thu, Fri, Sun",
+      "open": "10:00-18:00"
+     },
+     {
+      "days": "Wed, Sat",
+      "open": "10:00-21:00",
+      "note": "late opening 18:00-21:00"
+     }
+    ],
+    "closed": "Jan. 1, Lunar New Year's day, and Chuseok",
+    "fee": "Paid exhibition tickets: fees vary by exhibition. All Pass Ticket 10,000 KRW (when 3 or more paid exhibitions run). Free on Wed and Sat late opening (18:00-21:00) and on Culture Day (last Wednesday of every month). Free for individuals under 24 or over 65, undergraduate students and some card holders (ID required).",
+    "events": []
+   },
+   "official_of": null,
+   "events": null,
+   "conflict": "Wikivoyage price '₩4,000'; the official page says paid exhibition fees vary (All Pass 10,000 KRW).",
+   "status": "official"
+  },
+  "L15": {
+   "osm_opening_hours": null,
+   "wikivoyage_hours": null,
+   "wikivoyage_price": null,
+   "official": null,
+   "official_of": null,
+   "events": null,
+   "conflict": null,
+   "status": "outdoor"
+  },
+  "L16": {
+   "osm_opening_hours": null,
+   "wikivoyage_hours": null,
+   "wikivoyage_price": null,
+   "official": null,
+   "official_of": null,
+   "events": null,
+   "conflict": null,
+   "status": "unknown"
+  },
+  "L17": {
+   "osm_opening_hours": null,
+   "wikivoyage_hours": "10:00-17:00",
+   "wikivoyage_price": null,
+   "official": {
+    "place": "Bukchon Hanok Village - Red Zone (Bukchon-ro 11-gil area)",
+    "source_url": "https://culture.jongno.go.kr/media/ko/conts/111/web.do",
+    "publisher": "Jongno-gu Office, 종로문화플랫폼 > 관광 > 특별관리지역 (official)",
+    "read_date": "2026-11-23",
+    "hours": [
+     {
+      "days": "every day",
+      "open": "10:00-17:00",
+      "note": "Tourists may visit the Red Zone only 10:00-17:00. From 17:00 to 10:00 next day, tourist visits are prohibited."
+     }
+    ],
+    "closed": "Tourist visits prohibited 17:00 - 10:00 next day in the Red Zone (about 34,000 m2 around Bukchon-ro 11-gil).",
+    "fee": "No admission (public residential streets). Fine for violation: 100,000 won (enforced from 2025-03-01; guidance period 2024-11-01 to 2025-02-28).",
+    "rules": [
+     "Applies to visitors for tourism purposes (taking photos or videos, staying to look around, wandering not related to using shops).",
+     "Exceptions: residents, family and acquaintances, shop customers, merchants, people simply passing through (but tourist acts can still be fined).",
+     "Chartered tourist buses banned at all times on Bukchon-ro, Bukchon-ro 5-gil, Bukchon-ro 4-gil, Changdeokgung 1-gil (about 2.3 km), fines from 2026-01-01: 300,000 won (2nd 400,000, 3rd 500,000)."
+    ],
+    "note": "Policy began 2024-11-01. The page links an English PDF 'Bukchon Tourist Visiting Hours Guide' (not downloaded).",
+    "events": []
+   },
+   "official_of": null,
+   "events": null,
+   "conflict": null,
+   "status": "official"
+  },
+  "L18": {
+   "osm_opening_hours": null,
+   "wikivoyage_hours": null,
+   "wikivoyage_price": null,
+   "official": {
+    "place": "Bukchon Hanok Village - Red Zone (Bukchon-ro 11-gil area)",
+    "source_url": "https://culture.jongno.go.kr/media/ko/conts/111/web.do",
+    "publisher": "Jongno-gu Office, 종로문화플랫폼 > 관광 > 특별관리지역 (official)",
+    "read_date": "2026-11-23",
+    "hours": [
+     {
+      "days": "every day",
+      "open": "10:00-17:00",
+      "note": "Tourists may visit the Red Zone only 10:00-17:00. From 17:00 to 10:00 next day, tourist visits are prohibited."
+     }
+    ],
+    "closed": "Tourist visits prohibited 17:00 - 10:00 next day in the Red Zone (about 34,000 m2 around Bukchon-ro 11-gil).",
+    "fee": "No admission (public residential streets). Fine for violation: 100,000 won (enforced from 2025-03-01; guidance period 2024-11-01 to 2025-02-28).",
+    "rules": [
+     "Applies to visitors for tourism purposes (taking photos or videos, staying to look around, wandering not related to using shops).",
+     "Exceptions: residents, family and acquaintances, shop customers, merchants, people simply passing through (but tourist acts can still be fined).",
+     "Chartered tourist buses banned at all times on Bukchon-ro, Bukchon-ro 5-gil, Bukchon-ro 4-gil, Changdeokgung 1-gil (about 2.3 km), fines from 2026-01-01: 300,000 won (2nd 400,000, 3rd 500,000)."
+    ],
+    "note": "Policy began 2024-11-01. The page links an English PDF 'Bukchon Tourist Visiting Hours Guide' (not downloaded).",
+    "events": []
+   },
+   "official_of": null,
+   "events": null,
+   "conflict": null,
+   "status": "official"
+  },
+  "L19": {
+   "osm_opening_hours": null,
+   "wikivoyage_hours": null,
+   "wikivoyage_price": "₩3,000 admission, cash-only",
+   "official": null,
+   "official_of": null,
+   "events": null,
+   "conflict": null,
+   "status": "unknown"
+  },
+  "L20": {
+   "osm_opening_hours": null,
+   "wikivoyage_hours": null,
+   "wikivoyage_price": null,
+   "official": {
+    "place": "Baek In-je House (백인제가옥)",
+    "source_url": "https://museum.seoul.go.kr/www/guide/vis/BIJHShow/BIJHInfo.jsp",
+    "publisher": "Seoul Museum of History (official, Korean page)",
+    "read_date": "2026-11-23",
+    "hours": [
+     {
+      "days": "Tue-Sun",
+      "open": "09:00-18:00",
+      "last_admission": "17:30",
+      "note": "In August, weekend (Fri, Sat) night opening until 20:00 (as written on the page)."
+     }
+    ],
+    "closed": "January 1; every Monday (open if Monday is a public holiday).",
+    "fee": "Free",
+    "rules": [
+     "Free visit: outside of the buildings only during opening hours; entering the inner quarters (안채, 사랑채) is not allowed except on a booked guided tour."
+    ],
+    "events": [
+     {
+      "name": "Korean guided tour (booking)",
+      "when": "Weekdays 10:00, 11:00, 14:00, 15:00; weekends and holidays 10:00, 11:00, 13:30, 14:00, 15:00, 16:00"
+     },
+     {
+      "name": "Foreign-language guided tour",
+      "when": "16:00 - Wednesday Japanese, Thursday Chinese, Friday English (booking or on-site sign-up)"
+     }
+    ],
+    "directions": {
+     "subway": [
+      "Line 3 Anguk Station Exit 2, toward the Constitutional Court, 500 m, across from Jaedong Elementary School on the left"
+     ]
+    },
+    "hours_ko": "관람시간 : 오전 9시 ~ 오후 6시(입장마감 17:30) ※ 8월 한달동안 주말(금, 토) 20:00까지 야간 개장 / 휴관일 : 1월 1일 , 매주 월요일(월요일이 공휴일인 경우 개관) / 관람요금 : 무료",
+    "phone": "02-724-0232",
+    "address": "16 Bukchon-ro 7-gil, Jongno-gu, Seoul"
+   },
+   "official_of": null,
+   "events": null,
+   "conflict": null,
+   "status": "official"
+  },
+  "L21": {
+   "osm_opening_hours": "Mo-Su 10:00-18:00",
+   "wikivoyage_hours": "Tue-Sun 10:00-18:00 (closed on Mon)",
+   "wikivoyage_price": "Free",
+   "official": {
+    "place": "Seoul Museum of Craft Art (SeMoCA)",
+    "source_url": "https://craftmuseum.seoul.go.kr/eng/preview/visit",
+    "publisher": "Seoul Museum of Craft Art (official)",
+    "read_date": "2026-11-23",
+    "hours": [
+     {
+      "days": "Tue-Sun (weekdays and weekends)",
+      "open": "10:00-18:00",
+      "last_admission": "17:30",
+      "note": "Open until 21:00 on Fridays. Craft Archives special exhibitions open only Tue-Fri."
+     }
+    ],
+    "closed": "Every Monday; New Year's Day (January 1)",
+    "fee": "Free (except for certain paid exhibitions)",
+    "directions": {
+     "subway": [
+      "Walk 50 m from Exit 1 of Anguk Station (Line 3)"
+     ]
+    },
+    "note": "Outdoor Craft Garden: limited access 22:00-08:00. Located on the historic site of Andong Byeolgung. Children's Museum needs advance booking.",
+    "phone": "+82-2-6450-7000",
+    "address": "4, Yulgok-ro 3-gil, Jongno-gu, Seoul"
+   },
+   "official_of": null,
+   "events": null,
+   "conflict": "OSM opening_hours 'Mo-Su 10:00-18:00' says open on Mondays; the official page says closed every Monday.",
+   "status": "official"
+  },
+  "L22": {
+   "osm_opening_hours": null,
+   "wikivoyage_hours": null,
+   "wikivoyage_price": "Free",
+   "official": {
+    "place": "Unhyeongung (운현궁)",
+    "source_url": "https://www.unhyeongung.or.kr/sub/introduce/preview.php",
+    "publisher": "Unhyeongung Management Office (official, Korean page)",
+    "read_date": "2026-11-23",
+    "hours": [
+     {
+      "period": "April - October (하절기)",
+      "open": "09:00-19:00",
+      "last_admission": "18:30"
+     },
+     {
+      "period": "November - March (동절기)",
+      "open": "09:00-18:00",
+      "last_admission": "17:30"
+     },
+     {
+      "period": "Fridays, April - November (야간개장)",
+      "open": "09:00-21:00",
+      "last_admission": "20:30"
+     }
+    ],
+    "closed": "Closed every Monday (open if Monday is a public holiday).",
+    "fee": "Free (무료)",
+    "directions": {
+     "subway": [
+      "Line 3 Anguk station Exit 4 (3 min walk)",
+      "Line 1/3/5 Jongno 3-ga station Exit 5 (8 min walk)"
+     ]
+    },
+    "note": "Korean page; translated by us into English in this note. Original Korean text kept in hours_ko below.",
+    "hours_ko": "하절기 개장시간 9:00 ~ 19:00 입장마감 18:30 (4월 ~ 10월) / 동절기 개장시간 9:00 ~ 18:00 입장마감 17:30 (11월 ~ 3월) / 야간개장 매주 금요일 9:00 ~ 21:00 입장마감 20:30 (4월 ~ 11월) / 입장료 무료 / ※ 매주 월요일 휴관 (단, 월요일이 공휴일인 경우 정상 개장합니다.)",
+    "phone": "02-766-9090",
+    "address": "464 Samil-daero, Jongno-gu, Seoul"
+   },
+   "official_of": null,
+   "events": null,
+   "conflict": null,
+   "status": "official"
+  },
+  "L23": {
+   "osm_opening_hours": null,
+   "wikivoyage_hours": null,
+   "wikivoyage_price": null,
+   "official": {
+    "place": "Changdeokgung Palace (Donhwamun Gate)",
+    "source_url": "https://royal.khs.go.kr/ENG/contents/E702000000.do?schGroupCode=cdg",
+    "publisher": "Korea Heritage Service, Royal Palaces and Tombs Center (official)",
+    "read_date": "2026-11-23",
+    "hours": [
+     {
+      "area": "Palace Building Area",
+      "period": "February - May / September - October",
+      "open": "09:00-18:00",
+      "last_admission": "17:00"
+     },
+     {
+      "area": "Palace Building Area",
+      "period": "June - August",
+      "open": "09:00-18:30",
+      "last_admission": "17:30"
+     },
+     {
+      "area": "Palace Building Area",
+      "period": "November - January",
+      "open": "09:00-17:30",
+      "last_admission": "16:30"
+     },
+     {
+      "area": "Secret Garden",
+      "period": "March - June / September - October",
+      "open": "10:00-17:30",
+      "last_admission": "16:00"
+     },
+     {
+      "area": "Secret Garden",
+      "period": "July - August",
+      "open": "10:00-17:10",
+      "last_admission": "16:00"
+     },
+     {
+      "area": "Secret Garden",
+      "period": "November",
+      "open": "10:00-17:00",
+      "last_admission": "15:30"
+     },
+     {
+      "area": "Secret Garden",
+      "period": "December - February",
+      "open": "10:00-16:10",
+      "last_admission": "15:00"
+     }
+    ],
+    "closed": "Closed on Mondays. When a public holiday or substitute holiday falls on the closing day, open; closed the day after instead.",
+    "fee": "Palace Building Area: adult (19-64) 3,000 won (group 2,400). Free: 18 and under, over 65, those wearing Hanbok, Culture Day (last Wednesday of every month). Secret Garden: adult 5,000 won plus general admission; senior 5,000; youth (7-18) 2,500; limited to 100 people per session (50 online, 50 on site); entry only at the ticket time. Royal Palace Pass 6,000 won (4 palaces & Jongmyo, excluding Secret Garden).",
+    "directions": {
+     "subway": [
+      "Anguk Stn. (Line 3, Exit 3), walk 5 minutes",
+      "Jongno 3-ga Stn. (Line 1,3,5, Exit 7), walk 10 minutes"
+     ]
+    },
+    "phone": "02-3668-2300",
+    "address": "99, Yulgok-ro, Jongno-gu, Seoul"
+   },
+   "official_of": null,
+   "events": null,
+   "conflict": null,
+   "status": "official"
+  },
+  "L24": {
+   "osm_opening_hours": null,
+   "wikivoyage_hours": null,
+   "wikivoyage_price": null,
+   "official": {
+    "place": "Jogyesa Temple",
+    "source_url": "https://www.jogyesa.kr/eng/about/location.php",
+    "publisher": "Jogyesa (official, English pages)",
+    "read_date": "2026-11-23",
+    "hours": null,
+    "hours_note": "The official English pages (index, Access) give no visiting hours. 모름.",
+    "closed": null,
+    "fee": null,
+    "directions": {
+     "subway": [
+      "Line 1 Jonggak station Exit 2 - walk down along the road for 300m",
+      "Line 3 Anguk station Exit 6 - walk down for 150m - cross the street - walk down for 150m"
+     ],
+     "bus_stops": [
+      "01-202 (Jogyesa): 109, 151, 162, 606, 1020",
+      "01-201 (Jogyesa): 151, 162, 172, 401, 406, 704, 7022",
+      "01-267 (Jogyesa): 5000A, 5000B, 5005, 5500-2, 9000, 9200, 9401",
+      "01-893 (Insa-dong, Aventree Hotel): 6005"
+     ]
+    },
+    "other_facts_on_page": [
+     "Insa-dong is designated as a vehicle-free zone on Saturday afternoons and Sundays (stated on the Jogyesa page, not an Insa-dong official page)."
+    ],
+    "phone": "+82 2-768-8523 (ENG)",
+    "address": "55, Ujeongguk-ro, Jongno-gu, Seoul"
+   },
+   "official_of": null,
+   "events": null,
+   "conflict": null,
+   "status": "unknown"
+  },
+  "L25": {
+   "osm_opening_hours": null,
+   "wikivoyage_hours": null,
+   "wikivoyage_price": null,
+   "official": null,
+   "official_of": null,
+   "events": null,
+   "conflict": null,
+   "status": "outdoor"
+  },
+  "L26": {
+   "osm_opening_hours": null,
+   "wikivoyage_hours": "10:00 to 20:30",
+   "wikivoyage_price": null,
+   "official": null,
+   "official_of": null,
+   "events": null,
+   "conflict": null,
+   "status": "wikivoyage"
+  },
+  "L27": {
+   "osm_opening_hours": "Tu-Su 10:00-18:00",
+   "wikivoyage_hours": "Tue-Sun 10:00-18:00",
+   "wikivoyage_price": "₩5,000/3,000",
+   "official": {
+    "place": "Museum Kimchikan (뮤지엄김치간)",
+    "source_url": "https://www.kimchikan.com/visit/info",
+    "publisher": "Museum Kimchikan (official, Korean page)",
+    "read_date": "2026-11-23",
+    "hours": [
+     {
+      "days": "Tue-Sun",
+      "open": "10:00-18:00",
+      "last_admission": "17:30"
+     }
+    ],
+    "closed": "Every Monday; January 1; 3 days of Seollal and Chuseok holidays; December 25",
+    "fee": "Individual: adult 5,000 won, student 3,000 won, preschool child 2,000 won. Groups 20+: 4,000 / 2,000 / 1,000 won. Free: infants under 36 months, seniors 65+, people with disabilities and their companion (ID required).",
+    "events": [
+     {
+      "name": "Audio guide (Korean, English, Japanese, Chinese)",
+      "when": "Any time; free; scan QR code with own phone, bring earphones"
+     }
+    ],
+    "hours_ko": "화요일~일요일 10:00 ~ 18:00 마지막 입장 17:30 / 휴관일 매주 월요일, 1월 1일, 설/추석연휴 3일, 12월 25일 / 입장 요금(개인) 성인 5,000원 학생 3,000원 미취학아동 2,000원",
+    "phone": "02-2088-8531"
+   },
+   "official_of": null,
+   "events": null,
+   "conflict": null,
+   "status": "official"
+  },
+  "L28": {
+   "osm_opening_hours": null,
+   "wikivoyage_hours": null,
+   "wikivoyage_price": null,
+   "official": {
+    "place": "Tapgol Park (탑골공원)",
+    "source_url": null,
+    "publisher": null,
+    "read_date": "2026-11-23",
+    "hours": null,
+    "traveller_note": "Opening hours could not be confirmed from an official source.",
+    "hours_note": "모름. Jongno-gu's own facility page for Tapgol Park was not found. A web search summary quoted Seoul city news articles (mediahub.seoul.go.kr) with 'summer (Mar-Oct) 09:00-18:00, winter (Nov-Feb) 09:00-17:00', but the one article opened (https://mediahub.seoul.go.kr/archives/2005551, published 2022-09-19) shows a different line ('관람시간 09:00~18:00, 입장마감 17:30, 매주 월요일 정기휴무') whose subject is unclear. Not used.",
+    "closed": null,
+    "fee": null
+   },
+   "official_of": null,
+   "events": null,
+   "conflict": null,
+   "status": "unknown"
+  },
+  "L29": {
+   "osm_opening_hours": null,
+   "wikivoyage_hours": null,
+   "wikivoyage_price": null,
+   "official": null,
+   "official_of": null,
+   "events": null,
+   "conflict": null,
+   "status": "unknown"
+  },
+  "L30": {
+   "osm_opening_hours": null,
+   "wikivoyage_hours": null,
+   "wikivoyage_price": null,
+   "official": null,
+   "official_of": null,
+   "events": null,
+   "conflict": null,
+   "status": "outdoor"
+  },
+  "F01": {
+   "osm_opening_hours": null,
+   "wikivoyage_hours": null,
+   "wikivoyage_price": null,
+   "official": null,
+   "official_of": null,
+   "events": null,
+   "conflict": null,
+   "status": "unknown"
+  },
+  "F02": {
+   "osm_opening_hours": null,
+   "wikivoyage_hours": null,
+   "wikivoyage_price": null,
+   "official": null,
+   "official_of": null,
+   "events": null,
+   "conflict": null,
+   "status": "unknown"
+  },
+  "F03": {
+   "osm_opening_hours": "Mo-Su 11:30-20:50",
+   "wikivoyage_hours": null,
+   "wikivoyage_price": null,
+   "official": null,
+   "official_of": null,
+   "events": null,
+   "conflict": null,
+   "status": "osm"
+  },
+  "F04": {
+   "osm_opening_hours": "11:00-21:00",
+   "wikivoyage_hours": null,
+   "wikivoyage_price": "₩8000-13,000",
+   "official": null,
+   "official_of": null,
+   "events": null,
+   "conflict": null,
+   "status": "osm"
+  },
+  "F05": {
+   "osm_opening_hours": null,
+   "wikivoyage_hours": "11:30-21:00",
+   "wikivoyage_price": "₩20,000",
+   "official": null,
+   "official_of": null,
+   "events": null,
+   "conflict": null,
+   "status": "wikivoyage"
+  },
+  "F06": {
+   "osm_opening_hours": null,
+   "wikivoyage_hours": "10:30-21:00",
+   "wikivoyage_price": "₩13,000",
+   "official": null,
+   "official_of": null,
+   "events": null,
+   "conflict": null,
+   "status": "wikivoyage"
+  },
+  "F07": {
+   "osm_opening_hours": null,
+   "wikivoyage_hours": "09:30-21:30",
+   "wikivoyage_price": "₩15,000",
+   "official": null,
+   "official_of": null,
+   "events": null,
+   "conflict": null,
+   "status": "wikivoyage"
+  },
+  "F08": {
+   "osm_opening_hours": null,
+   "wikivoyage_hours": "11:00-21:00",
+   "wikivoyage_price": "₩13,000",
+   "official": null,
+   "official_of": null,
+   "events": null,
+   "conflict": null,
+   "status": "wikivoyage"
+  },
+  "F09": {
+   "osm_opening_hours": "Mo-Su 10:00-22:00",
+   "wikivoyage_hours": "10:30-21:00",
+   "wikivoyage_price": "₩12,000",
+   "official": null,
+   "official_of": null,
+   "events": null,
+   "conflict": "OSM opening_hours (Mo-Su 10:00-22:00) and Wikivoyage hours (10:30-21:00) differ.",
+   "status": "osm"
+  },
+  "F10": {
+   "osm_opening_hours": null,
+   "wikivoyage_hours": "07:30-20:00",
+   "wikivoyage_price": "₩5,000",
+   "official": null,
+   "official_of": null,
+   "events": null,
+   "conflict": null,
+   "status": "wikivoyage"
+  },
+  "F11": {
+   "osm_opening_hours": null,
+   "wikivoyage_hours": null,
+   "wikivoyage_price": null,
+   "official": null,
+   "official_of": null,
+   "events": null,
+   "conflict": null,
+   "status": "unknown"
+  },
+  "F12": {
+   "osm_opening_hours": null,
+   "wikivoyage_hours": "16:00 - 23:30",
+   "wikivoyage_price": null,
+   "official": null,
+   "official_of": null,
+   "events": null,
+   "conflict": null,
+   "status": "wikivoyage"
+  },
+  "F13": {
+   "osm_opening_hours": null,
+   "wikivoyage_hours": "11:00-20:00",
+   "wikivoyage_price": "₩ 2500-5000",
+   "official": null,
+   "official_of": null,
+   "events": null,
+   "conflict": null,
+   "status": "wikivoyage"
+  },
+  "F14": {
+   "osm_opening_hours": null,
+   "wikivoyage_hours": "Mo-Fr 11:00-23:00, Sa Su 10:00-23:00",
+   "wikivoyage_price": "₩18,000 per 180 g serving, pork set for two ₩54,000",
+   "official": null,
+   "official_of": null,
+   "events": null,
+   "conflict": null,
+   "status": "wikivoyage"
+  },
+  "F15": {
+   "osm_opening_hours": "Fr-We 11:30-16:00, 17:00-21:00",
+   "wikivoyage_hours": null,
+   "wikivoyage_price": null,
+   "official": null,
+   "official_of": null,
+   "events": null,
+   "conflict": null,
+   "status": "osm"
+  },
+  "F16": {
+   "osm_opening_hours": null,
+   "wikivoyage_hours": null,
+   "wikivoyage_price": null,
+   "official": null,
+   "official_of": null,
+   "events": null,
+   "conflict": null,
+   "status": "unknown"
+  },
+  "F17": {
+   "osm_opening_hours": "10:00-22:00",
+   "wikivoyage_hours": null,
+   "wikivoyage_price": null,
+   "official": null,
+   "official_of": null,
+   "events": null,
+   "conflict": null,
+   "status": "osm"
+  },
+  "F18": {
+   "osm_opening_hours": "Mo-Su 10:00-22:50",
+   "wikivoyage_hours": null,
+   "wikivoyage_price": null,
+   "official": null,
+   "official_of": null,
+   "events": null,
+   "conflict": null,
+   "status": "osm"
+  },
+  "F19": {
+   "osm_opening_hours": null,
+   "wikivoyage_hours": null,
+   "wikivoyage_price": null,
+   "official": null,
+   "official_of": null,
+   "events": null,
+   "conflict": null,
+   "status": "unknown"
+  },
+  "S01": {
+   "osm_opening_hours": null,
+   "wikivoyage_hours": null,
+   "wikivoyage_price": null,
+   "official": null,
+   "official_of": null,
+   "events": null,
+   "conflict": null,
+   "status": "unknown"
+  },
+  "S02": {
+   "osm_opening_hours": null,
+   "wikivoyage_hours": null,
+   "wikivoyage_price": null,
+   "official": null,
+   "official_of": null,
+   "events": null,
+   "conflict": null,
+   "status": "unknown"
+  },
+  "S03": {
+   "osm_opening_hours": null,
+   "wikivoyage_hours": null,
+   "wikivoyage_price": null,
+   "official": null,
+   "official_of": null,
+   "events": null,
+   "conflict": null,
+   "status": "unknown"
+  },
+  "S04": {
+   "osm_opening_hours": null,
+   "wikivoyage_hours": null,
+   "wikivoyage_price": null,
+   "official": null,
+   "official_of": null,
+   "events": null,
+   "conflict": null,
+   "status": "unknown"
+  },
+  "S05": {
+   "osm_opening_hours": null,
+   "wikivoyage_hours": null,
+   "wikivoyage_price": null,
+   "official": null,
+   "official_of": null,
+   "events": null,
+   "conflict": null,
+   "status": "unknown"
+  },
+  "S06": {
+   "osm_opening_hours": null,
+   "wikivoyage_hours": null,
+   "wikivoyage_price": null,
+   "official": null,
+   "official_of": null,
+   "events": null,
+   "conflict": null,
+   "status": "unknown"
+  },
+  "S07": {
+   "osm_opening_hours": null,
+   "wikivoyage_hours": null,
+   "wikivoyage_price": null,
+   "official": null,
+   "official_of": null,
+   "events": null,
+   "conflict": null,
+   "status": "unknown"
+  },
+  "S08": {
+   "osm_opening_hours": null,
+   "wikivoyage_hours": null,
+   "wikivoyage_price": null,
+   "official": null,
+   "official_of": null,
+   "events": null,
+   "conflict": null,
+   "status": "unknown"
+  },
+  "S09": {
+   "osm_opening_hours": null,
+   "wikivoyage_hours": null,
+   "wikivoyage_price": null,
+   "official": null,
+   "official_of": null,
+   "events": null,
+   "conflict": null,
+   "status": "unknown"
+  },
+  "S10": {
+   "osm_opening_hours": null,
+   "wikivoyage_hours": null,
+   "wikivoyage_price": null,
+   "official": null,
+   "official_of": null,
+   "events": null,
+   "conflict": null,
+   "status": "unknown"
+  },
+  "S11": {
+   "osm_opening_hours": null,
+   "wikivoyage_hours": null,
+   "wikivoyage_price": null,
+   "official": null,
+   "official_of": null,
+   "events": null,
+   "conflict": null,
+   "status": "unknown"
+  },
+  "S12": {
+   "osm_opening_hours": "Mo-Su 07:00-23:30",
+   "wikivoyage_hours": null,
+   "wikivoyage_price": null,
+   "official": null,
+   "official_of": null,
+   "events": null,
+   "conflict": null,
+   "status": "osm"
+  }
+ }
+}

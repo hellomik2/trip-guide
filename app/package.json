@@ -1,0 +1,14 @@
+{
+  "name": "trip-guide",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "An offline travel guide for Seoul's old palace quarter. On-device AI first, cloud only when the device can't (Firebase AI Logic hybrid inference).",
+  "license": "Apache-2.0",
+  "scripts": {
+    "serve": "node tools/serve.mjs",
+    "serve:hosting": "node tools/serve.mjs --hosting",
+    "test": "node test/names.test.mjs",
+    "scan": "node tools/scan-secrets.mjs"
+  }
+}

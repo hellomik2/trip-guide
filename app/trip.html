@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trip Guide · Seoul old town, works offline</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%230f766e'/%3E%3Cpath d='M12 4.5 15 12l-3 7.5L9 12z' fill='%23ffffff'/%3E%3Cpath d='M12 4.5 15 12H9z' fill='%23fca5a5'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="src/ui/trip.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <span class="mark" aria-hidden="true"></span>
+      <div class="brand-text">
+        <h1>Trip Guide</h1>
+        <p class="tag">Ask about the old palace quarter, even with no internet.</p>
+      </div>
+    </div>
+    <nav class="modes" role="tablist" aria-label="Choose what to do">
+      <button type="button" role="tab" id="tab-guide" class="mode on" aria-selected="true" aria-controls="guide-ask">Ask the guide</button>
+      <button type="button" role="tab" id="tab-read" class="mode" aria-selected="false" aria-controls="read-view">Read a Korean sign</button>
+    </nav>
+    <div class="packbox">
+      <div class="packname"><span id="pack-title">Seoul: Gyeongbokgung, Bukchon and Insa-dong</span> <span id="pack-state" class="mini">not saved</span></div>
+      <button id="pack-save" type="button" class="btn small">Save for offline</button>
+    </div>
+    <div class="pills">
+      <span id="net-status" class="pill" role="status">Online</span>
+      <span id="device-status" class="pill" role="status">Checking on-device AI…</span>
+    </div>
+  </header>
+
+  <section class="askbar" id="guide-ask" aria-label="Ask a question">
+    <div class="field here-field">
+      <label for="here">I am here</label>
+      <select id="here"></select>
+    </div>
+    <div class="field when-field">
+      <label for="day">When</label>
+      <div class="when-row">
+        <select id="day" aria-label="Day"></select>
+        <input id="time" type="text" inputmode="numeric" maxlength="5" pattern="[0-2][0-9]:[0-5][0-9]" aria-label="Time (24-hour, HH:MM)">
+      </div>
+      <button id="at-now" type="button" class="link" title="Use the day and time on this computer">Now</button>
+      <input id="at" type="hidden">
+    </div>
+    <div class="kinds" role="group" aria-label="Kind of question">
+      <button type="button" class="kind" data-kind="food"><span class="ki ki-food" aria-hidden="true"></span>Food</button>
+      <button type="button" class="kind" data-kind="route"><span class="ki ki-route" aria-hidden="true"></span>Directions</button>
+      <button type="button" class="kind" data-kind="sights"><span class="ki ki-sights" aria-hidden="true"></span>Sights nearby</button>
+      <button type="button" class="kind" data-kind="identify"><span class="ki ki-identify" aria-hidden="true"></span>What is this?</button>
+    </div>
+    <form id="ask-form" class="ask-form" autocomplete="off">
+      <input id="question" type="text" placeholder="Ask anything, e.g. How do I get to Jogyesa Temple?" aria-label="Your question" maxlength="300">
+      <button id="ask" type="submit" class="btn primary">Ask</button>
+    </form>
+  </section>
+
+  <main class="stage">
+    <section class="left" aria-label="Answer">
+      <div id="answer" class="answer empty" aria-live="polite"></div>
+    </section>
+    <section class="right" aria-label="Map and photos">
+      <div class="mapbox">
+        <svg id="map" role="img" aria-label="Walking map drawn from the saved pack"></svg>
+        <div class="map-tools">
+          <button type="button" class="mt" data-zoom="in" aria-label="Zoom in">+</button>
+          <button type="button" class="mt" data-zoom="out" aria-label="Zoom out">−</button>
+          <button type="button" class="mt" data-zoom="fit" aria-label="Fit the answer">⤢</button>
+        </div>
+        <div class="map-credit">Map data © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap contributors</a> (ODbL)</div>
+      </div>
+      <div id="photo" class="photo"></div>
+    </section>
+  </main>
+
+  <main class="read-view" id="read-view" aria-label="Read a Korean sign" hidden>
+    <section class="read-in" aria-label="Korean text or photo">
+      <form id="read-form" class="read-form" autocomplete="off">
+        <label for="read-text" class="read-h">Korean text from a sign, menu or notice</label>
+        <textarea id="read-text" rows="5" lang="ko" spellcheck="false" maxlength="1500" placeholder="Paste or type the Korean here. Keep the line breaks of a menu."></textarea>
+        <div class="read-actions">
+          <button id="read-go" type="submit" class="btn primary">Explain in English</button>
+          <label class="btn file-btn" for="read-photo">Choose a photo…</label>
+          <input id="read-photo" type="file" accept="image/*" class="visually-hidden">
+          <button id="read-clear" type="button" class="link">Clear</button>
+        </div>
+      </form>
+      <div class="read-try">
+        <div class="sub-h">Tips</div>
+        <ul class="read-tips muted small">
+          <li>Keep the line breaks of a menu or a timetable: each line gets its own meaning.</li>
+          <li>Copy the Korean from a web page or a map app and paste it here.</li>
+          <li>No internet? Typed text is still read on this computer.</li>
+        </ul>
+      </div>
+    </section>
+    <section class="read-out" aria-label="What it means">
+      <div id="read-card" class="read-card empty" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <footer class="credits-bar">
+    <span id="credits-line">Map and place data © OpenStreetMap contributors (ODbL) · Text adapted from Wikivoyage (CC BY-SA 4.0) · Facts from Wikidata (CC0) · Photos from Wikimedia Commons, each with its author and licence</span>
+    <button id="credits-open" type="button" class="link">Credits and licences</button>
+    <label class="switch"><input id="device-only" type="checkbox"> <span>Never use the cloud</span></label>
+  </footer>
+
+  <dialog id="credits" aria-labelledby="credits-h">
+    <div class="dlg-head"><h2 id="credits-h">Credits and licences</h2><button type="button" class="btn small" data-close>Close</button></div>
+    <div id="credits-body" class="dlg-body"></div>
+  </dialog>
+
+  <script type="module" src="src/ui/trip.js"></script>
+</body>
+</html>

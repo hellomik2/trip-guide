@@ -1,0 +1,2634 @@
+{
+ "made": "2026-11-23",
+ "how": "Picked by hand from osm/places-raw.json and wikivoyage/jongno-listings.json (see tools/build_candidates.py PICKS).",
+ "counts": {
+  "landmark": 30,
+  "food": 19,
+  "service": 12
+ },
+ "places": [
+  {
+   "id": "L01",
+   "group": "landmark",
+   "kind": "palace",
+   "name_en": "Gyeongbokgung Palace",
+   "name_ko": "경복궁",
+   "lat": 37.579766,
+   "lon": 126.976902,
+   "coord_source": "osm (center of way/relation)",
+   "osm": {
+    "type": "relation",
+    "id": 5501517,
+    "url": "https://www.openstreetmap.org/relation/5501517",
+    "version": 35,
+    "timestamp": "2026-08-26T08:35:43Z",
+    "tags": {
+     "alt_name:en": "Gyeongbok-gung",
+     "castle_type": "palace",
+     "contact:phone": "+82 2 3700 39001",
+     "contact:website": "http://www.royalpalace.go.kr",
+     "fee": "yes",
+     "guided_tours": "yes",
+     "guided_tours:fee": "no",
+     "guided_tours:languages": "English;Korean;?",
+     "historic": "castle",
+     "importance": "international",
+     "name": "경복궁",
+     "name:en": "Gyeongbokgung Palace",
+     "name:ja": "景福宮",
+     "name:ko": "경복궁",
+     "name:ko-Latn": "Gyeongbokgung",
+     "name:ru": "Кёнбоккун",
+     "name:zh": "景福宮",
+     "name:zh-Hans": "景福宫",
+     "name:zh-Hant": "景福宮",
+     "opening_hours": "Jan-Feb,Nov-Dec 09:00-17:00; Mar-May,Sep-Oct 09:00-18:00; Jun-Aug 09:00-18:30",
+     "operator": "문화재청",
+     "operator:type": "government",
+     "surveillance": "outdoor",
+     "tourism": "attraction",
+     "type": "multipolygon",
+     "website": "http://www.royalpalace.go.kr",
+     "wikidata": "Q482485",
+     "wikipedia": "ko:경복궁"
+    }
+   },
+   "opening_hours_osm": "Jan-Feb,Nov-Dec 09:00-17:00; Mar-May,Sep-Oct 09:00-18:00; Jun-Aug 09:00-18:30",
+   "wikidata": "Q482485",
+   "wikivoyage": {
+    "name": "Gyeongbokgung",
+    "kind": "see",
+    "section": "See / Palaces",
+    "line": 56,
+    "hours": "Opens at 09:00, closes between 17:00 and 18:30 depending on the season, closed Tuesdays; last admission 1 hour before closing",
+    "price": "₩3,000",
+    "address": "161, Sajik-ro",
+    "directions": "Gyeongbokgung (''Metro Line 3'') or Gwanghwamun stn (''Metro Line 5'', across the Gwanghwamun plaza)",
+    "content": "This is Seoul's grandest Joseon Dynasty-era palace and the seat of power for centuries before it was razed in 1592 by a Japanese invasion (and again by the Japanese in 1910). This was the first palace used by the Joseon Dynasty and was constructed after King Taejo founded the Joseon Dynasty and moved the capital to Hanyang. Large parts have now been restored, and the vast grounds also house the '''Joseon Palace Museum''' and the '''Korean Folk Museum'''. There's a small corner where you get the chance to try on traditional Korean dress for free after registering. Changing of the royal guard at ''Gwanghwamun'' (광화문, 光化門), the elegantly restored main gate to the palace, occurs twice a day at 10:00 and 14:00, as soldiers from the South Korean army dressed in Joseon-era uniforms march with traditional weapons to the tune of drumbeats for 20 minutes.",
+    "lastedit": "2026-05-13",
+    "url": "https://en.wikivoyage.org/w/index.php?title=Seoul/Jongno&oldid=5433820",
+    "revid": 5433820
+   },
+   "sources": [
+    "https://www.openstreetmap.org/relation/5501517",
+    "https://en.wikivoyage.org/w/index.php?title=Seoul/Jongno&oldid=5433820 (listing 'Gyeongbokgung', line 56)",
+    "https://www.wikidata.org/wiki/Q482485"
+   ],
+   "note": "Main royal palace of the Joseon dynasty."
+  },
+  {
+   "id": "L02",
+   "group": "landmark",
+   "kind": "palace gate",
+   "name_en": "Gwanghwamun Gate",
+   "name_ko": "광화문",
+   "lat": 37.575928,
+   "lon": 126.976818,
+   "coord_source": "osm (center of way/relation)",
+   "osm": {
+    "type": "way",
+    "id": 170199440,
+    "url": "https://www.openstreetmap.org/way/170199440",
+    "version": 22,
+    "timestamp": "2026-10-18T01:30:10Z",
+    "tags": {
+     "addr:city": "서울특별시",
+     "addr:district": "종로구",
+     "addr:housenumber": "161",
+     "addr:postcode": "03045",
+     "addr:street": "사직로",
+     "addr:subdistrict": "세종로",
+     "building": "gatehouse",
+     "building:architecture": "joseon",
+     "historic:civilization": "korean",
+     "historic:period": "joseon",
+     "name": "광화문",
+     "name:en": "Gwanghwamun Gate",
+     "name:ja": "光化門",
+     "name:ko": "광화문",
+     "name:zh": "光化门",
+     "ref": "533",
+     "wikidata": "Q485034",
+     "wikipedia": "en:Gwanghwamun"
+    }
+   },
+   "opening_hours_osm": null,
+   "wikidata": "Q485034",
+   "wikivoyage": null,
+   "sources": [
+    "https://www.openstreetmap.org/way/170199440",
+    "https://www.wikidata.org/wiki/Q485034"
+   ],
+   "note": "Main (south) gate of Gyeongbokgung; the Royal Guard Changing Ceremony is held here."
+  },
+  {
+   "id": "L03",
+   "group": "landmark",
+   "kind": "palace gate",
+   "name_en": "Heungnyemun Gate",
+   "name_ko": "흥례문",
+   "lat": 37.576953,
+   "lon": 126.976905,
+   "coord_source": "osm (center of way/relation)",
+   "osm": {
+    "type": "way",
+    "id": 1203368739,
+    "url": "https://www.openstreetmap.org/way/1203368739",
+    "version": 3,
+    "timestamp": "2026-10-17T23:20:34Z",
+    "tags": {
+     "building": "gatehouse",
+     "building:architecture": "joseon",
+     "building:colour": "#b73838",
+     "building:material": "wood",
+     "building:part": "yes",
+     "height": "11.5",
+     "historic:civilization": "korean",
+     "historic:period": "joseon",
+     "min_height": "2",
+     "name": "흥례문",
+     "name:en": "Heungnyemun Gate",
+     "name:ja": "興禮門",
+     "name:ko": "흥례문",
+     "name:zh": "兴礼门"
+    }
+   },
+   "opening_hours_osm": null,
+   "wikidata": "Q12626205",
+   "wikivoyage": null,
+   "sources": [
+    "https://www.openstreetmap.org/way/1203368739",
+    "https://www.wikidata.org/wiki/Q12626205"
+   ],
+   "note": "Second gate inside Gwanghwamun. Official site: free tours start at the Information Center inside Heungnyemun. Wikidata id found by search."
+  },
+  {
+   "id": "L04",
+   "group": "landmark",
+   "kind": "throne hall",
+   "name_en": "Geunjeongjeon Hall",
+   "name_ko": "근정전",
+   "lat": 37.578545,
+   "lon": 126.97699,
+   "coord_source": "osm (center of way/relation)",
+   "osm": {
+    "type": "way",
+    "id": 170199428,
+    "url": "https://www.openstreetmap.org/way/170199428",
+    "version": 17,
+    "timestamp": "2026-03-15T15:21:31Z",
+    "tags": {
+     "addr:city": "서울특별시",
+     "addr:district": "종로구",
+     "addr:housenumber": "161",
+     "addr:postcode": "03045",
+     "addr:street": "사직로",
+     "addr:subdistrict": "세종로",
+     "building": "yes",
+     "building:architecture": "joseon",
+     "cha:ref": "223",
+     "heritage": "2",
+     "heritage:description": "National Treasure of South Korea",
+     "heritage:operator": "Cultural Heritage Administration",
+     "historic": "building",
+     "historic:civilization": "korean",
+     "historic:period": "joseon",
+     "name": "근정전",
+     "name:en": "Geunjeongjeon Hall",
+     "name:ja": "勤政殿",
+     "name:ko": "근정전",
+     "name:zh": "勤政殿",
+     "wikidata": "Q10855678"
+    }
+   },
+   "opening_hours_osm": null,
+   "wikidata": "Q10855678",
+   "wikivoyage": null,
+   "sources": [
+    "https://www.openstreetmap.org/way/170199428",
+    "https://www.wikidata.org/wiki/Q10855678"
+   ],
+   "note": ""
+  },
+  {
+   "id": "L05",
+   "group": "landmark",
+   "kind": "pavilion",
+   "name_en": "Gyeonghoeru Pavilion",
+   "name_ko": "경회루",
+   "lat": 37.57975,
+   "lon": 126.975967,
+   "coord_source": "osm (center of way/relation)",
+   "osm": {
+    "type": "way",
+    "id": 170199469,
+    "url": "https://www.openstreetmap.org/way/170199469",
+    "version": 23,
+    "timestamp": "2025-07-28T10:57:58Z",
+    "tags": {
+     "alt_name:ko": "경복궁 경회루",
+     "building": "yes",
+     "building:architecture": "joseon",
+     "building:levels": "2",
+     "covered": "yes",
+     "description:en": "Part of Gyeongbok Palace. Banqueting and entertaining hall.",
+     "historic": "building",
+     "historic:civilization": "korean",
+     "historic:period": "joseon",
+     "name": "경회루",
+     "name:en": "Gyeonghoeru Pavilion",
+     "name:ja": "慶会楼",
+     "name:ko": "경회루",
+     "name:ko-Latn": "Gyeonghoeru",
+     "name:zh": "庆会楼",
+     "roof:shape": "hipped-and-gabled",
+     "start_date": "1867"
+    }
+   },
+   "opening_hours_osm": null,
+   "wikidata": "Q12583939",
+   "wikivoyage": null,
+   "sources": [
+    "https://www.openstreetmap.org/way/170199469",
+    "https://www.wikidata.org/wiki/Q12583939"
+   ],
+   "note": "Wikidata id found by search (OSM has none)."
+  },
+  {
+   "id": "L06",
+   "group": "landmark",
+   "kind": "pavilion",
+   "name_en": "Hyangwonjeong Pavilion",
+   "name_ko": "향원정",
+   "lat": 37.58238,
+   "lon": 126.97705,
+   "coord_source": "osm (center of way/relation)",
+   "osm": {
+    "type": "way",
+    "id": 842192001,
+    "url": "https://www.openstreetmap.org/way/842192001",
+    "version": 4,
+    "timestamp": "2026-09-06T10:19:41Z",
+    "tags": {
+     "amenity": "shelter",
+     "building": "yes",
+     "name": "향원정",
+     "name:en": "Hyangwonjeong",
+     "name:ko": "향원정",
+     "name:ko-Hani": "鄕遠停",
+     "wikidata": "Q16745780"
+    }
+   },
+   "opening_hours_osm": null,
+   "wikidata": "Q16745780",
+   "wikivoyage": null,
+   "sources": [
+    "https://www.openstreetmap.org/way/842192001",
+    "https://www.wikidata.org/wiki/Q16745780"
+   ],
+   "note": "OSM name:en 'Hyangwonjeong' (added after July 2026); 'Pavilion' added as written on the official Royal Palaces site history table."
+  },
+  {
+   "id": "L07",
+   "group": "landmark",
+   "kind": "watchtower",
+   "name_en": "Dongsipjagak",
+   "name_ko": "동십자각",
+   "lat": 37.57611,
+   "lon": 126.979424,
+   "coord_source": "osm (center of way/relation)",
+   "osm": {
+    "type": "way",
+    "id": 236942291,
+    "url": "https://www.openstreetmap.org/way/236942291",
+    "version": 10,
+    "timestamp": "2026-03-15T15:21:31Z",
+    "tags": {
+     "addr:city": "서울특별시",
+     "addr:district": "종로구",
+     "addr:housenumber": "1",
+     "addr:postcode": "03045",
+     "addr:street": "삼청로",
+     "addr:subdistrict": "세종로",
+     "alt_name": "경복궁 동십자각",
+     "alt_name:en": "Gyeongbokgung Palace Dongsipjagak",
+     "alt_name:ko": "경복궁 동십자각",
+     "building": "yes",
+     "historic": "building",
+     "name": "동십자각",
+     "name:en": "Dongsipjagak",
+     "name:ko": "동십자각"
+    }
+   },
+   "opening_hours_osm": null,
+   "wikidata": "Q16630864",
+   "wikivoyage": null,
+   "sources": [
+    "https://www.openstreetmap.org/way/236942291",
+    "https://www.wikidata.org/wiki/Q16630864"
+   ],
+   "note": "Wikidata id found by Korean search."
+  },
+  {
+   "id": "L08",
+   "group": "landmark",
+   "kind": "museum",
+   "name_en": "National Palace Museum of Korea",
+   "name_ko": "국립고궁박물관",
+   "lat": 37.576587,
+   "lon": 126.974975,
+   "coord_source": "osm (center of way/relation)",
+   "osm": {
+    "type": "relation",
+    "id": 2270998,
+    "url": "https://www.openstreetmap.org/relation/2270998",
+    "version": 10,
+    "timestamp": "2026-11-11T12:09:42Z",
+    "tags": {
+     "addr:city": "서울특별시",
+     "addr:district": "종로구",
+     "addr:housenumber": "12",
+     "addr:postcode": "03045",
+     "addr:street": "효자로",
+     "addr:subdistrict": "세종로",
+     "building": "yes",
+     "building:levels:underground": "3",
+     "name": "국립고궁박물관",
+     "name:en": "National Palace Museum of Korea",
+     "name:ja": "国立故宮博物館",
+     "name:ko": "국립고궁박물관",
+     "name:zh": "国立古宫博物馆",
+     "phone": "+82 2 3701 7500",
+     "tourism": "museum",
+     "type": "multipolygon",
+     "website": "https://www.gogung.go.kr/main.do",
+     "wikidata": "Q335998",
+     "wikipedia": "ko:국립고궁박물관"
+    }
+   },
+   "opening_hours_osm": null,
+   "wikidata": "Q335998",
+   "wikivoyage": {
+    "name": "National Palace Museum",
+    "kind": "see",
+    "section": "See / Museums",
+    "line": 192,
+    "hours": "10:00-18:00 (10:00-21:00 on Wed Sat)",
+    "price": "Free",
+    "address": "12 Hyoja-ro, Seoul National Palace Museum",
+    "directions": null,
+    "content": null,
+    "lastedit": "2022-11-29",
+    "url": "https://en.wikivoyage.org/w/index.php?title=Seoul/Jongno&oldid=5433820",
+    "revid": 5433820
+   },
+   "sources": [
+    "https://www.openstreetmap.org/relation/2270998",
+    "https://en.wikivoyage.org/w/index.php?title=Seoul/Jongno&oldid=5433820 (listing 'National Palace Museum', line 192)",
+    "https://www.wikidata.org/wiki/Q335998"
+   ],
+   "note": ""
+  },
+  {
+   "id": "L09",
+   "group": "landmark",
+   "kind": "museum",
+   "name_en": "National Folk Museum of Korea",
+   "name_ko": "국립민속박물관",
+   "lat": 37.580931,
+   "lon": 126.978983,
+   "coord_source": "osm (center of way/relation)",
+   "osm": {
+    "type": "relation",
+    "id": 5501518,
+    "url": "https://www.openstreetmap.org/relation/5501518",
+    "version": 11,
+    "timestamp": "2022-06-13T21:35:39Z",
+    "tags": {
+     "name": "국립민속박물관",
+     "name:en": "National Folk Museum of Korea",
+     "name:ja": "韓国国立民俗博物館",
+     "name:ko": "국립민속박물관",
+     "name:zh": "国立民俗博物馆",
+     "start_date": "1924",
+     "tourism": "museum",
+     "type": "multipolygon",
+     "website": "https://www.nfm.go.kr/",
+     "wikidata": "Q486449",
+     "wikipedia": "en:National Folk Museum of Korea"
+    }
+   },
+   "opening_hours_osm": null,
+   "wikidata": "Q486449",
+   "wikivoyage": {
+    "name": "National Folk Museum",
+    "kind": "see",
+    "section": "See / Museums",
+    "line": 257,
+    "hours": "09:00-17:00",
+    "price": "Free",
+    "address": "37 Samcheong-ro",
+    "directions": null,
+    "content": null,
+    "lastedit": "2022-12-12",
+    "url": "https://en.wikivoyage.org/w/index.php?title=Seoul/Jongno&oldid=5433820",
+    "revid": 5433820
+   },
+   "sources": [
+    "https://www.openstreetmap.org/relation/5501518",
+    "https://en.wikivoyage.org/w/index.php?title=Seoul/Jongno&oldid=5433820 (listing 'National Folk Museum', line 257)",
+    "https://www.wikidata.org/wiki/Q486449"
+   ],
+   "note": "OSM has three relations named 국립민속박물관 (r5501516, r5501518, r5501521); r5501518 carries the wikidata tag."
+  },
+  {
+   "id": "L10",
+   "group": "landmark",
+   "kind": "public square",
+   "name_en": "Gwanghwamun Square",
+   "name_ko": "광화문광장",
+   "lat": 37.57274,
+   "lon": 126.976742,
+   "coord_source": "osm (center of way/relation)",
+   "osm": {
+    "type": "relation",
+    "id": 5672803,
+    "url": "https://www.openstreetmap.org/relation/5672803",
+    "version": 17,
+    "timestamp": "2026-08-23T02:15:22Z",
+    "tags": {
+     "area": "yes",
+     "highway": "pedestrian",
+     "memorial": "plaque",
+     "name": "광화문광장",
+     "name:en": "Gwanghwamun Square",
+     "name:ja": "光化門(クァンファムン)広場",
+     "name:ko": "광화문광장",
+     "name:zh": "光化门广场",
+     "start_date": "2009-08-01",
+     "support": "ground",
+     "surface": "paving_stones",
+     "tourism": "attraction",
+     "type": "multipolygon",
+     "wikidata": "Q5623300",
+     "wikipedia": "en:Gwanghwamun Plaza"
+    }
+   },
+   "opening_hours_osm": null,
+   "wikidata": "Q5623300",
+   "wikivoyage": {
+    "name": "Gwanghwamun Plaza",
+    "kind": "see",
+    "section": "See",
+    "line": 41,
+    "hours": null,
+    "price": null,
+    "address": "172, Sejong-daero",
+    "directions": "Line 5, Gwanghwamun Station; Exit 9 directly leads to the plaza",
+    "content": "A center of Seoul. The name came from the main gate of the Gyeongbokgung. The site was a location of the Six Ministries during the Joseon dynasty and was a large motorway since then. In 2009, the middle of the road was opened to the public as a renovation project. It's now home to festivals and events. There are two statues in the plaza: Admiral Yi Sun-sin (a legendary admiral who won numerous important battles against Japanese invaders) and Sejong the Great (the most famous and popular king in Korean history, inventor of the Korean alphabet). The original gate was demolished by the Japanese during the colonial period, but has been faithfully rebuilt in its original location. Today, visitors can watch the changing of the guard ceremony performed by soldiers of the South Korean military dressed in Joseon-era historical costumes at 10:00 and 14:00 every day except Tuesdays.",
+    "lastedit": "2018-02-27",
+    "url": "https://en.wikivoyage.org/w/index.php?title=Seoul/Jongno&oldid=5433820",
+    "revid": 5433820
+   },
+   "sources": [
+    "https://www.openstreetmap.org/relation/5672803",
+    "https://en.wikivoyage.org/w/index.php?title=Seoul/Jongno&oldid=5433820 (listing 'Gwanghwamun Plaza', line 41)",
+    "https://www.wikidata.org/wiki/Q5623300"
+   ],
+   "note": ""
+  },
+  {
+   "id": "L11",
+   "group": "landmark",
+   "kind": "statue",
+   "name_en": "Statue of King Sejong the Great",
+   "name_ko": "광화문광장 세종대왕동상",
+   "lat": 37.572885,
+   "lon": 126.976913,
+   "coord_source": "osm (center of way/relation)",
+   "osm": {
+    "type": "way",
+    "id": 380883710,
+    "url": "https://www.openstreetmap.org/way/380883710",
+    "version": 5,
+    "timestamp": "2018-07-19T02:48:07Z",
+    "tags": {
+     "alt_name:ko": "세종대왕동상",
+     "description": "세종대왕의 동상. 2011년 한글날 제막.(크..크고 아름다워!)",
+     "direction": "180",
+     "historic": "monument",
+     "inscription": "세종대왕",
+     "layer": "1",
+     "memorial": "statue",
+     "name": "광화문광장 세종대왕동상",
+     "name:en": "King Sejong the Great (Statue at Gwanghwamun)",
+     "name:ja": "世宗大王 銅像",
+     "name:ko": "세종대왕 동상"
+    }
+   },
+   "opening_hours_osm": null,
+   "wikidata": "Q30601154",
+   "wikivoyage": null,
+   "sources": [
+    "https://www.openstreetmap.org/way/380883710",
+    "https://www.wikidata.org/wiki/Q30601154"
+   ],
+   "note": "OSM name:en 'King Sejong the Great (Statue at Gwanghwamun)'; shortened."
+  },
+  {
+   "id": "L12",
+   "group": "landmark",
+   "kind": "statue",
+   "name_en": "Statue of Admiral Yi Sun-sin",
+   "name_ko": "광화문광장 이순신장군 동상",
+   "lat": 37.570968,
+   "lon": 126.976951,
+   "coord_source": "osm",
+   "osm": {
+    "type": "node",
+    "id": 2653074012,
+    "url": "https://www.openstreetmap.org/node/2653074012",
+    "version": 11,
+    "timestamp": "2024-06-17T08:32:43Z",
+    "tags": {
+     "alt_name:ko": "이순신장군동상",
+     "artwork_type": "statue",
+     "direction": "180",
+     "memorial": "statue",
+     "name": "광화문광장 이순신장군 동상",
+     "name:en": "Gwanghwamun Square Statue of Admniral Yi Sun Shin",
+     "name:ja": "光化門広場 李舜臣将軍 銅像",
+     "name:ko": "이순신장군 동상",
+     "name:zh": "李舜臣将军铜像",
+     "tourism": "artwork"
+    }
+   },
+   "opening_hours_osm": null,
+   "wikidata": "Q30594133",
+   "wikivoyage": null,
+   "sources": [
+    "https://www.openstreetmap.org/node/2653074012",
+    "https://www.wikidata.org/wiki/Q30594133"
+   ],
+   "note": "OSM name:en has a typo ('Admniral Yi Sun Shin'); English name taken from the Wikidata label."
+  },
+  {
+   "id": "L13",
+   "group": "landmark",
+   "kind": "museum",
+   "name_en": "National Museum of Korean Contemporary History",
+   "name_ko": "대한민국역사박물관",
+   "lat": 37.57392,
+   "lon": 126.977936,
+   "coord_source": "osm (center of way/relation)",
+   "osm": {
+    "type": "way",
+    "id": 141957171,
+    "url": "https://www.openstreetmap.org/way/141957171",
+    "version": 21,
+    "timestamp": "2026-10-03T21:42:08Z",
+    "tags": {
+     "addr:city": "서울특별시",
+     "addr:district": "종로구",
+     "addr:housenumber": "198",
+     "addr:postcode": "03141",
+     "addr:street": "세종대로",
+     "addr:subdistrict": "세종로",
+     "building": "yes",
+     "building:levels": "8",
+     "description": "The Museum collects, examines, studies, and displays a wide array of materials related to the tumultuous and exciting history of modern and contemporary history of Korea.",
+     "fee": "no",
+     "height": "32",
+     "internet_access": "wlan",
+     "name": "대한민국역사박물관",
+     "name:en": "National Museum of Korean Contemporary History",
+     "name:ja": "大韓民国歴史博物館",
+     "name:ko": "대한민국역사박물관",
+     "name:zh": "大韩民国历史博物馆",
+     "opening_hours": "Mo-Su 10:00-18:00; We 10:00-21:00; Sa 10:00-21:00",
+     "phone": "+82 2 3703 9200",
+     "source:geometry": "Bing 2012",
+     "start_date": "1961",
+     "tourism": "museum",
+     "website": "https://www.much.go.kr/",
+     "wikidata": "Q12592360"
+    }
+   },
+   "opening_hours_osm": "Mo-Su 10:00-18:00; We 10:00-21:00; Sa 10:00-21:00",
+   "wikidata": "Q12592360",
+   "wikivoyage": {
+    "name": "National Museum of Korean Contemporary History",
+    "kind": "see",
+    "section": "See / Museums",
+    "line": 156,
+    "hours": null,
+    "price": "Free",
+    "address": "198 Sejongdae-ro",
+    "directions": null,
+    "content": "Since its independence from Japan, Korea has experienced a series of political events during a short period. You can see exhibitions that show war, dictatorships, uprisings against dictatorships, and industrialization that happened in South Korea.",
+    "lastedit": "2017-04-27",
+    "url": "https://en.wikivoyage.org/w/index.php?title=Seoul/Jongno&oldid=5433820",
+    "revid": 5433820
+   },
+   "sources": [
+    "https://www.openstreetmap.org/way/141957171",
+    "https://en.wikivoyage.org/w/index.php?title=Seoul/Jongno&oldid=5433820 (listing 'National Museum of Korean Contemporary History', line 156)",
+    "https://www.wikidata.org/wiki/Q12592360"
+   ],
+   "note": ""
+  },
+  {
+   "id": "L14",
+   "group": "landmark",
+   "kind": "museum",
+   "name_en": "MMCA Seoul (National Museum of Modern and Contemporary Art)",
+   "name_ko": "국립현대미술관",
+   "lat": 37.579557,
+   "lon": 126.98086,
+   "coord_source": "osm (center of way/relation)",
+   "osm": {
+    "type": "relation",
+    "id": 14956894,
+    "url": "https://www.openstreetmap.org/relation/14956894",
+    "version": 5,
+    "timestamp": "2025-02-15T13:27:03Z",
+    "tags": {
+     "building": "yes",
+     "name": "국립현대미술관",
+     "name:en": "National Museum of Modern and Contemporary Art",
+     "name:ja": "国立現代美術館",
+     "name:ko": "국립현대미술관",
+     "tourism": "gallery",
+     "type": "multipolygon"
+    }
+   },
+   "opening_hours_osm": null,
+   "wikidata": "Q484054",
+   "wikivoyage": {
+    "name": "MMCA Seoul (National Museum of Modern and Contemporary Art, Korea)",
+    "kind": "see",
+    "section": "See / Museums",
+    "line": 165,
+    "hours": "Mon Tue Thu Fri Sun 10:00-18:00; Wed Sat 10:00-21:00 (18:00-21:00: free), closed on January 1st, Lunar New Year’s Day, Korean Thanksgiving Day",
+    "price": "₩4,000. Free for ages under 24 or over 65, college students, and on the last Wednesday of each month",
+    "address": "30 Samcheong-ro, Sogyeok-dong",
+    "directions": "14 minute walk from Exit No. 1 from Ankuk Station, Line No. 3. 17-minute walk from Exit No. 2 from Gwanghwamun Station, Line No. 2. Right across the east gate of Gyeongbok Palace.",
+    "content": "MMCA is mainly located at the Gwacheon, near the Seoul Grand Park. MMCA Seoul opened in 2013. The site had been the Korean Armed Forces Capital Hospital and the Defense Security Command. MMCA Seoul has an art and culture complex equipped with exhibition and education buildings, a digital lab, a multi-project hall, and a theater. The building is unique and won Grand Prizes at the 2014 Korean Architecture Awards.",
+    "lastedit": "2018-01-23",
+    "url": "https://en.wikivoyage.org/w/index.php?title=Seoul/Jongno&oldid=5433820",
+    "revid": 5433820
+   },
+   "sources": [
+    "https://www.openstreetmap.org/relation/14956894",
+    "https://en.wikivoyage.org/w/index.php?title=Seoul/Jongno&oldid=5433820 (listing 'MMCA Seoul (National Museum of Modern and Contemporary Art, Korea)', line 165)",
+    "https://www.wikidata.org/wiki/Q484054"
+   ],
+   "note": "OSM name:en 'National Museum of Modern and Contemporary Art'; 'MMCA Seoul' from Wikivoyage and the official site."
+  },
+  {
+   "id": "L15",
+   "group": "landmark",
+   "kind": "street",
+   "name_en": "Samcheong-ro (Samcheong-dong street)",
+   "name_ko": "삼청로",
+   "lat": 37.583987,
+   "lon": 126.981197,
+   "coord_source": "osm (center of way/relation)",
+   "osm": {
+    "type": "way",
+    "id": 551184628,
+    "url": "https://www.openstreetmap.org/way/551184628",
+    "version": 12,
+    "timestamp": "2026-06-22T03:52:44Z",
+    "tags": {
+     "cycleway": "shared_lane",
+     "highway": "tertiary",
+     "lane_markings": "no",
+     "name": "삼청로",
+     "name:en": "Samcheong-ro",
+     "name:ja": "サムチョンロ(三清路)",
+     "name:ko": "삼청로",
+     "sidewalk": "both",
+     "surface": "asphalt"
+    }
+   },
+   "opening_hours_osm": null,
+   "wikidata": "Q16100499",
+   "wikivoyage": null,
+   "sources": [
+    "https://www.openstreetmap.org/way/551184628",
+    "https://www.wikidata.org/wiki/Q16100499"
+   ],
+   "note": "Street of cafes, galleries and shops north-east of Gyeongbokgung. The OSM way is one segment of Samcheong-ro."
+  },
+  {
+   "id": "L16",
+   "group": "landmark",
+   "kind": "library and garden",
+   "name_en": "Jeongdok Library",
+   "name_ko": "서울특별시교육청 정독도서관",
+   "lat": 37.580777,
+   "lon": 126.98311,
+   "coord_source": "osm (center of way/relation)",
+   "osm": {
+    "type": "relation",
+    "id": 10754475,
+    "url": "https://www.openstreetmap.org/relation/10754475",
+    "version": 7,
+    "timestamp": "2026-03-15T15:44:30Z",
+    "tags": {
+     "addr:city": "서울특별시",
+     "addr:district": "종로구",
+     "addr:housenumber": "48",
+     "addr:postcode": "03055",
+     "addr:street": "북촌로5길",
+     "addr:subdistrict": "화동",
+     "amenity": "library",
+     "name": "서울특별시교육청 정독도서관",
+     "name:en": "Jeongdok Library",
+     "name:ja": "正読図書館",
+     "phone": "+82 02-2011-5713",
+     "type": "multipolygon",
+     "website": "https://jdlib.sen.go.kr/",
+     "wikidata": "Q624545"
+    }
+   },
+   "opening_hours_osm": null,
+   "wikidata": "Q624545",
+   "wikivoyage": null,
+   "sources": [
+    "https://www.openstreetmap.org/relation/10754475",
+    "https://www.wikidata.org/wiki/Q624545"
+   ],
+   "note": "Public library (Seoul Metropolitan Office of Education). Seoul Museum of Education (w301282717) is in its grounds."
+  },
+  {
+   "id": "L17",
+   "group": "landmark",
+   "kind": "hanok village",
+   "name_en": "Bukchon Hanok Village",
+   "name_ko": "북촌한옥마을",
+   "lat": 37.582392,
+   "lon": 126.985865,
+   "coord_source": "osm",
+   "osm": {
+    "type": "node",
+    "id": 2669684119,
+    "url": "https://www.openstreetmap.org/node/2669684119",
+    "version": 14,
+    "timestamp": "2025-08-28T04:33:47Z",
+    "tags": {
+     "description:en": "Area of preserved tradtional wooden houses (hanok).",
+     "name": "북촌한옥마을 ДЕРЕВНЯ",
+     "name:en": "Bukchon Hanok Village",
+     "name:es": "Bukchon Hanok Village",
+     "name:ja": "北村韓屋村",
+     "name:ko": "북촌한옥마을",
+     "name:zh": "北村韩屋村",
+     "tourism": "attraction",
+     "wikidata": "Q490981",
+     "wikipedia": "en:Bukchon Hanok Village"
+    }
+   },
+   "opening_hours_osm": null,
+   "wikidata": "Q490981",
+   "wikivoyage": {
+    "name": "Bukchon Hanok Village",
+    "kind": "do",
+    "section": "Do",
+    "line": 382,
+    "hours": "10:00-17:00",
+    "price": null,
+    "address": "84-1, Pildong 2(i)-ga, Jung-gu",
+    "directions": "get off at Exit 2 of Anguk Station and walk along the road for about 10 minutes to get there",
+    "content": "The collective name of the few tiny suburbs (\"dong\") wedged between Gyeongbuk Palace and the Secret Garden, just north of Insadong and Anguk Station. This area was where relatives of the royal family, high public officials, and other important families lived for over 500 years as they serviced the nearby palaces. Today, some 900 of their traditional Korean \"hanok\" houses remain, making this area one of Seoul's most picturesque centres for arts, culture, food, and fashion. The flip side is that the neighbourhood has been heavily commercialized, is rather soulless, and on the verge of becoming a Korean theme park. Some streets no longer house local residents and have instead been taken over entirely by guest houses in faux hanok style. From 17:00 to 10:00, tourists are not allowed to enter the village. Self-styled neighbourhood guards in fantasy uniforms patrol the streets and rudely shoo visitors away. If your accommodation is in the area, they will let you pass grudgingly, but take cruel pleasure in proclaiming an absurd photo ban during the curfew.",
+    "lastedit": "2019-10-16",
+    "url": "https://en.wikivoyage.org/w/index.php?title=Seoul/Jongno&oldid=5433820",
+    "revid": 5433820
+   },
+   "sources": [
+    "https://www.openstreetmap.org/node/2669684119",
+    "https://en.wikivoyage.org/w/index.php?title=Seoul/Jongno&oldid=5433820 (listing 'Bukchon Hanok Village', line 382)",
+    "https://www.wikidata.org/wiki/Q490981"
+   ],
+   "note": "OSM name tag reads '북촌한옥마을 ДЕРЕВНЯ' (a Russian word mixed in, looks like an editing error). Red Zone visiting hours apply."
+  },
+  {
+   "id": "L18",
+   "group": "landmark",
+   "kind": "viewpoint",
+   "name_en": "Bukchon 5th Scenic Spot: Gahoe-dong Alley",
+   "name_ko": "북촌5경 : 가회동 골목길 (내림)",
+   "lat": 37.582508,
+   "lon": 126.983702,
+   "coord_source": "osm",
+   "osm": {
+    "type": "node",
+    "id": 5786802583,
+    "url": "https://www.openstreetmap.org/node/5786802583",
+    "version": 4,
+    "timestamp": "2021-12-07T20:23:35Z",
+    "tags": {
+     "direction": "349",
+     "name": "북촌5경 : 가회동 골목길 (내림)",
+     "name:en": "Buchon 5th Spot : Gahoe-dong Alley(Harmony)",
+     "name:ja": "ブッチョン(北村)5景 :カフェドン(嘉会洞)の路地_下り坂",
+     "tourism": "viewpoint"
+    }
+   },
+   "opening_hours_osm": null,
+   "wikidata": null,
+   "wikivoyage": null,
+   "sources": [
+    "https://www.openstreetmap.org/node/5786802583"
+   ],
+   "note": "OSM name:en spells 'Buchon'; corrected to 'Bukchon'. Spots 4 and 6 (n4722178090, n5786802580) are within 100 m."
+  },
+  {
+   "id": "L19",
+   "group": "landmark",
+   "kind": "viewpoint",
+   "name_en": "Bukchon Observatory",
+   "name_ko": "북촌전망대",
+   "lat": 37.58309,
+   "lon": 126.98274,
+   "coord_source": "wikivoyage",
+   "osm": null,
+   "opening_hours_osm": null,
+   "wikidata": null,
+   "wikivoyage": {
+    "name": "Bukchon Observatory",
+    "kind": "see",
+    "section": "See / Others",
+    "line": 359,
+    "hours": null,
+    "price": "₩3,000 admission, cash-only",
+    "address": "35-62 Samcheong-dong",
+    "directions": null,
+    "content": "Provides a sweeping view of Bukchon Village and the greater Seoul cityscape, with Lotte Tower and the palace both clearly visible. It’s humble: clearly a converted apartment, and so tucked away its easy to miss, but it’s a great place to rest and take in the views, with beverage (tea, coffee) included as part of admission.",
+    "lastedit": null,
+    "url": "https://en.wikivoyage.org/w/index.php?title=Seoul/Jongno&oldid=5433820",
+    "revid": 5433820
+   },
+   "sources": [
+    "https://en.wikivoyage.org/w/index.php?title=Seoul/Jongno&oldid=5433820 (listing 'Bukchon Observatory', line 359)"
+   ],
+   "note": "Not found in OSM. Location and facts only from Wikivoyage (private rooftop; admission includes a drink)."
+  },
+  {
+   "id": "L20",
+   "group": "landmark",
+   "kind": "historic house",
+   "name_en": "Baek In-je House",
+   "name_ko": "가회동백인제가옥",
+   "lat": 37.580714,
+   "lon": 126.984172,
+   "coord_source": "osm (center of way/relation)",
+   "osm": {
+    "type": "way",
+    "id": 611541494,
+    "url": "https://www.openstreetmap.org/way/611541494",
+    "version": 6,
+    "timestamp": "2026-03-15T15:44:05Z",
+    "tags": {
+     "addr:city": "서울특별시",
+     "addr:district": "종로구",
+     "addr:housenumber": "16",
+     "addr:postcode": "03055",
+     "addr:street": "북촌로7길",
+     "addr:subdistrict": "가회동",
+     "historic": "manor",
+     "name": "가회동백인제가옥",
+     "name:en": "Baek In-Je's House In Gahoe-dong",
+     "name:ja": "嘉會洞 白麟濟 家屋",
+     "phone": "+82 02-724-0232",
+     "tourism": "attraction",
+     "wikidata": "Q19657151",
+     "wikipedia": "ko:가회동 백인제 가옥"
+    }
+   },
+   "opening_hours_osm": null,
+   "wikidata": "Q19657151",
+   "wikivoyage": null,
+   "sources": [
+    "https://www.openstreetmap.org/way/611541494",
+    "https://www.wikidata.org/wiki/Q19657151"
+   ],
+   "note": "OSM name:en 'Baek In-Je's House In Gahoe-dong'."
+  },
+  {
+   "id": "L21",
+   "group": "landmark",
+   "kind": "museum",
+   "name_en": "Seoul Museum of Craft Art",
+   "name_ko": "서울공예박물관",
+   "lat": 37.576605,
+   "lon": 126.98337,
+   "coord_source": "osm (center of way/relation)",
+   "osm": {
+    "type": "way",
+    "id": 237615585,
+    "url": "https://www.openstreetmap.org/way/237615585",
+    "version": 15,
+    "timestamp": "2026-03-15T15:21:31Z",
+    "tags": {
+     "addr:city": "서울특별시",
+     "addr:district": "종로구",
+     "addr:housenumber": "4",
+     "addr:postcode": "03061",
+     "addr:street": "율곡로3길",
+     "addr:subdistrict": "안국동",
+     "fee": "no",
+     "name": "서울공예박물관",
+     "name:en": "Seoul Museum of Craft Art",
+     "name:ja": "ソウル工芸博物館",
+     "opening_hours": "Mo-Su 10:00-18:00",
+     "operator": "서울특별시",
+     "tourism": "museum"
+    }
+   },
+   "opening_hours_osm": "Mo-Su 10:00-18:00",
+   "wikidata": "Q115260513",
+   "wikivoyage": {
+    "name": "Seoul Craft Museum",
+    "kind": "see",
+    "section": "See / Museums",
+    "line": 183,
+    "hours": "Tue-Sun 10:00-18:00 (closed on Mon)",
+    "price": "Free",
+    "address": "4, Yulgok-ro 3-gil",
+    "directions": null,
+    "content": "The Seoul Craft Museum can experience the technical, practical, artistic, and cultural values of crafts by studying and sharing not only crafts but also knowledge, records, people, and the environment surrounding crafts.",
+    "lastedit": "2022-11-29",
+    "url": "https://en.wikivoyage.org/w/index.php?title=Seoul/Jongno&oldid=5433820",
+    "revid": 5433820
+   },
+   "sources": [
+    "https://www.openstreetmap.org/way/237615585",
+    "https://en.wikivoyage.org/w/index.php?title=Seoul/Jongno&oldid=5433820 (listing 'Seoul Craft Museum', line 183)",
+    "https://www.wikidata.org/wiki/Q115260513"
+   ],
+   "note": "Two Wikidata items describe this museum (Q115260513 used by Wikivoyage, Q97205213 found by search). Official English name 'Seoul Museum of Craft Art (SeMoCA)'."
+  },
+  {
+   "id": "L22",
+   "group": "landmark",
+   "kind": "palace (residence)",
+   "name_en": "Unhyeongung",
+   "name_ko": "운현궁",
+   "lat": 37.576183,
+   "lon": 126.987117,
+   "coord_source": "osm (center of way/relation)",
+   "osm": {
+    "type": "way",
+    "id": 771236312,
+    "url": "https://www.openstreetmap.org/way/771236312",
+    "version": 3,
+    "timestamp": "2021-06-23T22:33:43Z",
+    "tags": {
+     "area": "yes",
+     "historic": "castle",
+     "name": "운현궁",
+     "name:en": "Unhyeongung (Palace)",
+     "name:ko": "운현궁",
+     "name:ko-Hani": "雲峴宮",
+     "tourism": "attraction",
+     "wikidata": "Q490392",
+     "wikipedia": "ko:운현궁"
+    }
+   },
+   "opening_hours_osm": null,
+   "wikidata": "Q490392",
+   "wikivoyage": {
+    "name": "Unhyeongung",
+    "kind": "see",
+    "section": "See / Palaces",
+    "line": 84,
+    "hours": null,
+    "price": "Free",
+    "address": null,
+    "directions": "Subway line 3, Anguk Station 5-minute walk",
+    "content": "A museum in the former palace of a Joseon Dynasty archduke Heungseon, who was the father of the second last king of Joseon. It has several mannequins depicting the costumes of the ''yangban'' or noble class during the Joseon Dynasty. The palace buildings themselves represent the style of the Joseon noble class' mansion well.",
+    "lastedit": null,
+    "url": "https://en.wikivoyage.org/w/index.php?title=Seoul/Jongno&oldid=5433820",
+    "revid": 5433820
+   },
+   "sources": [
+    "https://www.openstreetmap.org/way/771236312",
+    "https://en.wikivoyage.org/w/index.php?title=Seoul/Jongno&oldid=5433820 (listing 'Unhyeongung', line 84)",
+    "https://www.wikidata.org/wiki/Q490392"
+   ],
+   "note": ""
+  },
+  {
+   "id": "L23",
+   "group": "landmark",
+   "kind": "palace gate",
+   "name_en": "Donhwamun Gate (Changdeokgung Palace)",
+   "name_ko": "돈화문",
+   "lat": 37.577854,
+   "lon": 126.989982,
+   "coord_source": "osm (center of way/relation)",
+   "osm": {
+    "type": "way",
+    "id": 170199455,
+    "url": "https://www.openstreetmap.org/way/170199455",
+    "version": 19,
+    "timestamp": "2026-03-15T15:21:31Z",
+    "tags": {
+     "addr:city": "서울특별시",
+     "addr:district": "종로구",
+     "addr:housenumber": "99",
+     "addr:postcode": "03072",
+     "addr:street": "율곡로",
+     "addr:subdistrict": "와룡동",
+     "building": "yes",
+     "building:architecture": "joseon",
+     "historic": "city_gate",
+     "name": "돈화문",
+     "name:en": "Donhwamun Gate",
+     "name:ja": "敦化門",
+     "name:ko": "돈화문",
+     "name:zh": "敦化门",
+     "roof:shape": "hipped",
+     "start_date": "1412",
+     "wikidata": "Q16092829",
+     "wikipedia": "ko:돈화문"
+    }
+   },
+   "opening_hours_osm": null,
+   "wikidata": "Q16092829",
+   "wikivoyage": null,
+   "sources": [
+    "https://www.openstreetmap.org/way/170199455",
+    "https://www.wikidata.org/wiki/Q16092829"
+   ],
+   "note": "Main gate of Changdeokgung, at the east edge of the area. The palace itself: OSM w789965985, Wikidata Q477157."
+  },
+  {
+   "id": "L24",
+   "group": "landmark",
+   "kind": "temple",
+   "name_en": "Jogyesa Temple",
+   "name_ko": "조계사",
+   "lat": 37.574175,
+   "lon": 126.98203,
+   "coord_source": "osm (center of way/relation)",
+   "osm": {
+    "type": "way",
+    "id": 223157537,
+    "url": "https://www.openstreetmap.org/way/223157537",
+    "version": 16,
+    "timestamp": "2026-09-06T08:55:57Z",
+    "tags": {
+     "addr:city": "서울특별시",
+     "addr:district": "종로구",
+     "addr:housenumber": "55",
+     "addr:postcode": "03144",
+     "addr:street": "우정국로",
+     "addr:subdistrict": "견지동",
+     "amenity": "place_of_worship",
+     "check_date": "2023-08-30",
+     "name": "조계사",
+     "name:en": "Jogyesa Temple",
+     "name:ja": "曹渓寺",
+     "name:ko": "조계사",
+     "phone": "+82 2 768 8600",
+     "religion": "buddhist",
+     "website": "https://www.jogyesa.kr/",
+     "wikidata": "Q488824",
+     "wikipedia": "en:Jogyesa"
+    }
+   },
+   "opening_hours_osm": null,
+   "wikidata": "Q488824",
+   "wikivoyage": {
+    "name": "Jogyesa Temple",
+    "kind": "see",
+    "section": "See / Shrines and temples",
+    "line": 104,
+    "hours": null,
+    "price": null,
+    "address": "45, Gyeonji-dong",
+    "directions": null,
+    "content": "The chief temple of the Jogye order of Buddhism, the dominant branch of Buddhism in Korea. As such, it is one of the most important modern Buddhist temples in the country. That being said, Jogyesa Temple is rather small, and if time permits, '''Bongeunsa''' in [[Gangnam]] is a larger and more interesting Buddhist temple.",
+    "lastedit": null,
+    "url": "https://en.wikivoyage.org/w/index.php?title=Seoul/Jongno&oldid=5433820",
+    "revid": 5433820
+   },
+   "sources": [
+    "https://www.openstreetmap.org/way/223157537",
+    "https://en.wikivoyage.org/w/index.php?title=Seoul/Jongno&oldid=5433820 (listing 'Jogyesa Temple', line 104)",
+    "https://www.wikidata.org/wiki/Q488824"
+   ],
+   "note": ""
+  },
+  {
+   "id": "L25",
+   "group": "landmark",
+   "kind": "street",
+   "name_en": "Insa-dong Street (Insadong-gil)",
+   "name_ko": "인사동길 전통 문화의 거리",
+   "lat": 37.574177,
+   "lon": 126.984639,
+   "coord_source": "osm",
+   "osm": {
+    "type": "node",
+    "id": 4992383221,
+    "url": "https://www.openstreetmap.org/node/4992383221",
+    "version": 4,
+    "timestamp": "2023-11-29T10:32:02Z",
+    "tags": {
+     "name": "인사동길 전통 문화의 거리",
+     "name:en": "Isandong tourist traditional street",
+     "tourism": "attraction"
+    }
+   },
+   "opening_hours_osm": null,
+   "wikidata": "Q61097753",
+   "wikivoyage": {
+    "name": "Insadong",
+    "kind": "buy",
+    "section": "Buy",
+    "line": 484,
+    "hours": null,
+    "price": null,
+    "address": null,
+    "directions": null,
+    "content": "Insadong is an area known for its art galleries and shops and is possibly the most touristy place in South Korea. It is a great place to buy cultural souvenirs. There are also a few stores that offer interesting vintage toys and various kitsch. Insadong also contains many traditional tea and coffee shops. It is one of the few places where vegetarian restaurants can be found.",
+    "lastedit": null,
+    "url": "https://en.wikivoyage.org/w/index.php?title=Seoul/Jongno&oldid=5433820",
+    "revid": 5433820
+   },
+   "sources": [
+    "https://www.openstreetmap.org/node/4992383221",
+    "https://en.wikivoyage.org/w/index.php?title=Seoul/Jongno&oldid=5433820 (listing 'Insadong', line 484)",
+    "https://www.wikidata.org/wiki/Q61097753"
+   ],
+   "note": "OSM node name:en 'Isandong tourist traditional street' (typo). Wikidata Q61097753 is the road Insadong-gil; the neighbourhood is Q488678."
+  },
+  {
+   "id": "L26",
+   "group": "landmark",
+   "kind": "shopping complex",
+   "name_en": "Ssamziegil",
+   "name_ko": "쌈지길",
+   "lat": 37.574264,
+   "lon": 126.984901,
+   "coord_source": "osm (center of way/relation)",
+   "osm": {
+    "type": "relation",
+    "id": 14280713,
+    "url": "https://www.openstreetmap.org/relation/14280713",
+    "version": 5,
+    "timestamp": "2026-03-15T15:44:30Z",
+    "tags": {
+     "addr:city": "서울특별시",
+     "addr:district": "종로구",
+     "addr:housenumber": "44",
+     "addr:postcode": "03146",
+     "addr:street": "인사동길",
+     "addr:subdistrict": "관훈동",
+     "alt_name:en": "Ssamzigil",
+     "building": "retail",
+     "building:levels": "3",
+     "building:levels:underground": "2",
+     "level": "1;2;3;4",
+     "name": "쌈지길",
+     "name:en": "Ssamziegil",
+     "name:ja": "サムジギル",
+     "name:zh": "仁寺洞森吉街人人商圈",
+     "old_name:en": "Ssamzie Market;Ssamzie Street",
+     "phone": "+82 2 736 0088",
+     "roof:levels": "1",
+     "shop": "mall",
+     "tourism": "attraction",
+     "type": "multipolygon",
+     "was:website": "http://ssamzigil.co.kr",
+     "wikimedia_commons": "File:쌈지길.jpg"
+    }
+   },
+   "opening_hours_osm": null,
+   "wikidata": null,
+   "wikivoyage": {
+    "name": "Ssamziegil",
+    "kind": "buy",
+    "section": "Buy",
+    "line": 492,
+    "hours": "10:00 to 20:30",
+    "price": null,
+    "address": null,
+    "directions": "at the beginning of Insadong-gil",
+    "content": "Ssamziegil is a shopping complex that opened in 2004. It has the form of a rectangular spiral on three floors and includes about a hundred craft shops (clothing, jewelry, leather, etc.), restaurants, and cafes, also make-your-own crafts like candles, pottery, etc.",
+    "lastedit": "2024-08-13",
+    "url": "https://en.wikivoyage.org/w/index.php?title=Seoul/Jongno&oldid=5433820",
+    "revid": 5433820
+   },
+   "sources": [
+    "https://www.openstreetmap.org/relation/14280713",
+    "https://en.wikivoyage.org/w/index.php?title=Seoul/Jongno&oldid=5433820 (listing 'Ssamziegil', line 492)"
+   ],
+   "note": "No Wikidata item found."
+  },
+  {
+   "id": "L27",
+   "group": "landmark",
+   "kind": "museum",
+   "name_en": "Museum Kimchikan",
+   "name_ko": "뮤지엄김치간",
+   "lat": 37.57357,
+   "lon": 126.984882,
+   "coord_source": "osm (center of way/relation)",
+   "osm": {
+    "type": "way",
+    "id": 355665717,
+    "url": "https://www.openstreetmap.org/way/355665717",
+    "version": 10,
+    "timestamp": "2026-08-28T01:33:31Z",
+    "tags": {
+     "addr:city": "서울특별시",
+     "addr:district": "종로구",
+     "addr:housenumber": "35-4",
+     "addr:postcode": "03149",
+     "addr:street": "인사동길",
+     "addr:subdistrict": "관훈동",
+     "building": "yes",
+     "building:levels": "6",
+     "contact:instagram": "museumkimchikan",
+     "fee": "yes",
+     "level": "5",
+     "name": "뮤지엄김치간",
+     "name:en": "Museum Kimchikan",
+     "name:ja": "ミュージアムキムチ間",
+     "opening_hours": "Tu-Su 10:00-18:00",
+     "phone": "+82 02-6002-6456",
+     "tourism": "museum",
+     "website": "https://www.kimchikan.com/",
+     "wikidata": "Q625781",
+     "wikipedia": "en:Museum Kimchikan"
+    }
+   },
+   "opening_hours_osm": "Tu-Su 10:00-18:00",
+   "wikidata": "Q625781",
+   "wikivoyage": {
+    "name": "Museum Kimchikan",
+    "kind": "see",
+    "section": "See / Museums",
+    "line": 147,
+    "hours": "Tue-Sun 10:00-18:00",
+    "price": "₩5,000/3,000",
+    "address": "4th to 6th floor, 35-4, Insa-dong, Jongno-gu",
+    "directions": "Subway line 3, Anguk Station, 10 minutes walk along Insadong-gil",
+    "content": "A museum (previously known as Kimchi Field Museum) about all things kimchi. Includes a lot of interactive exhibits and comes with a free audio guide in English. There are also hands-on kimchi-making programs, only on reservation, however.",
+    "lastedit": "2016-11-18",
+    "url": "https://en.wikivoyage.org/w/index.php?title=Seoul/Jongno&oldid=5433820",
+    "revid": 5433820
+   },
+   "sources": [
+    "https://www.openstreetmap.org/way/355665717",
+    "https://en.wikivoyage.org/w/index.php?title=Seoul/Jongno&oldid=5433820 (listing 'Museum Kimchikan', line 147)",
+    "https://www.wikidata.org/wiki/Q625781"
+   ],
+   "note": ""
+  },
+  {
+   "id": "L28",
+   "group": "landmark",
+   "kind": "park",
+   "name_en": "Tapgol Park",
+   "name_ko": "탑골공원",
+   "lat": 37.571157,
+   "lon": 126.988272,
+   "coord_source": "osm (center of way/relation)",
+   "osm": {
+    "type": "relation",
+    "id": 11504980,
+    "url": "https://www.openstreetmap.org/relation/11504980",
+    "version": 6,
+    "timestamp": "2026-03-02T08:38:58Z",
+    "tags": {
+     "addr:city": "서울특별시",
+     "addr:district": "종로구",
+     "addr:housenumber": "99",
+     "addr:postcode": "03140",
+     "addr:street": "종로",
+     "addr:subdistrict": "종로2가",
+     "leisure": "park",
+     "name": "탑골공원",
+     "name:en": "Tapgol Park",
+     "name:ja": "タプコル公園",
+     "name:ko": "탑골공원",
+     "phone": "+82 2 731 0534",
+     "tourism": "attraction",
+     "type": "multipolygon",
+     "website": "https://www.heritage.go.kr/heri/cul/culSelectDetail.do?VdkVgwKey=13,03540000,11&pageNo=5_2_1_0",
+     "website:en": "http://english.cha.go.kr/english/search_plaza_new/ECulresult_Db_View.jsp?VdkVgwKey=13,03540000,11",
+     "website:ko": "http://www.cha.go.kr/korea/heritage/search/Culresult_Db_View.jsp?mc=NS_04_03_01&VdkVgwKey=13,03540000,11",
+     "wikidata": "Q483357",
+     "wikipedia": "en:Tapgol Park"
+    }
+   },
+   "opening_hours_osm": null,
+   "wikidata": "Q483357",
+   "wikivoyage": {
+    "name": "Tapgol (\"Pagoda\") Park",
+    "kind": "see",
+    "section": "See / Others",
+    "line": 337,
+    "hours": null,
+    "price": null,
+    "address": "99, Jong-ro",
+    "directions": "you can arrive at Jonggak Station Exit 3-2 and go straight",
+    "content": "A small park frequented by the elderly and the footsore traveler, just to the east of Jongmyo Shrine. Contains a 500-year-old namesake pagoda under protective glass and a nice large gazebo to get out of the sun. This is where the Korean constitution was first read aloud by the public during the 20th century. Acts as a navigation landmark when moving between Myeong-dong, Jong-no, and Insa-dong neighborhoods.",
+    "lastedit": "2019-10-16",
+    "url": "https://en.wikivoyage.org/w/index.php?title=Seoul/Jongno&oldid=5433820",
+    "revid": 5433820
+   },
+   "sources": [
+    "https://www.openstreetmap.org/relation/11504980",
+    "https://en.wikivoyage.org/w/index.php?title=Seoul/Jongno&oldid=5433820 (listing 'Tapgol (\"Pagoda\") Park', line 337)",
+    "https://www.wikidata.org/wiki/Q483357"
+   ],
+   "note": "Wongaksa Pagoda (w320791143, Q625836) and Palgakjeong (w320791145) are inside."
+  },
+  {
+   "id": "L29",
+   "group": "landmark",
+   "kind": "religious building",
+   "name_en": "Cheondogyo Central Temple",
+   "name_ko": "천도교 중앙대교당",
+   "lat": 37.575199,
+   "lon": 126.98582,
+   "coord_source": "osm (center of way/relation)",
+   "osm": {
+    "type": "way",
+    "id": 320793333,
+    "url": "https://www.openstreetmap.org/way/320793333",
+    "version": 5,
+    "timestamp": "2024-05-24T08:44:39Z",
+    "tags": {
+     "amenity": "place_of_worship",
+     "building": "yes",
+     "name": "천도교 중앙대교당"
+    }
+   },
+   "opening_hours_osm": null,
+   "wikidata": "Q12618846",
+   "wikivoyage": null,
+   "sources": [
+    "https://www.openstreetmap.org/way/320793333",
+    "https://www.wikidata.org/wiki/Q12618846"
+   ],
+   "note": "OSM and Wikidata have only the Korean name; English name written by us (needs checking)."
+  },
+  {
+   "id": "L30",
+   "group": "landmark",
+   "kind": "hanok street",
+   "name_en": "Ikseon-dong Hanok Village",
+   "name_ko": "익선동 한옥마을",
+   "lat": 37.57353,
+   "lon": 126.989957,
+   "coord_source": "osm (center of way/relation)",
+   "osm": {
+    "type": "way",
+    "id": 980200451,
+    "url": "https://www.openstreetmap.org/way/980200451",
+    "version": 3,
+    "timestamp": "2023-11-28T15:55:49Z",
+    "tags": {
+     "landuse": "retail",
+     "name": "익선동 한옥마을 Ikseondong",
+     "name:en": "Ikseong-Dong Hanok Village",
+     "name:ja": "益善洞韓屋村",
+     "name:ko": "익선동 한옥마을"
+    }
+   },
+   "opening_hours_osm": null,
+   "wikidata": "Q124669648",
+   "wikivoyage": null,
+   "sources": [
+    "https://www.openstreetmap.org/way/980200451",
+    "https://www.wikidata.org/wiki/Q124669648"
+   ],
+   "note": "OSM name '익선동 한옥마을 Ikseondong'."
+  },
+  {
+   "id": "F01",
+   "group": "food",
+   "kind": "restaurant",
+   "name_en": "Imun Seolleongtang",
+   "name_ko": "이문설농탕",
+   "lat": 37.572695,
+   "lon": 126.98386,
+   "coord_source": "osm",
+   "osm": {
+    "type": "node",
+    "id": 4459966889,
+    "url": "https://www.openstreetmap.org/node/4459966889",
+    "version": 8,
+    "timestamp": "2026-03-15T15:21:18Z",
+    "tags": {
+     "addr:city": "서울특별시",
+     "addr:district": "종로구",
+     "addr:housenumber": "38-13",
+     "addr:postcode": "03149",
+     "addr:street": "우정국로",
+     "addr:subdistrict": "견지동",
+     "amenity": "restaurant",
+     "cuisine": "korean;noodles;breakfast;local",
+     "name": "이문설농탕",
+     "name:en": "Imun Seolleongtang",
+     "name:ja": "里門ソルノンタン",
+     "name:ko": "이문설농탕",
+     "name:zh": "里門雪濃湯",
+     "phone": "+82 02-733-6526",
+     "website": "https://imun.modoo.at/"
+    }
+   },
+   "opening_hours_osm": null,
+   "wikidata": "Q12611409",
+   "wikivoyage": {
+    "name": "Imun Seolnongtang",
+    "kind": "eat",
+    "section": "Eat",
+    "line": 520,
+    "hours": null,
+    "price": null,
+    "address": "38-13 Ujeongguk-ro",
+    "directions": null,
+    "content": "The oldest extant restaurant in South Korea, founded around 1904. Serves ''seolleongtang'' (beef stew).",
+    "lastedit": "2024-08-20",
+    "url": "https://en.wikivoyage.org/w/index.php?title=Seoul/Jongno&oldid=5433820",
+    "revid": 5433820
+   },
+   "sources": [
+    "https://www.openstreetmap.org/node/4459966889",
+    "https://en.wikivoyage.org/w/index.php?title=Seoul/Jongno&oldid=5433820 (listing 'Imun Seolnongtang', line 520)",
+    "https://www.wikidata.org/wiki/Q12611409"
+   ],
+   "note": ""
+  },
+  {
+   "id": "F02",
+   "group": "food",
+   "kind": "restaurant",
+   "name_en": "Sadong Myeonok",
+   "name_ko": "사동면옥",
+   "lat": 37.5741,
+   "lon": 126.985751,
+   "coord_source": "osm",
+   "osm": {
+    "type": "node",
+    "id": 12062468549,
+    "url": "https://www.openstreetmap.org/node/12062468549",
+    "version": 4,
+    "timestamp": "2026-03-15T15:21:18Z",
+    "tags": {
+     "addr:city": "서울특별시",
+     "addr:district": "종로구",
+     "addr:housenumber": "9",
+     "addr:postcode": "03148",
+     "addr:street": "인사동8길",
+     "addr:subdistrict": "관훈동",
+     "amenity": "restaurant",
+     "cuisine": "korean",
+     "name": "사동면옥"
+    }
+   },
+   "opening_hours_osm": null,
+   "wikidata": null,
+   "wikivoyage": {
+    "name": "Sadongmyenok",
+    "kind": "eat",
+    "section": "Eat",
+    "line": 528,
+    "hours": null,
+    "price": null,
+    "address": "29-21 Jongno Gwanhun",
+    "directions": "Insadong 8-gil, down the alley",
+    "content": "Justly famous for its ''manduguk'', a soup of gargantuan homemade dumplings stuffed with meat and veggies and served with side dishes for ₩5,000. English menu available.",
+    "lastedit": null,
+    "url": "https://en.wikivoyage.org/w/index.php?title=Seoul/Jongno&oldid=5433820",
+    "revid": 5433820
+   },
+   "sources": [
+    "https://www.openstreetmap.org/node/12062468549",
+    "https://en.wikivoyage.org/w/index.php?title=Seoul/Jongno&oldid=5433820 (listing 'Sadongmyenok', line 528)"
+   ],
+   "note": "OSM has no name:en; Wikivoyage spells 'Sadongmyenok'."
+  },
+  {
+   "id": "F03",
+   "group": "food",
+   "kind": "restaurant",
+   "name_en": "Gaesong Mandu Koong",
+   "name_ko": "개성만두 궁",
+   "lat": 37.574294,
+   "lon": 126.985398,
+   "coord_source": "osm",
+   "osm": {
+    "type": "node",
+    "id": 5614557724,
+    "url": "https://www.openstreetmap.org/node/5614557724",
+    "version": 4,
+    "timestamp": "2026-08-28T02:11:25Z",
+    "tags": {
+     "addr:city": "서울특별시",
+     "addr:district": "종로구",
+     "addr:housenumber": "30-11",
+     "addr:street": "Gwanhun-dong;인사동10길",
+     "amenity": "restaurant",
+     "cuisine": "korean;dumplings",
+     "name": "개성만두 궁",
+     "name:en": "Gaesong Mandu Koong",
+     "opening_hours": "Mo-Su 11:30-20:50"
+    }
+   },
+   "opening_hours_osm": "Mo-Su 11:30-20:50",
+   "wikidata": null,
+   "wikivoyage": {
+    "name": "Gung",
+    "kind": "eat",
+    "section": "Eat",
+    "line": 535,
+    "hours": null,
+    "price": null,
+    "address": null,
+    "directions": "take insa-dong 10-gil from the main street insa-dong gil and then it is about 15 meters on the left",
+    "content": "Specialty restaurant for ''mandu'' (Korean dumplings) from the nearby [[Kaesong]] region in [[North Korea]]. The chickpea patties are also very good. This restaurant has been passed down from mother to daughter for three generations.",
+    "lastedit": null,
+    "url": "https://en.wikivoyage.org/w/index.php?title=Seoul/Jongno&oldid=5433820",
+    "revid": 5433820
+   },
+   "sources": [
+    "https://www.openstreetmap.org/node/5614557724",
+    "https://en.wikivoyage.org/w/index.php?title=Seoul/Jongno&oldid=5433820 (listing 'Gung', line 535)"
+   ],
+   "note": "Wikivoyage lists it as 'Gung' (궁). In the 2026-07-28 OSM copy it was node 5618578721 named '개성만두 궁 (미쉐린가이드, 만두전골)'; in today's data it is node 5614557724."
+  },
+  {
+   "id": "F04",
+   "group": "food",
+   "kind": "restaurant",
+   "name_en": "Samcheongdong Sujebi",
+   "name_ko": "삼청동수제비",
+   "lat": 37.584531,
+   "lon": 126.981935,
+   "coord_source": "osm (center of way/relation)",
+   "osm": {
+    "type": "way",
+    "id": 316516024,
+    "url": "https://www.openstreetmap.org/way/316516024",
+    "version": 7,
+    "timestamp": "2026-03-15T15:21:31Z",
+    "tags": {
+     "addr:city": "서울특별시",
+     "addr:district": "종로구",
+     "addr:housenumber": "101-1",
+     "addr:postcode": "03049",
+     "addr:street": "삼청로",
+     "addr:subdistrict": "삼청동",
+     "amenity": "restaurant",
+     "building": "commercial",
+     "cuisine": "regional",
+     "name": "삼청동수제비",
+     "name:en": "Samcheongdong Sujebi",
+     "name:ja": "三清洞スジェビ",
+     "name:zh": "三清洞麵疙瘩",
+     "opening_hours": "11:00-21:00",
+     "website": "http://www.sujaebi.kr/"
+    }
+   },
+   "opening_hours_osm": "11:00-21:00",
+   "wikidata": null,
+   "wikivoyage": {
+    "name": "Samcheong Sujaebi",
+    "kind": "eat",
+    "section": "Eat",
+    "line": 549,
+    "hours": null,
+    "price": "₩8000-13,000",
+    "address": null,
+    "directions": null,
+    "content": "Canteen style ambiance, renowned for serving good Sujaebi - a mild soup where the noodles are flattened and torn into sheets. Always packed with people so be prepared for a queue.",
+    "lastedit": null,
+    "url": "https://en.wikivoyage.org/w/index.php?title=Seoul/Jongno&oldid=5433820",
+    "revid": 5433820
+   },
+   "sources": [
+    "https://www.openstreetmap.org/way/316516024",
+    "https://en.wikivoyage.org/w/index.php?title=Seoul/Jongno&oldid=5433820 (listing 'Samcheong Sujaebi', line 549)"
+   ],
+   "note": "Duplicate node n12060692158 at the same spot."
+  },
+  {
+   "id": "F05",
+   "group": "food",
+   "kind": "restaurant",
+   "name_en": "Uyeonhwa",
+   "name_ko": "우연화",
+   "lat": 37.572893,
+   "lon": 126.990316,
+   "coord_source": "osm",
+   "osm": {
+    "type": "node",
+    "id": 12074718646,
+    "url": "https://www.openstreetmap.org/node/12074718646",
+    "version": 4,
+    "timestamp": "2026-03-15T15:21:31Z",
+    "tags": {
+     "addr:city": "서울특별시",
+     "addr:district": "종로구",
+     "addr:housenumber": "30-2",
+     "addr:postcode": "03133",
+     "addr:street": "수표로28길",
+     "addr:subdistrict": "돈의동",
+     "amenity": "restaurant",
+     "name": "우연화"
+    }
+   },
+   "opening_hours_osm": null,
+   "wikidata": null,
+   "wikivoyage": {
+    "name": "Uyeonhwa",
+    "kind": "eat",
+    "section": "Eat",
+    "line": 681,
+    "hours": "11:30-21:00",
+    "price": "₩20,000",
+    "address": "Jongrogu supyoro 28 30-2",
+    "directions": "84m from",
+    "content": "The Hanok-style restaurant in Ikseon-dong blends modern sensibilities and traditional atmosphere. It features Hamburg steak made with 100 percent Korean beef and is served with hot pot rice.",
+    "lastedit": "2025-11-28",
+    "url": "https://en.wikivoyage.org/w/index.php?title=Seoul/Jongno&oldid=5433820",
+    "revid": 5433820
+   },
+   "sources": [
+    "https://www.openstreetmap.org/node/12074718646",
+    "https://en.wikivoyage.org/w/index.php?title=Seoul/Jongno&oldid=5433820 (listing 'Uyeonhwa', line 681)"
+   ],
+   "note": "OSM has no name:en."
+  },
+  {
+   "id": "F06",
+   "group": "food",
+   "kind": "restaurant",
+   "name_en": "Sinrajemyeon (Anguk)",
+   "name_ko": "신라제면",
+   "lat": 37.578216,
+   "lon": 126.986236,
+   "coord_source": "osm",
+   "osm": {
+    "type": "node",
+    "id": 13674868878,
+    "url": "https://www.openstreetmap.org/node/13674868878",
+    "version": 2,
+    "timestamp": "2026-07-03T16:19:45Z",
+    "tags": {
+     "amenity": "restaurant",
+     "cuisine": "ramen",
+     "name": "신라제면"
+    }
+   },
+   "opening_hours_osm": null,
+   "wikidata": null,
+   "wikivoyage": {
+    "name": "Sinrajemyeon Anguk Branch",
+    "kind": "eat",
+    "section": "Eat",
+    "line": 697,
+    "hours": "10:30-21:00",
+    "price": "₩13,000",
+    "address": "Jongrogu gyedong 19-6",
+    "directions": "126m from exit 3 of Anguk station",
+    "content": "It is a kalguksu specialty store that originated in Gyeongju, and is located in Anguk Station in Seoul. It features a traditional Korean interior with a luxurious atmosphere.",
+    "lastedit": "2025-11-28",
+    "url": "https://en.wikivoyage.org/w/index.php?title=Seoul/Jongno&oldid=5433820",
+    "revid": 5433820
+   },
+   "sources": [
+    "https://www.openstreetmap.org/node/13674868878",
+    "https://en.wikivoyage.org/w/index.php?title=Seoul/Jongno&oldid=5433820 (listing 'Sinrajemyeon Anguk Branch', line 697)"
+   ],
+   "note": "OSM cuisine tag says 'ramen'; Wikivoyage says kalguksu."
+  },
+  {
+   "id": "F07",
+   "group": "food",
+   "kind": "restaurant",
+   "name_en": "Chwiyabeol Guksi",
+   "name_ko": "취야벌국시",
+   "lat": 37.572783,
+   "lon": 126.984805,
+   "coord_source": "osm",
+   "osm": {
+    "type": "node",
+    "id": 13955726451,
+    "url": "https://www.openstreetmap.org/node/13955726451",
+    "version": 1,
+    "timestamp": "2026-06-21T14:27:15Z",
+    "tags": {
+     "amenity": "restaurant",
+     "cuisine": "korean",
+     "name": "취야벌국시"
+    }
+   },
+   "opening_hours_osm": null,
+   "wikidata": null,
+   "wikivoyage": {
+    "name": "Chwiyabeolguksi",
+    "kind": "eat",
+    "section": "Eat",
+    "line": 705,
+    "hours": "09:30-21:30",
+    "price": "₩15,000",
+    "address": "Jongrogu insadong 7 21",
+    "directions": "256m from exit 1 of Jongak station",
+    "content": "Dumpling hot pot is a particularly famous noodle restaurant. Dumpling hot pot here boasts a deep and cool taste of soup with a combination of large dumplings and fresh vegetables.",
+    "lastedit": "2025-11-28",
+    "url": "https://en.wikivoyage.org/w/index.php?title=Seoul/Jongno&oldid=5433820",
+    "revid": 5433820
+   },
+   "sources": [
+    "https://www.openstreetmap.org/node/13955726451",
+    "https://en.wikivoyage.org/w/index.php?title=Seoul/Jongno&oldid=5433820 (listing 'Chwiyabeolguksi', line 705)"
+   ],
+   "note": ""
+  },
+  {
+   "id": "F08",
+   "group": "food",
+   "kind": "restaurant",
+   "name_en": "Eomyongbaek Dwaeji Gukbap",
+   "name_ko": "엄용백돼지국밥",
+   "lat": 37.571846,
+   "lon": 126.985829,
+   "coord_source": "osm",
+   "osm": {
+    "type": "node",
+    "id": 13955741503,
+    "url": "https://www.openstreetmap.org/node/13955741503",
+    "version": 1,
+    "timestamp": "2026-06-21T14:41:44Z",
+    "tags": {
+     "amenity": "restaurant",
+     "name": "엄용백돼지국밥"
+    }
+   },
+   "opening_hours_osm": null,
+   "wikidata": null,
+   "wikivoyage": {
+    "name": "Eomyongbaek pork soup",
+    "kind": "eat",
+    "section": "Eat",
+    "line": 713,
+    "hours": "11:00-21:00",
+    "price": "₩13,000",
+    "address": "Jongrogu insadong 3 20",
+    "directions": "233m from exit 3 of Jongak station",
+    "content": "It is a restaurant that serves Busan style pork and rice soup in a tranquil hanok atmosphere. The main menu here is pork and rice soup in two styles, clear and thick, and kimchi and kkakdugi, served as basic side dishes, go well with gukbap.",
+    "lastedit": "2025-11-28",
+    "url": "https://en.wikivoyage.org/w/index.php?title=Seoul/Jongno&oldid=5433820",
+    "revid": 5433820
+   },
+   "sources": [
+    "https://www.openstreetmap.org/node/13955741503",
+    "https://en.wikivoyage.org/w/index.php?title=Seoul/Jongno&oldid=5433820 (listing 'Eomyongbaek pork soup', line 713)"
+   ],
+   "note": ""
+  },
+  {
+   "id": "F09",
+   "group": "food",
+   "kind": "restaurant",
+   "name_en": "Gwanghwamun Mijin",
+   "name_ko": "미진",
+   "lat": 37.57057,
+   "lon": 126.979887,
+   "coord_source": "osm",
+   "osm": {
+    "type": "node",
+    "id": 6897152187,
+    "url": "https://www.openstreetmap.org/node/6897152187",
+    "version": 6,
+    "timestamp": "2026-03-15T15:21:18Z",
+    "tags": {
+     "addr:city": "서울특별시",
+     "addr:district": "종로구",
+     "addr:housenumber": "19",
+     "addr:postcode": "03157",
+     "addr:street": "종로",
+     "addr:subdistrict": "종로1가",
+     "amenity": "restaurant",
+     "name": "미진",
+     "name:en": "Mijin",
+     "name:ja": "美進",
+     "name:ko": "광화문미진",
+     "opening_hours": "Mo-Su 10:00-22:00"
+    }
+   },
+   "opening_hours_osm": "Mo-Su 10:00-22:00",
+   "wikidata": null,
+   "wikivoyage": {
+    "name": "GwanghwamunMijin",
+    "kind": "eat",
+    "section": "Eat",
+    "line": 721,
+    "hours": "10:30-21:00",
+    "price": "₩12,000",
+    "address": "Jongrogu Jongro 19 Reumeiereu Jongro Town 116-2",
+    "directions": "221m from exit 1 of Jongak station",
+    "content": "As a traditional buckwheat specialty, cold buckwheat noodles and handmade pork cutlet are the main dishes. The restaurant is spacious and quick-rotating, and the Yeolmu Kimchi and pickled radish served as standard side dishes are delicious.",
+    "lastedit": "2025-11-28",
+    "url": "https://en.wikivoyage.org/w/index.php?title=Seoul/Jongno&oldid=5433820",
+    "revid": 5433820
+   },
+   "sources": [
+    "https://www.openstreetmap.org/node/6897152187",
+    "https://en.wikivoyage.org/w/index.php?title=Seoul/Jongno&oldid=5433820 (listing 'GwanghwamunMijin', line 721)"
+   ],
+   "note": "OSM opening_hours (Mo-Su 10:00-22:00) and Wikivoyage hours (10:30-21:00) differ."
+  },
+  {
+   "id": "F10",
+   "group": "food",
+   "kind": "bakery cafe",
+   "name_en": "Artist Bakery",
+   "name_ko": "아티스트 베이커리",
+   "lat": 37.576227,
+   "lon": 126.984337,
+   "coord_source": "osm",
+   "osm": {
+    "type": "node",
+    "id": 11794898969,
+    "url": "https://www.openstreetmap.org/node/11794898969",
+    "version": 2,
+    "timestamp": "2025-08-25T13:59:48Z",
+    "tags": {
+     "name": "아티스트 베이커리",
+     "name:en": "Artist Bakery",
+     "shop": "bakery"
+    }
+   },
+   "opening_hours_osm": null,
+   "wikidata": null,
+   "wikivoyage": {
+    "name": "Artist Bakery",
+    "kind": "drink",
+    "section": "Drink",
+    "line": 811,
+    "hours": "07:30-20:00",
+    "price": "₩5,000",
+    "address": "Jongrogu yulgokro 45",
+    "directions": "10m from exit 1 of Anguk station",
+    "content": "It is a bakery specializing in various kinds of salt bread, featuring a savory and salty taste.",
+    "lastedit": "2025-11-28",
+    "url": "https://en.wikivoyage.org/w/index.php?title=Seoul/Jongno&oldid=5433820",
+    "revid": 5433820
+   },
+   "sources": [
+    "https://www.openstreetmap.org/node/11794898969",
+    "https://en.wikivoyage.org/w/index.php?title=Seoul/Jongno&oldid=5433820 (listing 'Artist Bakery', line 811)"
+   ],
+   "note": ""
+  },
+  {
+   "id": "F11",
+   "group": "food",
+   "kind": "restaurant",
+   "name_en": "Man-Seok Dak Han Ma-Ri (Insadong)",
+   "name_ko": "만석닭한마리 인사동1호점",
+   "lat": 37.571564,
+   "lon": 126.986867,
+   "coord_source": "osm (center of way/relation)",
+   "osm": {
+    "type": "way",
+    "id": 355845777,
+    "url": "https://www.openstreetmap.org/way/355845777",
+    "version": 6,
+    "timestamp": "2026-03-15T15:21:31Z",
+    "tags": {
+     "addr:city": "서울특별시",
+     "addr:district": "종로구",
+     "addr:housenumber": "7",
+     "addr:postcode": "03164",
+     "addr:street": "인사동길",
+     "addr:subdistrict": "인사동",
+     "amenity": "restaurant",
+     "building": "yes",
+     "building:levels": "2",
+     "cuisine": "Dak_Gangjeong_(Sweet_and_Sour_Chicken)",
+     "name": "만석닭한마리 인사동1호점",
+     "name:en": "Man-Seok Dak Han Ma-Ri",
+     "name:ko": "만석닭한마리 인사동1호점"
+    }
+   },
+   "opening_hours_osm": null,
+   "wikidata": null,
+   "wikivoyage": null,
+   "sources": [
+    "https://www.openstreetmap.org/way/355845777"
+   ],
+   "note": "OSM only. Not in Wikivoyage."
+  },
+  {
+   "id": "F12",
+   "group": "food",
+   "kind": "restaurant",
+   "name_en": "Tteoksang",
+   "name_ko": "떡상",
+   "lat": 37.572336,
+   "lon": 126.988727,
+   "coord_source": "wikivoyage",
+   "osm": null,
+   "opening_hours_osm": null,
+   "wikidata": null,
+   "wikivoyage": {
+    "name": "Tteoksang",
+    "kind": "eat",
+    "section": "Eat",
+    "line": 614,
+    "hours": "16:00 - 23:30",
+    "price": null,
+    "address": "1F, 43 Insadong 14-gil",
+    "directions": null,
+    "content": "This restaurant offers a fusion of Korean tteokbokki (rice cakes) in a hanok charming setting.",
+    "lastedit": "2023-10-15",
+    "url": "https://en.wikivoyage.org/w/index.php?title=Seoul/Jongno&oldid=5433820",
+    "revid": 5433820
+   },
+   "sources": [
+    "https://en.wikivoyage.org/w/index.php?title=Seoul/Jongno&oldid=5433820 (listing 'Tteoksang', line 614)"
+   ],
+   "note": "Not found in OSM. Location from Wikivoyage."
+  },
+  {
+   "id": "F13",
+   "group": "food",
+   "kind": "snack bar",
+   "name_en": "Pungnyeon Ssal Nongsan",
+   "name_ko": "풍년쌀농산",
+   "lat": 37.58095,
+   "lon": 126.98165,
+   "coord_source": "wikivoyage",
+   "osm": null,
+   "opening_hours_osm": null,
+   "wikidata": null,
+   "wikivoyage": {
+    "name": "Pungnyeon Ssal Nongsan",
+    "kind": "eat",
+    "section": "Eat",
+    "line": 622,
+    "hours": "11:00-20:00",
+    "price": "₩ 2500-5000",
+    "address": "32 Bukchon-ro 5ga-gil, Jongno District",
+    "directions": "inside Bukchon Hanok Village",
+    "content": "cheap snack places. noodle sausage, fried stuff, fried rice cake...",
+    "lastedit": "2024-07-15",
+    "url": "https://en.wikivoyage.org/w/index.php?title=Seoul/Jongno&oldid=5433820",
+    "revid": 5433820
+   },
+   "sources": [
+    "https://en.wikivoyage.org/w/index.php?title=Seoul/Jongno&oldid=5433820 (listing 'Pungnyeon Ssal Nongsan', line 622)"
+   ],
+   "note": "Not found in OSM. Location from Wikivoyage."
+  },
+  {
+   "id": "F14",
+   "group": "food",
+   "kind": "restaurant",
+   "name_en": "Ikseon-dong Meat Restaurant",
+   "name_ko": "익선동고기집",
+   "lat": 37.57337,
+   "lon": 126.99083,
+   "coord_source": "wikivoyage",
+   "osm": null,
+   "opening_hours_osm": null,
+   "wikidata": "Q141901871",
+   "wikivoyage": {
+    "name": "Ikseon-dong Meat Restaurant",
+    "kind": "eat",
+    "section": "Eat",
+    "line": 689,
+    "hours": "Mo-Fr 11:00-23:00, Sa Su 10:00-23:00",
+    "price": "₩18,000 per 180 g serving, pork set for two ₩54,000",
+    "address": "1F, 47 Supyo-ro 28-gil",
+    "directions": "2 min walk from exit 6 of Jongno 3-ga station",
+    "content": "Korean barbecue in a hanok with exposed wooden rafters, where staff grill the meat at your table. Korean pork cuts such as minari samgyeopsal, galmaegisal and kkotmoksal, plus wagyu sirloin and kimchi jjigae. Group seating and outdoor tables in the alley.",
+    "lastedit": "2026-10-29",
+    "url": "https://en.wikivoyage.org/w/index.php?title=Seoul/Jongno&oldid=5433820",
+    "revid": 5433820
+   },
+   "sources": [
+    "https://en.wikivoyage.org/w/index.php?title=Seoul/Jongno&oldid=5433820 (listing 'Ikseon-dong Meat Restaurant', line 689)",
+    "https://www.wikidata.org/wiki/Q141901871"
+   ],
+   "note": "Not found in OSM. Location from Wikivoyage."
+  },
+  {
+   "id": "F15",
+   "group": "food",
+   "kind": "restaurant",
+   "name_en": "Osegyehyang",
+   "name_ko": "오세계향",
+   "lat": 37.574661,
+   "lon": 126.985282,
+   "coord_source": "osm",
+   "osm": {
+    "type": "node",
+    "id": 2471444664,
+    "url": "https://www.openstreetmap.org/node/2471444664",
+    "version": 13,
+    "timestamp": "2026-03-15T15:21:18Z",
+    "tags": {
+     "addr:city": "서울특별시",
+     "addr:district": "종로구",
+     "addr:housenumber": "14-5",
+     "addr:postcode": "03146",
+     "addr:street": "인사동12길",
+     "addr:subdistrict": "관훈동",
+     "amenity": "restaurant",
+     "cuisine": "Korean,_Vegetable_Cuisine;불구이쌈밥;두개장정식;중화볶음우동;순두부강된장비빔밥",
+     "diet:vegan": "only",
+     "name": "오세계향",
+     "name:en": "Osegyehyang",
+     "name:ko": "오세계향",
+     "opening_hours": "Fr-We 11:30-16:00, 17:00-21:00",
+     "phone": "02-735-7171",
+     "website": "http://go5.co.kr/default/"
+    }
+   },
+   "opening_hours_osm": "Fr-We 11:30-16:00, 17:00-21:00",
+   "wikidata": null,
+   "wikivoyage": null,
+   "sources": [
+    "https://www.openstreetmap.org/node/2471444664"
+   ],
+   "note": "OSM only. Vegetarian Korean (OSM cuisine tag)."
+  },
+  {
+   "id": "F16",
+   "group": "food",
+   "kind": "restaurant",
+   "name_en": "Can Dumplings (Kkangtong Mandu)",
+   "name_ko": "깡통만두",
+   "lat": 37.578151,
+   "lon": 126.986106,
+   "coord_source": "osm",
+   "osm": {
+    "type": "node",
+    "id": 5476055828,
+    "url": "https://www.openstreetmap.org/node/5476055828",
+    "version": 6,
+    "timestamp": "2026-03-15T15:21:18Z",
+    "tags": {
+     "addr:city": "서울특별시",
+     "addr:district": "종로구",
+     "addr:housenumber": "5-6",
+     "addr:postcode": "03059",
+     "addr:street": "북촌로2길",
+     "addr:subdistrict": "재동",
+     "amenity": "restaurant",
+     "cuisine": "korean",
+     "name": "깡통만두",
+     "name:en": "Can Dumplings",
+     "phone": "+82 02-794-4243"
+    }
+   },
+   "opening_hours_osm": null,
+   "wikidata": null,
+   "wikivoyage": null,
+   "sources": [
+    "https://www.openstreetmap.org/node/5476055828"
+   ],
+   "note": "OSM only."
+  },
+  {
+   "id": "F17",
+   "group": "food",
+   "kind": "teahouse",
+   "name_en": "Namusae Teahouse",
+   "name_ko": "Namusae Teahouse",
+   "lat": 37.574138,
+   "lon": 126.984158,
+   "coord_source": "osm (center of way/relation)",
+   "osm": {
+    "type": "way",
+    "id": 555212525,
+    "url": "https://www.openstreetmap.org/way/555212525",
+    "version": 6,
+    "timestamp": "2026-05-24T08:20:47Z",
+    "tags": {
+     "addr:city": "Seoul",
+     "addr:district": "Gwanhundong",
+     "addr:street": "47-9 Insadong Gil",
+     "addr:subdistrict": "Jongno",
+     "air_conditioning": "yes",
+     "amenity": "teahouse",
+     "building": "yes",
+     "cuisine": "tea;camelia_ice_tea;bingsu;green_tea_shaved_ice;jujube_tea;omija_tea;ginger_tea;bellflower_root_jujube_tea;quince_tea;yuja_cha;sikhye;cinnamon_punch;green_plum_tea;dessert;latte;americano;marigold_tea;magnolia_tea;dried_persimmon;rice_cake;yakgwa",
+     "name": "Namusae Teahouse",
+     "name:ko": "나무새 찻집",
+     "opening_hours": "10:00-22:00",
+     "outdoor_seating": "no",
+     "phone": "8227321012",
+     "tourism": "yes"
+    }
+   },
+   "opening_hours_osm": "10:00-22:00",
+   "wikidata": null,
+   "wikivoyage": null,
+   "sources": [
+    "https://www.openstreetmap.org/way/555212525"
+   ],
+   "note": "OSM only. OSM name has only English."
+  },
+  {
+   "id": "F18",
+   "group": "food",
+   "kind": "teahouse",
+   "name_en": "Traditional Tea House (Jeontong Dawon)",
+   "name_ko": "전통다원",
+   "lat": 37.574556,
+   "lon": 126.985476,
+   "coord_source": "osm",
+   "osm": {
+    "type": "node",
+    "id": 4455281404,
+    "url": "https://www.openstreetmap.org/node/4455281404",
+    "version": 8,
+    "timestamp": "2026-03-15T15:21:18Z",
+    "tags": {
+     "addr:city": "서울특별시",
+     "addr:district": "종로구",
+     "addr:housenumber": "11-4",
+     "addr:postcode": "03146",
+     "addr:street": "인사동10길",
+     "addr:subdistrict": "관훈동",
+     "amenity": "cafe",
+     "name": "전통다원",
+     "name:en": "전통다원 Traditional Tea House",
+     "opening_hours": "Mo-Su 10:00-22:50"
+    }
+   },
+   "opening_hours_osm": "Mo-Su 10:00-22:50",
+   "wikidata": null,
+   "wikivoyage": null,
+   "sources": [
+    "https://www.openstreetmap.org/node/4455281404"
+   ],
+   "note": "OSM only."
+  },
+  {
+   "id": "F19",
+   "group": "food",
+   "kind": "street snack",
+   "name_en": "Samcheongdong Hotteok",
+   "name_ko": "삼청동호떡",
+   "lat": 37.579182,
+   "lon": 126.982508,
+   "coord_source": "osm (center of way/relation)",
+   "osm": {
+    "type": "way",
+    "id": 426709960,
+    "url": "https://www.openstreetmap.org/way/426709960",
+    "version": 4,
+    "timestamp": "2026-03-15T15:21:46Z",
+    "tags": {
+     "addr:city": "서울특별시",
+     "addr:district": "종로구",
+     "addr:housenumber": "82-6",
+     "addr:postcode": "03061",
+     "addr:street": "율곡로3길",
+     "addr:subdistrict": "화동",
+     "amenity": "restaurant",
+     "building": "yes",
+     "cuisine": "korean",
+     "name": "삼청동호떡",
+     "name:en": "Samcheongdong Hotteok",
+     "phone": "+82 02-732-0420"
+    }
+   },
+   "opening_hours_osm": null,
+   "wikidata": null,
+   "wikivoyage": null,
+   "sources": [
+    "https://www.openstreetmap.org/way/426709960"
+   ],
+   "note": "OSM only."
+  },
+  {
+   "id": "S01",
+   "group": "service",
+   "kind": "subway exit",
+   "name_en": "Gyeongbokgung Station Exit 5",
+   "name_ko": "경복궁역 5번출구",
+   "lat": 37.576276,
+   "lon": 126.975494,
+   "coord_source": "osm",
+   "osm": {
+    "type": "node",
+    "id": 3403538917,
+    "url": "https://www.openstreetmap.org/node/3403538917",
+    "version": 8,
+    "timestamp": "2025-12-13T15:58:16Z",
+    "tags": {
+     "description": "경복궁역 5번출구",
+     "description:en": "Gyeongbokgung Station Exit 5",
+     "description:ja": "景福宮駅 5番出口",
+     "railway": "subway_entrance",
+     "ref": "5"
+    }
+   },
+   "opening_hours_osm": null,
+   "wikidata": null,
+   "wikivoyage": null,
+   "sources": [
+    "https://www.openstreetmap.org/node/3403538917"
+   ],
+   "note": "Line 3. Exit on the palace side."
+  },
+  {
+   "id": "S02",
+   "group": "service",
+   "kind": "subway exit",
+   "name_en": "Anguk Station Exit 1",
+   "name_ko": "안국역 1번출구",
+   "lat": 37.57613,
+   "lon": 126.984372,
+   "coord_source": "osm",
+   "osm": {
+    "type": "node",
+    "id": 3403538918,
+    "url": "https://www.openstreetmap.org/node/3403538918",
+    "version": 6,
+    "timestamp": "2025-12-13T16:40:04Z",
+    "tags": {
+     "description": "안국역 1번출구",
+     "description:en": "Anguk Station gate 1",
+     "description:ja": "安国駅 1番出口",
+     "railway": "subway_entrance",
+     "ref": "1",
+     "wheelchair": "no"
+    }
+   },
+   "opening_hours_osm": null,
+   "wikidata": null,
+   "wikivoyage": null,
+   "sources": [
+    "https://www.openstreetmap.org/node/3403538918"
+   ],
+   "note": "Line 3. Seoul Museum of Craft Art is 50 m from Exit 1 (official museum page)."
+  },
+  {
+   "id": "S03",
+   "group": "service",
+   "kind": "subway exit",
+   "name_en": "Anguk Station Exit 2",
+   "name_ko": "안국역 2번출구",
+   "lat": 37.577107,
+   "lon": 126.986126,
+   "coord_source": "osm",
+   "osm": {
+    "type": "node",
+    "id": 3403538920,
+    "url": "https://www.openstreetmap.org/node/3403538920",
+    "version": 6,
+    "timestamp": "2026-09-26T09:28:22Z",
+    "tags": {
+     "description": "안국역 2번출구",
+     "description:en": "Anguk Station gate 2",
+     "description:ja": "安国駅 2番出口",
+     "railway": "subway_entrance",
+     "ref": "2",
+     "wheelchair": "no"
+    }
+   },
+   "opening_hours_osm": null,
+   "wikidata": null,
+   "wikivoyage": null,
+   "sources": [
+    "https://www.openstreetmap.org/node/3403538920"
+   ],
+   "note": "Line 3. Toward Bukchon."
+  },
+  {
+   "id": "S04",
+   "group": "service",
+   "kind": "subway exit",
+   "name_en": "Anguk Station Exit 6",
+   "name_ko": "안국역 6번출구",
+   "lat": 37.575864,
+   "lon": 126.9842,
+   "coord_source": "osm",
+   "osm": {
+    "type": "node",
+    "id": 3403538919,
+    "url": "https://www.openstreetmap.org/node/3403538919",
+    "version": 8,
+    "timestamp": "2025-12-13T16:40:04Z",
+    "tags": {
+     "description": "안국역 6번출구",
+     "description:en": "Anguk Station gate 6",
+     "description:ja": "安国駅 6番出口",
+     "railway": "subway_entrance",
+     "ref": "6",
+     "wheelchair": "no"
+    }
+   },
+   "opening_hours_osm": null,
+   "wikidata": null,
+   "wikivoyage": null,
+   "sources": [
+    "https://www.openstreetmap.org/node/3403538919"
+   ],
+   "note": "Line 3. Toward Insa-dong and Jogyesa (Jogyesa official page: Exit 6)."
+  },
+  {
+   "id": "S05",
+   "group": "service",
+   "kind": "subway exit",
+   "name_en": "Gwanghwamun Station Exit 9",
+   "name_ko": "광화문역 9번출구",
+   "lat": 37.571303,
+   "lon": 126.976942,
+   "coord_source": "osm",
+   "osm": {
+    "type": "node",
+    "id": 3841809500,
+    "url": "https://www.openstreetmap.org/node/3841809500",
+    "version": 5,
+    "timestamp": "2025-12-13T15:58:16Z",
+    "tags": {
+     "description": "광화문역 9번출구",
+     "level": "-1",
+     "railway": "subway_entrance",
+     "ref": "9",
+     "wheelchair": "yes"
+    }
+   },
+   "opening_hours_osm": null,
+   "wikidata": null,
+   "wikivoyage": null,
+   "sources": [
+    "https://www.openstreetmap.org/node/3841809500"
+   ],
+   "note": "Line 5. Opens onto Gwanghwamun Square (OSM: level -1, wheelchair=yes)."
+  },
+  {
+   "id": "S06",
+   "group": "service",
+   "kind": "subway exit",
+   "name_en": "Jongno 3-ga Station Exit 5",
+   "name_ko": "종로3가역 5번출구",
+   "lat": 37.572468,
+   "lon": 126.988889,
+   "coord_source": "osm",
+   "osm": {
+    "type": "node",
+    "id": 3403195792,
+    "url": "https://www.openstreetmap.org/node/3403195792",
+    "version": 8,
+    "timestamp": "2025-12-13T15:58:16Z",
+    "tags": {
+     "description": "종로3가역 5번출구",
+     "railway": "subway_entrance",
+     "ref": "5"
+    }
+   },
+   "opening_hours_osm": null,
+   "wikidata": null,
+   "wikivoyage": null,
+   "sources": [
+    "https://www.openstreetmap.org/node/3403195792"
+   ],
+   "note": "Lines 1/3/5. Toward Ikseon-dong and Tapgol Park. OSM has no English description."
+  },
+  {
+   "id": "S07",
+   "group": "service",
+   "kind": "tourist information",
+   "name_en": "Insadong Information Center",
+   "name_ko": "인사동홍보관",
+   "lat": 37.573664,
+   "lon": 126.983571,
+   "coord_source": "osm",
+   "osm": {
+    "type": "node",
+    "id": 3371283293,
+    "url": "https://www.openstreetmap.org/node/3371283293",
+    "version": 7,
+    "timestamp": "2026-03-15T15:21:18Z",
+    "tags": {
+     "addr:city": "서울특별시",
+     "addr:district": "종로구",
+     "addr:housenumber": "19",
+     "addr:postcode": "03145",
+     "addr:street": "인사동11길",
+     "addr:subdistrict": "견지동",
+     "information": "office",
+     "name": "인사동홍보관",
+     "name:en": "Insadong Information Center",
+     "name:ja": "仁寺洞広報館",
+     "name:ko": "인사동홍보관",
+     "phone": "+82 02-737-7891",
+     "tourism": "information",
+     "website": "http://www.hiinsa.com/"
+    }
+   },
+   "opening_hours_osm": null,
+   "wikidata": null,
+   "wikivoyage": null,
+   "sources": [
+    "https://www.openstreetmap.org/node/3371283293"
+   ],
+   "note": ""
+  },
+  {
+   "id": "S08",
+   "group": "service",
+   "kind": "tourist information",
+   "name_en": "Bukchon Hanok Village Information Center",
+   "name_ko": "북촌마을안내소",
+   "lat": 37.579559,
+   "lon": 126.983163,
+   "coord_source": "osm (center of way/relation)",
+   "osm": {
+    "type": "way",
+    "id": 611165760,
+    "url": "https://www.openstreetmap.org/way/611165760",
+    "version": 6,
+    "timestamp": "2026-03-15T15:21:46Z",
+    "tags": {
+     "addr:city": "서울특별시",
+     "addr:district": "종로구",
+     "addr:housenumber": "48",
+     "addr:postcode": "03055",
+     "addr:street": "북촌로5길",
+     "addr:subdistrict": "화동",
+     "building": "yes",
+     "information": "office",
+     "name": "북촌마을안내소",
+     "name:en": "Bukchon Hanok Village Information Center",
+     "name:ja": "ブッチョン(北村)韓屋村の案内所",
+     "phone": "+82 02-2148-4161",
+     "tourism": "information",
+     "wikipedia": "ko:북촌한옥마을"
+    }
+   },
+   "opening_hours_osm": null,
+   "wikidata": null,
+   "wikivoyage": null,
+   "sources": [
+    "https://www.openstreetmap.org/way/611165760"
+   ],
+   "note": ""
+  },
+  {
+   "id": "S09",
+   "group": "service",
+   "kind": "toilets",
+   "name_en": "Samcheongdong Public Restrooms",
+   "name_ko": "삼청동공중화장실",
+   "lat": 37.585878,
+   "lon": 126.98166,
+   "coord_source": "osm",
+   "osm": {
+    "type": "node",
+    "id": 5798480901,
+    "url": "https://www.openstreetmap.org/node/5798480901",
+    "version": 6,
+    "timestamp": "2026-03-15T15:21:18Z",
+    "tags": {
+     "addr:city": "서울특별시",
+     "addr:district": "종로구",
+     "addr:housenumber": "117",
+     "addr:postcode": "03049",
+     "addr:street": "삼청로",
+     "addr:subdistrict": "삼청동",
+     "amenity": "toilets",
+     "fee": "no",
+     "name": "삼청동공중화장실",
+     "name:en": "Samcheongdong Public Restrooms"
+    }
+   },
+   "opening_hours_osm": null,
+   "wikidata": null,
+   "wikivoyage": null,
+   "sources": [
+    "https://www.openstreetmap.org/node/5798480901"
+   ],
+   "note": ""
+  },
+  {
+   "id": "S10",
+   "group": "service",
+   "kind": "toilets",
+   "name_en": "Public toilets under Gwanghwamun Square",
+   "name_ko": null,
+   "lat": 37.571503,
+   "lon": 126.97685,
+   "coord_source": "osm",
+   "osm": {
+    "type": "node",
+    "id": 3052967563,
+    "url": "https://www.openstreetmap.org/node/3052967563",
+    "version": 5,
+    "timestamp": "2025-04-08T07:01:31Z",
+    "tags": {
+     "amenity": "toilets",
+     "check_date": "2025-04-08",
+     "check_date:wheelchair": "2025-04-08",
+     "fee": "no",
+     "level": "-1",
+     "wheelchair": "yes"
+    }
+   },
+   "opening_hours_osm": null,
+   "wikidata": null,
+   "wikivoyage": null,
+   "sources": [
+    "https://www.openstreetmap.org/node/3052967563"
+   ],
+   "note": "OSM node has no name; level -1, fee=no, wheelchair=yes."
+  },
+  {
+   "id": "S11",
+   "group": "service",
+   "kind": "pharmacy",
+   "name_en": "Sudo Onnuri Pharmacy (Insa-dong)",
+   "name_ko": "수도온누리약국",
+   "lat": 37.574051,
+   "lon": 126.985147,
+   "coord_source": "osm (center of way/relation)",
+   "osm": {
+    "type": "way",
+    "id": 355665710,
+    "url": "https://www.openstreetmap.org/way/355665710",
+    "version": 4,
+    "timestamp": "2026-08-28T02:11:25Z",
+    "tags": {
+     "addr:housenumber": "40",
+     "addr:street": "인사동길",
+     "amenity": "pharmacy",
+     "building": "yes",
+     "healthcare": "pharmacy",
+     "name": "수도온누리약국"
+    }
+   },
+   "opening_hours_osm": null,
+   "wikidata": null,
+   "wikivoyage": null,
+   "sources": [
+    "https://www.openstreetmap.org/way/355665710"
+   ],
+   "note": "OSM has only the Korean name 수도온누리약국; English written by us."
+  },
+  {
+   "id": "S12",
+   "group": "service",
+   "kind": "atm",
+   "name_en": "Woori Bank Jaedong Branch (ATM)",
+   "name_ko": "우리은행 재동지점",
+   "lat": 37.576791,
+   "lon": 126.98561,
+   "coord_source": "osm",
+   "osm": {
+    "type": "node",
+    "id": 3793809178,
+    "url": "https://www.openstreetmap.org/node/3793809178",
+    "version": 7,
+    "timestamp": "2026-03-15T15:21:18Z",
+    "tags": {
+     "addr:city": "서울특별시",
+     "addr:district": "종로구",
+     "addr:housenumber": "57",
+     "addr:postcode": "03060",
+     "addr:street": "율곡로",
+     "addr:subdistrict": "재동",
+     "amenity": "bank",
+     "atm": "yes",
+     "branch": "재동지점",
+     "brand": "우리은행",
+     "brand:en": "Woori Bank",
+     "brand:ko": "우리은행",
+     "brand:wikidata": "Q494369",
+     "brand:wikipedia": "en:Woori Bank",
+     "name": "우리은행",
+     "name:en": "Woori Bank",
+     "name:ko": "우리은행",
+     "opening_hours": "Mo-Su 07:00-23:30",
+     "phone": "+82 02-732-1136"
+    }
+   },
+   "opening_hours_osm": "Mo-Su 07:00-23:30",
+   "wikidata": null,
+   "wikivoyage": null,
+   "sources": [
+    "https://www.openstreetmap.org/node/3793809178"
+   ],
+   "note": "Near Anguk Station Exits 2 and 3."
+  }
+ ]
+}

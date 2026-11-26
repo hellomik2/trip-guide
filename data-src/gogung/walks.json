@@ -1,0 +1,18 @@
+{
+ "made": "2026-11-23",
+ "rule": "Order of stops only (place ids from candidates.json). No route shape, no distances: the app will compute the path later from osm/ways-raw.json.",
+ "walks": [
+  {"id": "W1", "title_en": "Gwanghwamun Square to the heart of Gyeongbokgung", "title_ko": "광화문광장에서 경복궁 안쪽까지",
+   "stops": ["S05", "L12", "L11", "L10", "L02", "L03", "L04", "L05", "L06", "L09"],
+   "notes": ["Gyeongbokgung is closed on Tuesdays (official).", "Guard ceremony at Gwanghwamun 10:00 and 14:00 (official notice, Feb 2026)."]},
+  {"id": "W2", "title_en": "Bukchon hanok lanes and Samcheong-dong", "title_ko": "북촌 한옥 골목과 삼청동길",
+   "stops": ["S03", "L20", "L17", "L18", "L19", "L15", "L16", "L14", "S02"],
+   "notes": ["Bukchon Red Zone (Bukchon-ro 11-gil area): tourist visits only 10:00-17:00 (Jongno-gu official).", "L19 Bukchon Observatory location is from Wikivoyage only."]},
+  {"id": "W3", "title_en": "Jogyesa, Insa-dong and Tapgol Park", "title_ko": "조계사, 인사동, 탑골공원",
+   "stops": ["S04", "L24", "S07", "L26", "L27", "L25", "L28", "S06"],
+   "notes": ["Insa-dong is a vehicle-free zone on Saturday afternoons and Sundays (stated on the Jogyesa official page)."]},
+  {"id": "W4", "title_en": "Anguk: craft museum, Unhyeongung, Changdeokgung gate, Ikseon-dong", "title_ko": "안국: 공예박물관, 운현궁, 돈화문, 익선동",
+   "stops": ["S02", "L21", "L29", "L22", "L23", "L30", "S06"],
+   "notes": ["Seoul Museum of Craft Art and Unhyeongung are closed on Mondays; Changdeokgung is closed on Mondays (official)."]}
+ ]
+}

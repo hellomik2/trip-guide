@@ -1,0 +1,18 @@
+Trip Guide
+Copyright 2026 the Trip Guide authors
+
+The code in this repository is licensed under the Apache License, Version 2.0 (see LICENSE).
+It contains no third-party source code.
+
+The travel data and photos in app/packs/ and data-src/ are not covered by the Apache License.
+They keep the licences of their sources:
+
+- OpenStreetMap data (c) OpenStreetMap contributors, Open Database License 1.0
+  (https://opendatacommons.org/licenses/odbl/1-0/, https://www.openstreetmap.org/copyright).
+  app/packs/*/pack.json is a derived database of OpenStreetMap data, available under the ODbL 1.0.
+- Text adapted from Wikivoyage, "Seoul/Jongno" (revision 5433820), by Wikivoyage contributors,
+  CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/). Changes were made.
+- Facts from Wikidata, CC0 1.0.
+- Photos from Wikimedia Commons, each under its own licence (CC0, CC BY or CC BY-SA), resized.
+
+CREDITS.md lists every source, licence, photo author and photo source page.

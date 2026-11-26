@@ -1,0 +1,15 @@
+# Your own Firebase settings and App Check debug token live in app/local/. Never commit them.
+app/local/
+local/
+.env
+.env.*
+google-services.json
+GoogleService-Info.plist
+node_modules/
+*.log
+.firebase/
+.firebaserc
+# Raw 1280px photos fetched by data-src/<area>/tools/photos_download.py (the app uses the resized copies in app/packs/)
+data-src/*/photos/img/
+# Written by the export script that made this tree
+.export-public.json

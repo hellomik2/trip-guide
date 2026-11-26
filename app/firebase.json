@@ -1,0 +1,88 @@
+{
+  "hosting": {
+    "public": ".",
+    "cleanUrls": true,
+    "trailingSlash": false,
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/.*/**",
+      "**/node_modules/**",
+      "tools/**",
+      "test/**",
+      "docs/**",
+      "package.json",
+      "package-lock.json",
+      "README.md",
+      "LICENSE",
+      "**/*.example.js",
+      "local/test-env.json",
+      "index.html",
+      "orders.html",
+      "mail.html",
+      "src/ui/shell.js",
+      "src/ui/styles.css",
+      "src/ui/orders.js",
+      "src/ui/mail.js",
+      "src/engine/tasks/order.js",
+      "src/engine/tasks/order-mix.js",
+      "src/engine/tasks/mail.js",
+      "src/engine/dates.js",
+      "src/engine/checks.js",
+      "src/engine/mail-parse.js"
+    ],
+    "redirects": [
+      {
+        "source": "/",
+        "destination": "/trip",
+        "type": 302
+      }
+    ],
+    "headers": [
+      {
+        "source": "**",
+        "headers": [
+          {
+            "key": "X-Content-Type-Options",
+            "value": "nosniff"
+          },
+          {
+            "key": "Referrer-Policy",
+            "value": "no-referrer"
+          },
+          {
+            "key": "Permissions-Policy",
+            "value": "camera=(), microphone=(), geolocation=()"
+          }
+        ]
+      },
+      {
+        "source": "/trip",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "no-cache"
+          }
+        ]
+      },
+      {
+        "source": "**/*.@(html|js|mjs|css|json)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "no-cache"
+          }
+        ]
+      },
+      {
+        "source": "**/*.@(png|svg)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=86400"
+          }
+        ]
+      }
+    ]
+  }
+}

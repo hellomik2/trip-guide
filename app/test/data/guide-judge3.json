@@ -1,0 +1,581 @@
+{
+ "made": {
+  "by": "fresh question writer 3",
+  "at": "2026-11-23T17:43:46+09:00",
+  "pack": "55db07bc349b",
+  "doc": "319428296dfd"
+ },
+ "rules": "Walks: shortest path by length over net (edge length in decimetres) from the start place's node to the end place's node, fee ways only when the start or end place has ticket, a walled palace ends at its door; walkM = path/10 + start snapM + end snapM, rounded. Lists: food = kind restaurant/cafe, sights = kind sight, matched by serves/kind/type, reference place itself left out, nearest walk first; 'open now' lists use the trip-pack.md order (open/outdoor/visit-allowed, then days-not-stated, then unknown; closed left out) with hours evaluated at 'at'.",
+ "questions": [
+  {
+   "id": "M01",
+   "use": "route",
+   "here": "L17",
+   "at": "2026-11-29T16:40",
+   "q": "whats the way back to anguk statoin exit 2",
+   "style": [
+    "lowercase",
+    "typo"
+   ],
+   "expect": {
+    "from": "L17",
+    "to": "S03",
+    "walkM": 686,
+    "nodes": [
+     1614,
+     1618,
+     4585,
+     4586,
+     141,
+     1609,
+     130,
+     149,
+     1630,
+     37,
+     733,
+     3482,
+     36,
+     35,
+     3219,
+     3218,
+     3461,
+     3217,
+     3802,
+     34,
+     3228,
+     1564,
+     623,
+     3937,
+     3938,
+     4197,
+     4198,
+     4200,
+     4201,
+     4202,
+     4205,
+     4204,
+     4203,
+     4206,
+     3939
+    ],
+    "streets": [
+     "Bukchon-ro 12-gil",
+     "Bukchon-ro"
+    ]
+   }
+  },
+  {
+   "id": "M02",
+   "use": "food",
+   "here": "S05",
+   "at": "2026-12-04T12:10",
+   "q": "any dumpling places near jogyesa temple? and what's the temple's phone number",
+   "style": [
+    "lowercase",
+    "two-in-one"
+   ],
+   "expect": {
+    "condition": "serves 'dumplings', walking distance from Jogyesa Temple (named in the question)",
+    "ref": "L24",
+    "ranked": [
+     "F02",
+     "F03",
+     "F07"
+    ],
+    "walkM": 410,
+    "openTop": "unknown",
+    "noneMatch": false
+   }
+  },
+  {
+   "id": "M03",
+   "use": "identify",
+   "here": "F11",
+   "at": "2026-12-03T22:15",
+   "q": "I'm in front of a wide old gateway painted green and red with a tiled roof, and through it I can see a paved yard with an octagonal pavilion. What is this place?",
+   "style": [],
+   "expect": {
+    "id": "L28",
+    "note": "Tapgol Park: its entrance gate (Samilmun) with green woodwork and red pillars; the eight-sided pavilion inside"
+   }
+  },
+  {
+   "id": "M04",
+   "use": "sights",
+   "here": "L10",
+   "at": "2026-11-30T11:00",
+   "q": "Which museums nearby are open right now?",
+   "style": [],
+   "expect": {
+    "condition": "type 'museum', open at that moment (open-list order); last Monday of the month",
+    "ref": "L10",
+    "ranked": [
+     "L13",
+     "L14",
+     "L09"
+    ],
+    "walkM": 533,
+    "openTop": "open",
+    "noneMatch": false
+   }
+  },
+  {
+   "id": "M05",
+   "use": "none",
+   "here": "S06",
+   "at": "2026-11-28T11:20",
+   "q": "how do i get to jongmyo shirne from here?",
+   "style": [
+    "lowercase",
+    "typo"
+   ],
+   "expect": {
+    "missing": "Jongmyo Shrine is not a place in the pack (no position, no walk)",
+    "tempting": "Tapgol Park's description mentions Jongmyo Shrine, and the palace ticket text says the Royal Palace Pass covers Jongmyo Shrine"
+   }
+  },
+  {
+   "id": "M06",
+   "use": "food",
+   "here": "S06",
+   "at": "2026-11-24T19:00",
+   "q": "i'm starving and could really go for some pork, where should i head?",
+   "style": [
+    "lowercase",
+    "indirect"
+   ],
+   "expect": {
+    "condition": "serves 'pork', nearest walk (no time condition)",
+    "ref": "S06",
+    "ranked": [
+     "F14",
+     "F08",
+     "F09"
+    ],
+    "walkM": 262,
+    "openTop": "open",
+    "noneMatch": false
+   }
+  },
+  {
+   "id": "M07",
+   "use": "route",
+   "here": "L20",
+   "at": "2026-12-01T15:20",
+   "q": "How far is MMCA from here, and is it open right now?",
+   "style": [
+    "variant",
+    "two-in-one"
+   ],
+   "expect": {
+    "from": "L20",
+    "to": "L14",
+    "walkM": 546,
+    "nodes": [
+     738,
+     735,
+     736,
+     3783,
+     699,
+     698,
+     68,
+     3547,
+     69,
+     30,
+     70,
+     925,
+     1064,
+     4346,
+     4345,
+     4344,
+     4333,
+     4332,
+     4800,
+     4801
+    ],
+    "streets": [
+     "Bukchon-ro 7-gil",
+     "Bukchon-ro",
+     "Bukchon-ro 5-gil",
+     "Yulgok-ro 1-gil"
+    ]
+   }
+  },
+  {
+   "id": "M08",
+   "use": "identify",
+   "here": "L02",
+   "at": "2026-12-02T13:05",
+   "q": "what's that old stone block with a tiny roofed pavilion perched on top, sitting all alone on the corner where the traffic goes around it?",
+   "style": [
+    "lowercase"
+   ],
+   "expect": {
+    "id": "L07",
+    "note": "Dongsipjagak: the watchtower on a tall cut-stone base at the road junction by the palace's south-east corner"
+   }
+  },
+  {
+   "id": "M09",
+   "use": "sights",
+   "here": "S01",
+   "at": "2026-12-06T08:10",
+   "q": "Are there any famous statues around here?",
+   "style": [],
+   "expect": {
+    "condition": "type 'statue', nearest walk (no time condition)",
+    "ref": "S01",
+    "ranked": [
+     "L11",
+     "L12"
+    ],
+    "walkM": 604,
+    "openTop": "outdoor",
+    "noneMatch": false
+   }
+  },
+  {
+   "id": "M10",
+   "use": "none",
+   "here": "F08",
+   "at": "2026-12-04T16:45",
+   "q": "What time does Tapgol Park close today?",
+   "style": [],
+   "expect": {
+    "missing": "Tapgol Park opening hours: status 'unknown' in the pack",
+    "tempting": "the hours note quotes unconfirmed article lines (09:00-18:00, winter 09:00-17:00) that the pack marks as 'Not used'"
+   }
+  },
+  {
+   "id": "M11",
+   "use": "food",
+   "here": "S07",
+   "at": "2026-12-05T21:30",
+   "q": "It's freezing out here. Where could I sit down with a hot cup of tea somewhere that's still open?",
+   "style": [
+    "indirect"
+   ],
+   "expect": {
+    "condition": "serves 'tea', open at that moment (open-list order)",
+    "ref": "S07",
+    "ranked": [
+     "F17",
+     "F18"
+    ],
+    "walkM": 184,
+    "openTop": "open",
+    "noneMatch": false
+   }
+  },
+  {
+   "id": "M12",
+   "use": "route",
+   "here": "L26",
+   "at": "2026-11-26T10:15",
+   "q": "how do i walk from jogeysa to tapgol park?",
+   "style": [
+    "lowercase",
+    "typo"
+   ],
+   "expect": {
+    "from": "L24",
+    "to": "L28",
+    "walkM": 823,
+    "nodes": [
+     1860,
+     1861,
+     593,
+     594,
+     316,
+     317,
+     3332,
+     318,
+     3333,
+     319,
+     1208,
+     324,
+     1211,
+     1214,
+     1220,
+     1172,
+     2,
+     1169,
+     1171,
+     3,
+     1229,
+     549,
+     1152,
+     539,
+     1235,
+     3669,
+     3673,
+     3678,
+     3670,
+     513,
+     1237,
+     5051,
+     4434,
+     5052,
+     4511,
+     4435,
+     82,
+     4474,
+     901,
+     863,
+     869,
+     3734,
+     865,
+     3735
+    ],
+    "streets": [
+     "Insadong 11-gil",
+     "Insadong-gil"
+    ]
+   }
+  },
+  {
+   "id": "M13",
+   "use": "sights",
+   "here": "S03",
+   "at": "2026-11-28T14:10",
+   "q": "Where can I get a nice view over the rooftops near Bukchon village?",
+   "style": [
+    "indirect",
+    "variant"
+   ],
+   "expect": {
+    "condition": "type 'viewpoint', walking distance from Bukchon Hanok Village (named in the question)",
+    "ref": "L17",
+    "ranked": [
+     "L18",
+     "L19"
+    ],
+    "walkM": 371,
+    "openTop": "visit-allowed",
+    "noneMatch": false
+   }
+  },
+  {
+   "id": "M14",
+   "use": "identify",
+   "here": "S07",
+   "at": "2026-11-30T15:45",
+   "q": "Big colourful hall with green and red painted wood, a red gable with a yellow symbol of three dots in a circle, and a white stone figure under a twisted old tree. Which place is that?",
+   "style": [],
+   "expect": {
+    "id": "L24",
+    "note": "Jogyesa Temple: main hall with painted woodwork, red gable with the gold three-circle emblem, old tree and white stone statue in front"
+   }
+  },
+  {
+   "id": "M15",
+   "use": "none",
+   "here": "L02",
+   "at": "2026-11-26T09:30",
+   "q": "I'd love to dress up in traditional Korean clothes for photos at the palace. Where can I rent an outfit around here?",
+   "style": [
+    "indirect"
+   ],
+   "expect": {
+    "missing": "hanbok (traditional clothes) rental shops: no such shop or service in the pack",
+    "tempting": "Gyeongbokgung and Changdeokgung price texts say entry is free for those wearing a Hanbok"
+   }
+  },
+  {
+   "id": "M16",
+   "use": "food",
+   "here": "L27",
+   "at": "2026-12-03T12:30",
+   "q": "I'm vegeterian. Anywhere open right now where I can eat?",
+   "style": [
+    "typo"
+   ],
+   "expect": {
+    "condition": "serves 'vegetarian', open at that moment; the only match is closed on Thursdays",
+    "ref": "L27",
+    "ranked": [],
+    "walkM": null,
+    "openTop": null,
+    "noneMatch": true
+   }
+  },
+  {
+   "id": "M17",
+   "use": "route",
+   "here": "S06",
+   "at": "2026-12-05T18:20",
+   "q": "How do I get to Iksun-dong hanok village from here?",
+   "style": [
+    "variant"
+   ],
+   "expect": {
+    "from": "S06",
+    "to": "L30",
+    "walkM": 263,
+    "nodes": [
+     124,
+     762,
+     4607,
+     763,
+     229,
+     232,
+     1148
+    ],
+    "streets": [
+     "Donhwamun-ro 11-gil",
+     "Supyo-ro 28-gil"
+    ]
+   }
+  },
+  {
+   "id": "M18",
+   "use": "sights",
+   "here": "L02",
+   "at": "2026-11-25T19:30",
+   "q": "It's already evening. Is there a musuem still open that I could walk to?",
+   "style": [
+    "typo"
+   ],
+   "expect": {
+    "condition": "type 'museum', open at that moment (open-list order); last Wednesday of the month",
+    "ref": "L02",
+    "ranked": [
+     "L13",
+     "L08",
+     "L14"
+    ],
+    "walkM": 366,
+    "openTop": "open",
+    "noneMatch": false
+   }
+  },
+  {
+   "id": "M19",
+   "use": "identify",
+   "here": "S02",
+   "at": "2026-11-27T16:30",
+   "q": "There's a red brick building with a tall tower, a little dome and a spike on the very top, and a round window up high. Looks almost like a church. What is it?",
+   "style": [],
+   "expect": {
+    "id": "L29",
+    "note": "Cheondogyo Central Temple: red brick with white stone trim, central tower with a small dome and spire"
+   }
+  },
+  {
+   "id": "M20",
+   "use": "none",
+   "here": "L25",
+   "at": "2026-11-24T12:40",
+   "q": "where can i get bibimbap near here?",
+   "style": [
+    "lowercase"
+   ],
+   "expect": {
+    "missing": "bibimbap: not among the pack's food words or dishes",
+    "tempting": "nearby rice and soup dishes (pork and rice soup at Eomyongbaek Dwaeji Gukbap, hot pot rice at Uyeonhwa)"
+   }
+  },
+  {
+   "id": "M21",
+   "use": "food",
+   "here": "S04",
+   "at": "2026-11-27T07:50",
+   "q": "Is there a cafe opn this early around here?",
+   "style": [
+    "typo"
+   ],
+   "expect": {
+    "condition": "kind 'cafe', open at that moment (open-list order)",
+    "ref": "S04",
+    "ranked": [
+     "F10"
+    ],
+    "walkM": 79,
+    "openTop": "days-not-stated",
+    "noneMatch": false
+   }
+  },
+  {
+   "id": "M22",
+   "use": "route",
+   "here": "S01",
+   "at": "2026-11-24T09:40",
+   "q": "Which way to Gyeongbok Palace? Is it even open today?",
+   "style": [
+    "variant",
+    "two-in-one"
+   ],
+   "expect": {
+    "from": "S01",
+    "to": "L01",
+    "walkM": 242,
+    "nodes": [
+     1992,
+     2000,
+     2005,
+     585,
+     2003,
+     2002,
+     2046,
+     4921,
+     2041,
+     1881,
+     591,
+     1489,
+     1487
+    ],
+    "streets": []
+   }
+  },
+  {
+   "id": "M23",
+   "use": "sights",
+   "here": "S02",
+   "at": "2026-11-29T13:20",
+   "q": "any museums near here?",
+   "style": [
+    "lowercase"
+   ],
+   "expect": {
+    "condition": "type 'museum', nearest walk (no time condition)",
+    "ref": "S02",
+    "ranked": [
+     "L21",
+     "L27",
+     "L14"
+    ],
+    "walkM": 203,
+    "openTop": "open",
+    "noneMatch": false
+   }
+  },
+  {
+   "id": "M24",
+   "use": "identify",
+   "here": "S08",
+   "at": "2026-11-25T06:50",
+   "q": "Yellowish old 3-storey building with an arched door in the middle, pine trees in front and a fountian with a white mushroom-shaped thing in it. what am i looking at?",
+   "style": [
+    "typo"
+   ],
+   "expect": {
+    "id": "L16",
+    "note": "Jeongdok Library: pale yellow old school-style building, pine garden, round fountain with a white bowl-shaped centrepiece"
+   }
+  },
+  {
+   "id": "M25",
+   "use": "none",
+   "here": "L10",
+   "at": "2026-12-02T08:30",
+   "q": "Is it going to rain this afternoon? I want to catch the guard changing ceremony.",
+   "style": [
+    "two-in-one"
+   ],
+   "expect": {
+    "missing": "weather forecast: the pack has no weather data",
+    "tempting": "Gwanghwamun Gate events say ceremonies can be cancelled due to weather (rain, heat wave); ceremony times 10:00 / 14:00 are in the pack"
+   }
+  }
+ ]
+}
