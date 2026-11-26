@@ -1,0 +1,16 @@
+# Firebase settings file from the console. Never commit.
+google-services.json
+# Local machine settings and build output.
+local.properties
+.gradle/
+build/
+*.apk
+*.aab
+*.log
+.idea/
+# Kotlin compiler session files.
+.kotlin/
+# Signing keys. Never commit.
+*.jks
+*.keystore
+*.p12

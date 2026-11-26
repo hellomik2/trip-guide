@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Full-screen page, no action bar. Status bar in the app's teal (same as the web page's mark). -->
+    <style name="TripTheme" parent="@android:style/Theme.Material.Light.NoActionBar">
+        <item name="android:statusBarColor">#0f766e</item>
+        <item name="android:navigationBarColor">#ffffff</item>
+        <item name="android:windowBackground">@android:color/white</item>
+    </style>
+</resources>

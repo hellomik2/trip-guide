@@ -1,0 +1,16 @@
+[
+  { "file": "trip.html", "find": "<link rel=\"stylesheet\" href=\"src/ui/trip.css\">", "replace": "<link rel=\"stylesheet\" href=\"src/ui/trip.css\">\n  <link rel=\"stylesheet\" href=\"src/ui/android.css\">", "count": 1 },
+  { "file": "trip.html", "find": "this computer", "replace": "this phone", "count": 2 },
+
+  { "file": "src/ui/trip.js", "find": "if (!p && packInfo && navigator.onLine) {", "replace": "if (!p && packInfo && (navigator.onLine || globalThis.TripBridge)) {", "count": 1 },
+  { "file": "src/ui/trip.js", "find": "async function renderPackState() {", "replace": "async function renderPackState() {\n  // Android: the pack is inside the app (APK assets), nothing to save.\n  if (globalThis.TripBridge) { const st = $('pack-state'); st.textContent = 'inside this app'; st.className = 'mini ok'; $('pack-save').style.display = 'none'; rk.packState = { saved: !!pack, app: true }; return; }", "count": 1 },
+  { "file": "src/ui/trip.js", "find": "async function appSaved() {", "replace": "async function appSaved() {\n  if (globalThis.TripBridge) return true; // Android: the app is installed", "count": 1 },
+  { "file": "src/ui/trip.js", "find": "if ('serviceWorker' in navigator) {", "replace": "if (!globalThis.TripBridge && 'serviceWorker' in navigator) {", "count": 1 },
+  { "file": "src/ui/trip.js", "find": "downloadable: 'On-device AI not installed', downloading: 'On-device AI not installed'", "replace": "downloadable: 'On-device AI: not downloaded yet', downloading: 'On-device AI: downloading…'", "count": 1 },
+  { "file": "src/ui/trip.js", "find": "this computer", "replace": "this phone", "count": 9 },
+
+  { "file": "src/ui/read.js", "find": "this computer", "replace": "this phone", "count": 2 },
+  { "file": "src/engine/index.js", "find": "this computer", "replace": "this phone", "count": 9 },
+  { "file": "src/engine/tasks/sign.js", "find": "this computer", "replace": "this phone", "count": 2 },
+  { "file": "src/engine/tasks/trip.js", "find": "this computer", "replace": "this phone", "count": 2 }
+]

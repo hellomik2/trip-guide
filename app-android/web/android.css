@@ -1,0 +1,5 @@
+/* Android app only (copied next to trip.css by app-android/app/build.gradle.kts). Phone tweaks on top of the
+   web version's own narrow-screen rules (trip.css, max-width 1040px / 520px). */
+input, select, textarea { font-size: 16px; }
+.kind, .mode { min-height: 38px; }
+.credits-bar { padding-bottom: 12px; }
