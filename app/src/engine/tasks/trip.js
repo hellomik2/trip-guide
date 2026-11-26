@@ -7,7 +7,7 @@
 import { plan, knownWord } from '../trip/guide.js';
 import { words } from '../trip/pick.js';
 import { inQuestion } from '../trip/names.js';
-import { SYSTEM, userText, ANSWER_SCHEMA, HINTS, identifySchema, UNDERSTAND_SYSTEM, UNDERSTAND_SCHEMA, UNDERSTAND_KINDS, understandText } from '../trip/prompts.js';
+import { SYSTEM, userText, ANSWER_SCHEMA, HINTS, identifySchema, UNDERSTAND_SYSTEM, UNDERSTAND_SCHEMA, UNDERSTAND_KINDS, understandText, TEXT_OK } from '../trip/prompts.js';
 
 const APP_TEXT = 'Answered on this computer by the app from your saved pack (no AI needed)';
 const UNDERSTOOD_TEXT = { on_device: 'The on-device AI read the question; the app answered from your saved pack', in_cloud: 'The cloud AI read the question; the app answered from your saved pack' };
@@ -19,6 +19,31 @@ function checkInput(input) {
   if (pack.format !== 'trip-pack/2') throw Object.assign(new Error('This travel pack is an old format. Save the pack again.'), { code: 'old-pack' });
   if (!question) throw Object.assign(new Error('Type a question first.'), { code: 'empty' });
   return { pack, question };
+}
+
+/**
+ * Does the AI's form keep the form's own rules (UNDERSTAND_SYSTEM)? "food" is only for food questions, "from" only for
+ * route questions, and no field holds code marks or other scripts. A form that breaks them was read wrongly as a
+ * whole (seen with the "Gemma 4 for Built-in AI" model: a route question came back as "sights" with junk in "food"
+ * and "also"), so the engine asks the device once more. Not a check of the question's words.
+ */
+export function formKeepsRules(v) {
+  if (!v || typeof v !== 'object') return false;
+  if (v.food && v.kind !== 'food') return false;
+  if (v.from && v.kind !== 'route') return false;
+  return ['place', 'from', 'food', 'also'].every((k) => typeof v[k] !== 'string' || TEXT_OK.test(v[k]));
+}
+
+/**
+ * An answer the schema's maxLength stopped mid-sentence ends at its last full sentence. An answer of one cut sentence
+ * keeps its words up to the last comma or word and gets "…". Answers that end a sentence are unchanged.
+ */
+export function wholeSentences(text) {
+  const t = String(text ?? '').trim();
+  if (!t || /[.!?)"”’]$/.test(t)) return t;
+  const end = Math.max(t.lastIndexOf('. '), t.lastIndexOf('! '), t.lastIndexOf('? '));
+  if (end > 20) return t.slice(0, end + 1);
+  return `${t.replace(/[\s,;:–—-]+\S*$/, '').replace(/[\s,;:–—-]+$/, '')}…`;
 }
 
 /** The AI's form, kept only where it holds: a known kind, and names that are really written in the question. */
@@ -128,7 +153,7 @@ export const tripTask = {
   understand(input) {
     const { question } = checkInput(input);
     if (input?.understood) return null;
-    return { system: UNDERSTAND_SYSTEM, schema: UNDERSTAND_SCHEMA, userText: understandText(question) };
+    return { system: UNDERSTAND_SYSTEM, schema: UNDERSTAND_SCHEMA, userText: understandText(question), check: formKeepsRules };
   },
   readUnderstood(value, input) { return readUnderstood(value, String(input?.text ?? '')); },
   // The free cloud tier allows a few requests a minute: two cloud requests for one question are spaced this far apart.
@@ -175,7 +200,7 @@ export const tripTask = {
   finish(value, prep) {
     const v = value ?? {};
     const p = prep.plan;
-    const modelText = typeof v.answer === 'string' ? v.answer.trim() : '';
+    const modelText = wholeSentences(typeof v.answer === 'string' ? v.answer.trim() : '');
     let found = v.found !== false && modelText !== '';
     let pickedId = null;
     let answer = modelText;

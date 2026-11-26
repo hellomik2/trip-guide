@@ -62,6 +62,27 @@ best (11-24), so they are not read on this device. With no on-device model, text
 and allowed; otherwise the card shows a notice instead of an answer. Cloud requests of the sign reader are at least
 6.7 seconds apart (`cloudGapMs`), for the free tier.
 
+## Both on-device models
+
+Chrome has two on-device models behind the Prompt API: the default one, and Gemma 4 when `chrome://flags`
+"Gemma 4 for Built-in AI" is on. The app does not pick one; it uses whichever Chrome gives through Firebase AI
+Logic. A web page cannot set the sampling (temperature, top-K) of either, so the answers are bounded instead, in
+the same way for both models (measured on both on 26 Nov 2026; the numbers are in the root README):
+
+- **Question form and short answers (JSON):** every free-text field has a `maxLength` in the answer schema
+  (`src/engine/trip/prompts.js`). Chrome follows it while the model writes, so the model cannot write on and on
+  inside a field (Gemma 4 once did for 47 to 59 seconds). The schema is not repeated in the prompt
+  (`omitResponseConstraintInput`; the system prompt already shows the form). The cloud gets the same schema
+  without `maxLength`.
+- **One more try on this device** when the answer is not a form, is far too long, or breaks the form's own rules
+  (`formKeepsRules` in `src/engine/tasks/trip.js`: "food" only for food questions, "from" only for routes, no code
+  marks or other scripts). Sampling differs every time, so the second try usually reads the question right.
+- **A cut answer** ends at its last whole sentence.
+- **Read a Korean sign, typed text on this device:** the answer must match a regular expression
+  (`textConstraint` in `src/engine/tasks/sign.js`): one numbered English line per Korean line with no Korean
+  letters, then "To do:". The system prompt asks for the meaning as an English sign or menu would say it, never only
+  a romanized word.
+
 ## Offline start
 
 - `sw-trip.js` (a service worker for `/trip` only) keeps the app files, the Firebase web settings of this

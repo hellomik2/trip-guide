@@ -53,3 +53,15 @@ export function parseFinal(text) {
   const v = parsePartial(text);
   return { value: v, strict: false };
 }
+
+/** The schema for the cloud: the same, without maxLength and pattern. */
+export function cloudSchema(schema) {
+  if (Array.isArray(schema)) return schema.map(cloudSchema);
+  if (!schema || typeof schema !== 'object') return schema;
+  const out = {};
+  for (const [k, v] of Object.entries(schema)) {
+    if ((k === 'maxLength' || k === 'pattern') && typeof v !== 'object') continue; // a keyword, not a property named so
+    out[k] = cloudSchema(v);
+  }
+  return out;
+}

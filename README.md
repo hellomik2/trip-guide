@@ -9,7 +9,7 @@ request goes through **Firebase AI Logic** hybrid inference.
 Built for the Firebase #BuildHybridAI hackathon (platform: Chrome on desktop).
 
 - Try it: <https://buildhybridai-2026-4e5fc.web.app> (Chrome on desktop; the address opens `/trip`)
-- Demo video (2 minutes): <https://youtu.be/tqvN0Cc9-n8>
+- Demo video (2 minutes, recorded with Chrome's "Gemma 4 for Built-in AI" flag on): <https://youtu.be/E0dr_M5MLp0>
 
 ![Directions answered on the computer with no internet](app/docs/shots/guide3-offline-route.png)
 
@@ -83,8 +83,9 @@ The engine decides before every request, in under a second (`decide()` in `app/s
 | not available | any | on | nowhere; nothing is sent | Not answered |
 
 Also: input too long for the on-device model goes to the cloud; Chrome's unknown on-device error is retried once
-and then goes to the cloud; two cloud requests for one question are kept 6.5 s apart (free tier). The full rule
-is in `app/docs/trip-routing.md`.
+and then goes to the cloud; an on-device answer that cannot be used (not the form asked for, far too long, or
+breaking the form's own rules) is asked once more on the same device; two cloud requests for one question are kept
+6.5 s apart (free tier). The full rule is in `app/docs/trip-routing.md`.
 
 ### Where each sign reader request runs
 
@@ -101,6 +102,8 @@ measured each one to do well (results below):
 
 The AI answers in plain text, one numbered line per Korean line and a last "To do:" line. It is not asked for JSON
 or screen code; the app parses the lines and draws the card itself (`readText()` in `sign.js`, `app/src/ui/read.js`).
+For typed text read on this computer, that line shape is held with a regular expression (`textConstraint` in
+`sign.js`, passed as `responseConstraint`).
 
 ### Where Firebase AI Logic is imported and called
 
@@ -108,16 +111,17 @@ or screen code; the app parses the lines and draws the card itself (`readText()`
 |---|---|
 | `app/src/engine/sdk.js:4-5` | Imports `initializeApp`, `getAI`, `getGenerativeModel`, `GoogleAIBackend`, `InferenceMode` from the Firebase JS SDK 13.3.0 (official CDN, no build step) |
 | `app/src/engine/cloud.js:15-28` | Firebase app with App Check (reCAPTCHA Enterprise), then `getAI(app, { backend: new GoogleAIBackend() })` |
-| `app/src/engine/index.js:269-272` | A second Firebase app without App Check for on-device-only requests, so an offline page contacts no one |
-| `app/src/engine/index.js:283`, `:290`, `:293` | Guide: `getGenerativeModel(…)` with `InferenceMode.ONLY_ON_DEVICE`, `PREFER_ON_DEVICE` (`onDeviceParams` and `inCloudParams`) or `ONLY_IN_CLOUD`, all with the same JSON schema |
-| `app/src/engine/index.js:310`, `:316`, `:319` | Sign reader: the same three modes for plain text, with image input declared for photos |
-| `app/src/engine/index.js:73`, `:93` | `model.generateContentStream(…)` for every request (text, or text and an inline photo) |
-| `app/src/engine/index.js:86`, `:108` | Reads `response.inferenceSource` (`on_device` / `in_cloud`) for the badge |
-| `app/src/engine/index.js:338`, `:368`, `:410` | `decide()`, `askOnce()` (reading the question) and `process()` (the whole guide question) |
-| `app/src/engine/index.js:651` | `runText()`: the sign reader's order of tries |
+| `app/src/engine/index.js:276-280` | A second Firebase app without App Check for on-device-only requests, so an offline page contacts no one |
+| `app/src/engine/index.js:290`, `:297`, `:300` | Guide: `getGenerativeModel(…)` with `InferenceMode.ONLY_ON_DEVICE`, `PREFER_ON_DEVICE` (`onDeviceParams` and `inCloudParams`) or `ONLY_IN_CLOUD`, all with the same JSON schema |
+| `app/src/engine/index.js:318`, `:324`, `:327` | Sign reader: the same three modes for plain text, with image input declared for photos |
+| `app/src/engine/index.js:80`, `:100` | `model.generateContentStream(…)` for every request (text, or text and an inline photo) |
+| `app/src/engine/index.js:93`, `:115` | Reads `response.inferenceSource` (`on_device` / `in_cloud`) for the badge |
+| `app/src/engine/index.js:346`, `:376`, `:420` | `decide()`, `askOnce()` (reading the question) and `process()` (the whole guide question) |
+| `app/src/engine/index.js:661` | `runText()`: the sign reader's order of tries |
 
-On-device output of the guide is held to a JSON schema with `responseConstraint`; cloud output uses
-`responseJsonSchema` (same schema). The app never sends a prompt to Chrome's model itself: there is no direct
+On-device output of the guide is held to a JSON schema with `responseConstraint`, with a `maxLength` on every
+free-text field so the model cannot write on and on inside one field; cloud output uses `responseJsonSchema` (the
+same schema without the length limits). The app never sends a prompt to Chrome's model itself: there is no direct
 `prompt()` or `promptStreaming()` call outside the SDK. Outside the SDK it asks `LanguageModel.availability()`,
 measures the input size, and, in `app/src/engine/session-store.js`, prepares one on-device session per set of
 options and hands the SDK clones of it, so the model does not re-read the instructions on every request. The request
@@ -133,10 +137,11 @@ offline the engine does not start App Check or reCAPTCHA.
 
 ## Measured results
 
-All on one Windows PC (6-core CPU, 31 GB RAM, integrated graphics, which Chrome rates "Medium"), Chrome 157 with
-its on-device model, window 1366×768. "Network cut" means offline emulation plus blocking every request that leaves
-the computer. The cloud path was measured with the on-device model switched off in the app (`?simulate=no-model`)
-or in a browser without the model.
+All on one Windows PC (6-core CPU, 31 GB RAM, integrated graphics, which Chrome rates "Medium"), Chrome 157 and,
+for the runs of the evening of 26 Nov, Chrome 158, window 1366×768. The on-device model is Chrome's default one
+unless a table says otherwise. "Network cut" means offline emulation plus blocking every request that leaves the
+computer. The cloud path was measured with the on-device model switched off in the app (`?simulate=no-model`) or in
+a browser without the model.
 
 ### The guide (23 Nov 2026)
 
@@ -170,11 +175,12 @@ Since then we changed how questions are read (the "from A to B" order; words suc
 | Code | Bar | Run 1 | Run 2 | "Not in the pack" | Median | Result |
 |---|---|---|---|---|---|---|
 | 26 Nov, before the last fix | 23/25 in both runs | 24/25 | 24/25 | 5/5, 5/5 | 5.1 s, 4.6 s | passed |
-| 26 Nov, the version online now | 24/25 in both runs | 25/25 | 23/25 | 5/5, 5/5 | 4.8 s, 5.0 s | **not passed** (run 2 missed two questions that the code before the fix also missed) |
+| 26 Nov, after the last of these fixes (v8) | 24/25 in both runs | 25/25 | 23/25 | 5/5, 5/5 | 4.8 s, 5.0 s | **not passed** (run 2 missed two questions that the code before the fix also missed) |
 
 New questions written before each fix, network cut: 6/6 "near me / from here" questions with both versions, and
-6/6 questions with a kind of place but no name ("is there an art museum somewhere close by?") with the version
-online now (3/6 before the last fix). These two small sets are not part of this repository.
+6/6 questions with a kind of place but no name ("is there an art museum somewhere close by?") with v8 (3/6 before
+the last fix). These two small sets are not part of this repository. The version online now (v9) was measured
+again on these 25 questions; see "Both of Chrome's on-device models" below.
 
 ### Read a Korean sign (24 and 26 Nov 2026)
 
@@ -194,6 +200,41 @@ romanized Korean name counts as wrong.
 The two failed rows decided the routing above: menus go to the cloud first while online, and photos are not read
 offline (`devicePhotos: false` in `sign.js`; the on-device photo prompt is kept).
 
+### Both of Chrome's on-device models (26 Nov 2026)
+
+Chrome can answer the Prompt API with two on-device models. On our PC the default was its Gemini Nano model
+(listed as `nano_v3` in `chrome://on-device-internals`). With `chrome://flags/#gemma4-for-built-in-ai`
+("Gemma 4 for Built-in AI") set to Enabled, which the hackathon FAQ gives as the way to use Gemini Nano 4 in
+Chrome, the same API is answered by Gemma 4. The app does not choose or check the model: it uses whichever one
+Chrome gives through Firebase AI Logic. Every table above was measured with the default model.
+
+On 26 Nov we measured the version then online (v8) with the flag on and the network cut, and it did worse there:
+the route question shown in the video was answered right in 3 of 5 tries (once the model wrote on for 58 s inside
+one field until the app cut it, once it returned mixed-script text), the 25 questions scored 23/25 and the one-line
+signs 15/20. A web page cannot set the sampling (temperature, top-K) of Chrome's model, so we bounded the answers
+instead: a `maxLength` on every free-text field of the JSON schema, a regular expression for the sign reader's
+lines, and one more try on the same device when an answer cannot be used (`app/docs/trip-routing.md`, "Both
+on-device models"). That version, v9 (service worker `trip-app-v9`), is the one online now. We measured it on both
+models with the same questions, network cut, on the local server:
+
+| Check | Bar | Gemma 4 flag on | Default model |
+|---|---|---|---|
+| The video's three questions (a route, sights nearby, a one-line sign) | flag on: 9 of 10, 5 of 5, 9 of 10; default: 5 of 5 each | 10/10, 5/5 (10/10 counting every run), 10/10; slowest answer 8.7 s; passed | 5/5, 5/5, 5/5; passed |
+| The 25 guide questions, one run | 23/25, "not in the pack" 5/5, median 10 s or less | 25/25, 5/5, median 6.1 s (slowest 18.5 s); passed | 24/25, 5/5, median 2.9 s (slowest 51.4 s); passed |
+| The 20 one-line signs | 17/20 right | 16/20, median 6.3 s; **not passed** | 19/20, median 3.0 s; passed |
+
+The four signs missed with Gemma 4 were wrong word meanings (for example a door sign that says "pull" was
+explained as "Please wait here", and "sold out" as "Jin"). The answer shape cannot prevent that, and we did not add
+the test words to the prompt. With the default model, the 51.4 s answer was a reply that ran long, was cut by the app and
+asked again. Online, the cloud path of v9 answered 2 of 2 menu readings, and 2 of 2 route questions with the model
+switched off (`?simulate=no-model`).
+
+After v9 went online we ran the video's questions again on the hosted site. Network cut: 5/5 (route), 3/3 (sights)
+and 5/5 (sign) with the Gemma 4 flag on, and 3/3 each with the default model, all answered on the computer with 0
+requests out. Online: 2/2 menu readings and 2/2 route questions with the model switched off, all by the cloud. A
+browser that had saved v8 kept only `trip-app-v9` after opening the page online and reloading it once; the saved
+travel pack stayed.
+
 ![No on-device model and no internet](app/docs/shots/guide3-nomodel-offline.png)
 
 ## Run it yourself
@@ -203,7 +244,9 @@ offline (`devicePhotos: false` in `sign.js`; the on-device photo prompt is kept)
 - Chrome on desktop with the built-in Prompt API and its on-device model. When we read Chrome's
   [Get started page](https://developer.chrome.com/docs/ai/get-started) (Nov 2026) it listed: Chrome 148 or later on
   the web, a GPU with more than 4 GB of memory or 16 GB RAM with 4 CPU cores, and 22 GB free on the drive of the
-  Chrome profile. We tested Chrome 157. Without the model the app still works online through the cloud.
+  Chrome profile. We tested Chrome 157 and 158, with the default model and with the flag
+  `chrome://flags/#gemma4-for-built-in-ai` set to Enabled (Gemma 4; relaunch Chrome after changing it). Without a
+  model the app still works online through the cloud.
 - Node.js 20 or later (only for the small local server and the checks).
 - Your own Firebase project with Firebase AI Logic (Gemini Developer API) and App Check.
 
@@ -265,7 +308,11 @@ in this repository.
 - The on-device model does not always read the same question the same way: three of the 25 questions were read
   differently in run 1 and run 2 on 23 Nov. The code filters what it can (names not written in the question are
   dropped, "now" without a time word is dropped), but it cannot remove this.
-- "What is this?" takes 14 to 18 s because it needs two AI calls.
+- "What is this?" needs two AI calls: with v9 it took about 10 to 12 s on the default model and about 18 s with
+  Gemma 4.
+- With the "Gemma 4 for Built-in AI" flag on, answers took about twice as long as with the default model (median
+  6.1 s against 2.9 s for guide questions), and one-line signs were 16/20 against our bar of 17: a single word on a
+  sign is sometimes given a wrong meaning.
 - Sign reader: photos need an internet connection, and menus read on this computer (offline, or with "Never use the
   cloud" on) may give dish names without a good English explanation. Korean is not among the input languages
   Chrome's on-device model lists, so the app declares English input and output; the results above are what that

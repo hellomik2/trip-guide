@@ -16,7 +16,8 @@
 import { initializeApp, getAI, getGenerativeModel, GoogleAIBackend, InferenceMode, SDK_VERSION } from './sdk.js';
 import * as store from './session-store.js';
 import { hybridAI } from './cloud.js';
-import { parseFinal, parsePartial } from './partial-json.js';
+import { parseFinal, parsePartial, cloudSchema } from './partial-json.js';
+
 import { tripTask } from './tasks/trip.js';
 import { signTask, PHOTO_OFFLINE_TEXT, PHOTO_LOCKED_TEXT } from './tasks/sign.js';
 
@@ -30,7 +31,7 @@ const LIMITS = {
   measureWaitMs: 250,
   softRatio: 0.6,          // above 60 % of the on-device window, use the cloud when allowed (long inputs were slow and error-prone on device)
   outputReserve: 400,      // tokens kept free for the answer
-  maxAnswerChars: 3000,    // a one-row answer is about 200 characters
+  maxAnswerChars: 1500,    // a one-row answer is about 200 characters; every free-text field has a maxLength (at most about 500 characters in all)
   stallMs: 45000,          // no new text for this long counts as a device error
   cloudFirstMs: 25000,     // the cloud must start answering within this time, or the row says it could not reach it
 };
@@ -65,8 +66,14 @@ function classify(err) {
   const s = `${err.name} ${err.message}`;
   if (/QuotaExceeded|input is too large/i.test(s)) return 'too-long';
   if (/UnknownError|kErrorUnknown/i.test(s)) return 'unknown';
+  // The model answered, but not usably (not a form, or far too long). Sampling differs every time, so one more try
+  // on the same device often gives a good answer (seen with the "Gemma 4 for Built-in AI" model, 11-26).
+  if (/^(BadAnswer|RunawayError) /.test(s)) return 'answer';
   return 'other';
 }
+// Device attempts per request: Chrome's unknown error and an unusable answer are tried once more.
+const RETRY = new Set(['unknown', 'answer']);
+
 
 /** One streamed request through the SDK. onText gets the whole text so far. */
 async function streamOnce(model, text, onText, { firstMs = null } = {}) {
@@ -276,8 +283,8 @@ class Engine {
   async model(kind, schema = this.task.schema, system = this.task.system) {
     const key = `${kind}|${system === this.task.system ? '' : system}|${kind === 'warm' ? '' : JSON.stringify(schema)}`;
     if (this.models.has(key)) return this.models.get(key);
-    const onDeviceParams = { createOptions: system === this.task.system ? { ...this.createOptions } : this.optionsFor(system), promptOptions: kind === 'warm' ? {} : { responseConstraint: schema } };
-    const inCloudParams = { model: this.state.cloudModel, systemInstruction: system, generationConfig: { responseMimeType: 'application/json', responseJsonSchema: schema } };
+    const onDeviceParams = { createOptions: system === this.task.system ? { ...this.createOptions } : this.optionsFor(system), promptOptions: kind === 'warm' ? {} : { responseConstraint: schema, omitResponseConstraintInput: true } };
+    const inCloudParams = { model: this.state.cloudModel, systemInstruction: system, generationConfig: { responseMimeType: 'application/json', responseJsonSchema: cloudSchema(schema) } };
     let m;
     if (kind === 'device' || kind === 'warm') {
       m = store.withSessionStore(() => getGenerativeModel(this.deviceAI(), { mode: InferenceMode.ONLY_ON_DEVICE, onDeviceParams }));
@@ -300,10 +307,11 @@ class Engine {
   textOptions(system, image = false) { return { expectedInputs: image ? [EN, IMG] : [EN], expectedOutputs: [EN], initialPrompts: [{ role: 'system', content: system }] }; }
 
   /** A model for a plain-text task (sign reader): same three ways as model(), without JSON. */
-  async textModel(kind, system, image = false) {
-    const key = `text|${kind}|${image ? 'image' : 'text'}|${system}`;
+  async textModel(kind, system, image = false, constraint = null) {
+    const key = `text|${kind}|${image ? 'image' : 'text'}|${system}|${constraint ? String(constraint) : ''}`;
     if (this.models.has(key)) return this.models.get(key);
-    const onDeviceParams = { createOptions: this.textOptions(system, image) };
+    // constraint: a regular expression the on-device answer must match (Chrome's responseConstraint); the cloud gets none
+    const onDeviceParams = { createOptions: this.textOptions(system, image), ...(constraint ? { promptOptions: { responseConstraint: constraint } } : {}) };
     const inCloudParams = { model: this.state.cloudModel, systemInstruction: system };
     let m;
     if (kind === 'device') {
@@ -377,6 +385,8 @@ class Engine {
           const a = await streamOnce(model, req.userText, () => {});
           const value = parseFinal(a.text).value;
           if (!value) throw named('BadAnswer', 'The on-device answer was not a form.');
+          // the task's own rules for its form (trip guide: formKeepsRules); on the last try the form is kept as it is
+          if (req.check && !req.check(value) && attempt === 0) throw named('BadAnswer', 'The on-device form broke its own rules.');
           attempts.push({ where: 'device', kind, step, startMs: s, ms: ms() - s, source: a.source });
           if (a.source === 'in_cloud') this.lastCloudAt = performance.now();
           return { value, source: a.source, reason, raw: a.text.slice(0, 600) };
@@ -385,7 +395,7 @@ class Engine {
           const cls = classify(err);
           attempts.push({ where: 'device', kind, step, startMs: s, ms: ms() - s, error: err, class: cls });
           reason = cls === 'too-long' ? 'too-long' : 'device-error';
-          if (cls !== 'unknown') break;
+          if (!RETRY.has(cls)) break;
         }
       }
     }
@@ -540,7 +550,7 @@ class Engine {
           const cls = classify(err);
           out.attempts.push({ where: 'device', kind, startMs: s, ms: ms() - s, error: err, class: cls });
           reason = cls === 'too-long' ? 'too-long' : 'device-error';
-          if (cls !== 'unknown') break; // only Chrome's unknown error is worth one more try
+          if (!RETRY.has(cls)) break; // Chrome's unknown error and an unusable answer are worth one more try
         }
       }
     }
@@ -693,7 +703,7 @@ class Engine {
         for (let attempt = 0; attempt < 2 && !answer; attempt += 1) {
           const s = ms();
           try {
-            const model = await this.textModel(kind, task.system, prep.image);
+            const model = await this.textModel(kind, task.system, prep.image, prep.deviceConstraint ?? null);
             const a = await streamText(model, prep.deviceParts ?? prep.parts, onText('device'));
             if (!a.text.trim()) throw named('EmptyAnswer', 'The on-device AI gave an empty answer.');
             answer = a;

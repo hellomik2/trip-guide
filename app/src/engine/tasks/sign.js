@@ -11,9 +11,10 @@
 //   two or more lines  the cloud first while online and the cloud is allowed; this device otherwise, or when the cloud fails
 //   photo              the cloud only (devicePhotos: false); offline or with the cloud not allowed, a notice asks for typed text
 // The prompts below were fixed before measuring. Do not edit them for a judged run; a changed prompt is a
-// separate, reference-only variant.
+// separate, reference-only variant. SIGN_SYSTEM got its last two sentences on 11-26: with the
+// "Gemma 4 for Built-in AI" model, dish names came back romanized only and some words lost their meaning.
 
-export const SIGN_SYSTEM = 'You help a foreign traveler in Korea understand Korean signs, menus and notices. Answer in plain English. Keep every number exactly as written, in digits: prices in won (for example 12,000 won), times, floors and servings. For food, give the romanized Korean name and what it is in English. Never add lines, items or details that are not in the Korean text.';
+export const SIGN_SYSTEM = 'You help a foreign traveler in Korea understand Korean signs, menus and notices. Answer in plain English. Keep every number exactly as written, in digits: prices in won (for example 12,000 won), times, floors and servings. For food, give the romanized Korean name and what it is in English. Never add lines, items or details that are not in the Korean text. Write each meaning the way an English sign, label or menu would say it (for example on a door, a counter or a price list). Never write only a romanized Korean word.';
 
 const TODO_RULE = 'Then write one last line that starts with "To do:" and says in a few English words what the reader should do because of this text.';
 
@@ -52,6 +53,16 @@ export const LINES_DEVICE_NOTE = 'Read on this computer: dish names on a menu ma
  */
 export function tryOrder({ cloudFirst, online, locked }) {
   return cloudFirst && online && !locked ? ['cloud', 'device'] : ['device', 'cloud'];
+}
+
+// Typed text read on this device: the answer must have this shape, which Chrome enforces while the model writes
+// (responseConstraint with a regular expression; the cloud gets no constraint). Exactly one numbered English line per
+// Korean line, no Korean letters in them, then "To do:". Without it, the "Gemma 4 for Built-in AI" model sometimes
+// repeated the Korean line, kept Korean words (11시) or wrote only the To do line, so the card had no meaning (11-26).
+const NO_KO = '[^\\n\\u1100-\\u11FF\\u3130-\\u318F\\uAC00-\\uD7A3]';
+export function textConstraint(n) {
+  const rows = Array.from({ length: n }, (_, i) => `${i + 1}\\. ${NO_KO}{2,240}`).join('\\n');
+  return new RegExp(`^${rows}\\nTo do: ${NO_KO}{2,160}$`);
 }
 
 const MAX_LINES = 30;
@@ -122,7 +133,8 @@ export function readText(text, prep) {
       const m = raw.match(NUMBERED);
       if (m) {
         const i = Number(m[1]) - 1;
-        const v = dropKorean(clean(m[2]));
+        // "1. 1. Closed today": the model wrote the line number twice
+        const v = dropKorean(clean(m[2])).replace(new RegExp(`^${m[1]}\\.\\s+`), '');
         if (i >= 0 && i < en.length && !en[i] && !waiting.includes(i)) {
           if (v && !/[a-z]/i.test(v)) waiting.push(i); // only Korean (and numbers): wait for its English line
           else en[i] = v;
@@ -180,7 +192,7 @@ export const signTask = {
         input: { kind: 'photo', name: c.img.name ?? null, bytes: c.img.bytes ?? null, width: c.img.width ?? null, height: c.img.height ?? null, mimeType: c.img.mimeType } };
     }
     const prompt = textPrompt(c.lines);
-    return { kind: 'text', image: false, cloudFirst: c.lines.length >= 2, lines: c.lines, parts: prompt, measureText: prompt, input: { kind: 'text', text: c.lines.join('\n'), lines: c.lines.length } };
+    return { kind: 'text', image: false, cloudFirst: c.lines.length >= 2, lines: c.lines, parts: prompt, deviceConstraint: textConstraint(c.lines.length), measureText: prompt, input: { kind: 'text', text: c.lines.join('\n'), lines: c.lines.length } };
   },
 
   order: tryOrder,

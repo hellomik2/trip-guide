@@ -33,15 +33,27 @@ export const UNDERSTAND_SYSTEM = [
 ].join('\n');
 
 export const UNDERSTAND_KINDS = ['food', 'route', 'sights', 'identify', 'hours', 'other'];
+// The length of every free-text field is bounded in the schema itself. Chrome's on-device models follow maxLength
+// while they write (checked 11-26 on the test PC: a 200-word request into a field with maxLength 12 stopped at
+// 12 characters). Without a bound, the "Gemma 4 for Built-in AI" model sometimes kept writing inside one field for
+// 47 to 59 s, so the question was not read. The cloud gets the same schema without
+// maxLength (partial-json.js cloudSchema). A "pattern" for the letters was tried too and made reading the question
+// slower (25 questions: middle time 9.1 s with it, 8.2 s without), so the letters are checked after the answer:
+// TEXT_OK, used by tasks/trip.js formKeepsRules (a form that fails is asked once more on the device).
+// Characters allowed: letters (accented Latin and Hangul too), digits, space and the punctuation of names and short
+// sentences. Code marks, brackets and slashes (seen in broken forms) are not.
+const TEXT_CHARS = "A-Za-z0-9 .,:;'?!&()À-ɏ가-힣‘’“”–—-"; // the hyphen last: a plain character
+export const TEXT_OK = new RegExp(`^[${TEXT_CHARS}]*$`);
+export const boundedText = (max, description) => ({ type: 'string', maxLength: max, description });
 export const UNDERSTAND_SCHEMA = {
   type: 'object',
   properties: {
     kind: { type: 'string', enum: UNDERSTAND_KINDS },
-    place: { type: 'string', description: 'place name copied from the question, or ""' },
-    from: { type: 'string', description: 'start place copied from the question, or ""' },
-    food: { type: 'string', description: 'dish, drink or cuisine, or ""' },
+    place: boundedText(80, 'place name copied from the question, or ""'),
+    from: boundedText(80, 'start place copied from the question, or ""'),
+    food: boundedText(40, 'dish, drink or cuisine, or ""'),
     time: { type: 'string', enum: ['now', 'later', 'any'] },
-    also: { type: 'string', description: 'a second question, or ""' },
+    also: boundedText(160, 'a second question, or ""'),
   },
   required: ['kind', 'place', 'from', 'food', 'time', 'also'],
   additionalProperties: false,
@@ -76,7 +88,7 @@ export const ANSWER_SCHEMA = {
   type: 'object',
   properties: {
     found: { type: 'boolean', description: 'true if the lines answer the question' },
-    answer: { type: 'string', description: 'One or two short sentences' },
+    answer: boundedText(360, 'One or two short sentences'), // at most 45 words asked; the longest measured answer was 272 characters
   },
   required: ['found', 'answer'],
   additionalProperties: false,
@@ -89,7 +101,7 @@ export function identifySchema(ids) {
     properties: {
       found: { type: 'boolean', description: 'true if one candidate matches what the traveller sees' },
       id: { type: 'string', enum: [...ids, 'none'], description: 'id of the matching line' },
-      answer: { type: 'string', description: 'One short sentence' },
+      answer: boundedText(180, 'One short sentence'), // cut answers end at a whole sentence (tasks/trip.js wholeSentences)
     },
     required: ['found', 'id', 'answer'],
     additionalProperties: false,

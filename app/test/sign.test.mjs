@@ -2,7 +2,10 @@
 //   node test/sign.test.mjs
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
-import { signTask, readText, splitPrice, splitLines, textPrompt, tryOrder, SIGN_SYSTEM, PHOTO_PROMPT, PHOTO_NOTE, LINES_DEVICE_NOTE } from '../src/engine/tasks/sign.js';
+import { signTask, readText, splitPrice, splitLines, textPrompt, textConstraint, tryOrder, SIGN_SYSTEM, PHOTO_PROMPT, PHOTO_NOTE, LINES_DEVICE_NOTE } from '../src/engine/tasks/sign.js';
+import { formKeepsRules, wholeSentences } from '../src/engine/tasks/trip.js';
+import { UNDERSTAND_SCHEMA, ANSWER_SCHEMA, identifySchema } from '../src/engine/trip/prompts.js';
+import { cloudSchema } from '../src/engine/partial-json.js';
 
 let n = 0;
 const t = (name, fn) => { fn(); n += 1; console.log('ok', name); };
@@ -113,12 +116,58 @@ t('note: several lines read on this device get the menu note; the cloud and one 
   assert.doesNotMatch(LINES_DEVICE_NOTE, /[가-힣]/);
 });
 
-t('prompts are the ones measured on 11-24 (sha256 fingerprints recorded before that run)', () => {
+t('prompts are the ones measured (sha256 fingerprints recorded before the runs)', () => {
   const h = (x) => createHash('sha256').update(x).digest('hex').slice(0, 16);
-  assert.equal(h(SIGN_SYSTEM), '4f9bd0411a41561c');
+  assert.equal(h(SIGN_SYSTEM), 'ab6bd5fc12c8766c'); // 26 Nov: two sentences added for both on-device models; before: 4f9bd0411a41561c
   assert.equal(h(textPrompt(['{line 1}'])), '4ead2335410207dd');
   assert.equal(h(textPrompt(['{line 1}', '{line 2}'])), '58a20be3e848d6d0');
   assert.equal(h(PHOTO_PROMPT), '795e5916bba74a87');
+});
+
+// ---- 26 Nov: answers bounded for both on-device models
+t('on-device text answers: one numbered English line per Korean line, then To do, no Korean letters', () => {
+  const one = textConstraint(1);
+  assert.ok(one.test('1. Pull\nTo do: Pull the door.'));
+  assert.ok(!one.test('1. 당기세요\nTo do: Pull.'));
+  assert.ok(!one.test('To do: Please take off your shoes.'));
+  assert.ok(!one.test('1. Open from 11시 to 9시\nTo do: Visit.'));
+  const two = textConstraint(2);
+  assert.ok(two.test('1. Tteokbokki (spicy rice cakes), 4,000 won\n2. Eomuk (fish cake), 1,000 won\nTo do: Order by name.'));
+  assert.ok(!two.test('1. Tteokbokki, 4,000 won\nTo do: Order.'));
+  assert.ok(signTask.prepare({ text: '매표소' }).deviceConstraint instanceof RegExp);
+});
+
+t('a line number written twice is dropped from the meaning', () => {
+  const p = signTask.prepare({ text: '금일 휴무' });
+  assert.equal(readText('1. 1. Closed today\nTo do: Come back tomorrow.', p).rows[0].en, 'Closed today');
+  assert.equal(readText('1. 1 person bibimbap 10,000 won\nTo do: Order.', p).rows[0].en, '1 person bibimbap 10,000 won');
+});
+
+t('question form: free-text fields bounded on the device, not for the cloud', () => {
+  for (const k of ['place', 'from', 'food', 'also']) {
+    const f = UNDERSTAND_SCHEMA.properties[k];
+    assert.ok(f.maxLength > 0 && f.maxLength <= 160 && f.type === 'string');
+  }
+  assert.ok(ANSWER_SCHEMA.properties.answer.maxLength >= 300);
+  assert.ok(identifySchema(['L01']).properties.answer.maxLength >= 150);
+  assert.equal(wholeSentences('Jogyesa Temple. It has a red gable with a gold sym'), 'Jogyesa Temple. It has a red gable with a gold…');
+  assert.equal(wholeSentences('The hall of Jogyesa Temple. It has a red gable with a gold sym'), 'The hall of Jogyesa Temple.');
+  assert.equal(wholeSentences('A finished sentence.'), 'A finished sentence.');
+  const c = cloudSchema(UNDERSTAND_SCHEMA);
+  assert.equal(JSON.stringify(c).includes('maxLength') || JSON.stringify(c).includes('pattern'), false);
+  assert.deepEqual(c.properties.kind, UNDERSTAND_SCHEMA.properties.kind);
+  assert.deepEqual(c.required, UNDERSTAND_SCHEMA.required);
+});
+
+t('question form keeps its own rules (else the device is asked once more)', () => {
+  const base = { kind: 'route', place: 'Anguk Station Exit 2', from: '', food: '', time: 'any', also: '' };
+  assert.equal(formKeepsRules(base), true);
+  assert.equal(formKeepsRules({ ...base, kind: 'food', food: 'dumplings' }), true);
+  assert.equal(formKeepsRules({ ...base, kind: 'sights', food: 'place erode' }), false); // food only for food questions
+  assert.equal(formKeepsRules({ ...base, kind: 'sights', from: 'Tapgol Park' }), false); // from only for routes
+  assert.equal(formKeepsRules({ ...base, also: '//x_),' }), false);
+  assert.equal(formKeepsRules({ ...base, place: '정독도서관' }), true);
+  assert.equal(formKeepsRules(null), false);
 });
 
 console.log(`${n} tests passed`);
