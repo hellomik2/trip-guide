@@ -9,6 +9,7 @@ request goes through **Firebase AI Logic** hybrid inference.
 Built for the Firebase #BuildHybridAI hackathon (platform: Chrome on desktop).
 
 - Try it: <https://buildhybridai-2026-4e5fc.web.app> (Chrome on desktop; the address opens `/trip`)
+- Demo video (2 minutes): <https://youtu.be/tqvN0Cc9-n8>
 
 ![Directions answered on the computer with no internet](app/docs/shots/guide3-offline-route.png)
 
