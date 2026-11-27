@@ -181,7 +181,10 @@ class Engine {
       device: 'checking', simulated: settings.simulate, deviceOnly: settings.deviceOnly,
       sessionStore: settings.sessionStore, cloudModel: config.cloudModel || 'gemini-3.5-flash-lite',
       tokenLimit: null, sdkVersion: SDK_VERSION, online: isOnline(), mix: settings.mix && settings.mix.split(',').every((m) => task.mix?.[m]) ? settings.mix : null,
+      // "Get on-device AI": canGet when Chrome says the model can be downloaded and this SDK can start it; getAI is the download
+      canGet: false, getAI: { status: 'idle', loaded: null },
     };
+    this.getting = null;
     this.createOptions = this.optionsFor(task.system);
     store.setEnabled(settings.sessionStore);
     this.warm = { promise: null, ms: null, error: null };
@@ -221,10 +224,56 @@ class Engine {
     if (!LM) { this.set({ device: 'no-api' }); return 'no-api'; }
     try {
       const a = await LM.availability({ expectedInputs: [EN], expectedOutputs: [EN] });
-      if (a !== 'available') this.set({ device: a });
-      else if (this.state.device === 'checking' || this.state.device === 'downloading' || this.state.device === 'downloadable') this.set({ device: 'warming' });
+      if (a !== 'available') this.set({ device: a, canGet: (a === 'downloadable' || a === 'downloading') && !!this.downloader() });
+      else if (this.state.device === 'checking' || this.state.device === 'downloading' || this.state.device === 'downloadable') this.set({ device: 'warming', canGet: false });
+      else if (this.state.canGet) this.set({ canGet: false });
       return a;
     } catch { this.set({ device: 'error' }); return 'error'; }
+  }
+
+  /**
+   * The SDK model that can start Chrome's model download (GenerativeModel.initializeDeviceModel), or null when this
+   * SDK has no such call (the Android build's stand-in). Made without the session store, so the SDK holds Chrome's own
+   * LanguageModel. Making it sends nothing and loads nothing.
+   */
+  downloader() {
+    if (this._downloader !== undefined) return this._downloader;
+    let m = null;
+    try { m = getGenerativeModel(this.deviceAI(), { mode: InferenceMode.ONLY_ON_DEVICE, onDeviceParams: { createOptions: { expectedInputs: [EN], expectedOutputs: [EN] } } }); } catch { m = null; }
+    this._downloader = typeof m?.initializeDeviceModel === 'function' ? m : null;
+    return this._downloader;
+  }
+
+  /**
+   * "Get on-device AI": download Chrome's on-device model, only when Chrome says it can be downloaded (canGet).
+   * Through the Firebase AI Logic SDK: initializeDeviceModel() asks Chrome's availability() and, when the model is
+   * downloadable or downloading, calls LanguageModel.create() with a monitor that reports progress (firebase-ai.js
+   * 13.3.0, ChromeAdapterImpl.downloadIfAvailable/download). The app does not call LanguageModel.create() for this.
+   * Call it straight from the click, before any await: Chrome starts a model download only right after a user click.
+   * Questions keep going to the cloud while it downloads; when it is done the model is warmed up as on any start.
+   * Resolves to 'available', 'offline', 'failed' or 'not-needed'. Never rejects.
+   */
+  getDeviceModel() {
+    if (this.getting) return this.getting;
+    const sdk = this.state.canGet ? this.downloader() : null;
+    if (!sdk) return Promise.resolve('not-needed');
+    if (!isOnline()) { this.set({ getAI: { status: 'offline', loaded: null } }); return Promise.resolve('offline'); }
+    const s = performance.now();
+    this.set({ getAI: { status: 'downloading', loaded: null } });
+    this.getting = sdk.initializeDeviceModel((loaded) => this.set({ getAI: { status: 'downloading', loaded: Number(loaded) } }))
+      .then(async () => {
+        this.availability = this.checkDevice();
+        const a = await this.availability;
+        this.set({ getAI: { status: a === 'available' ? 'done' : 'failed', loaded: 1, ms: Math.round(performance.now() - s), availability: a } });
+        if (a === 'available') this.warmUp();
+        return a === 'available' ? a : 'failed';
+      }, (e) => {
+        this.set({ getAI: { status: 'failed', loaded: null, ms: Math.round(performance.now() - s), error: errOf(e) } });
+        this.availability = this.checkDevice();
+        return 'failed';
+      })
+      .finally(() => { this.getting = null; });
+    return this.getting;
   }
 
   /** Availability for routing, within the time budget. A model that finished downloading is picked up here. */

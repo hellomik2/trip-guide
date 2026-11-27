@@ -35,7 +35,7 @@ val copyWebApp = tasks.register("copyWebApp") {
         out.deleteRecursively()
         val files = listOf(
             "trip.html",
-            "src/ui/trip.js", "src/ui/trip.css", "src/ui/map.js", "src/ui/read.js",
+            "src/ui/trip.js", "src/ui/trip.css", "src/ui/map.js", "src/ui/read.js", "src/ui/device-get.js",
             "src/engine/index.js", "src/engine/session-store.js", "src/engine/cloud.js", "src/engine/partial-json.js",
             "src/engine/tasks/trip.js", "src/engine/tasks/sign.js",
         ) + webSrc.resolve("src/engine/trip").listFiles()!!.filter { it.name.endsWith(".js") }.map { "src/engine/trip/${it.name}" }

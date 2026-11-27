@@ -5,6 +5,7 @@ import { validatePack, placeById } from '../engine/trip/pack.js';
 import { walk } from '../engine/trip/route.js';
 import { createMap } from './map.js';
 import { setupRead } from './read.js';
+import { getView, GET_TEXT } from './device-get.js';
 
 const INDEX_URL = 'packs/index.json';
 const LS = { pack: 'trip.packId', saved: 'trip.packSavedAt', version: 'trip.packVersion', here: 'trip.here' };
@@ -221,9 +222,21 @@ function renderNet() {
 }
 function renderDevice(state) {
   const n = $('device-status');
-  n.textContent = `${DEVICE_TEXT[state.device] ?? state.device}${state.simulated === 'no-model' ? ' (simulated)' : ''}`;
-  n.className = `pill ${state.device === 'ready' ? 'pill-device' : ['checking', 'warming'].includes(state.device) ? 'pill-wait' : 'pill-muted'}`;
+  const g = getView(state, navigator.onLine);
+  n.textContent = `${g.pill ?? DEVICE_TEXT[state.device] ?? state.device}${state.simulated === 'no-model' ? ' (simulated)' : ''}`;
+  n.className = `pill ${state.device === 'ready' ? 'pill-device' : g.pill || ['checking', 'warming'].includes(state.device) ? 'pill-wait' : 'pill-muted'}`;
+  $('ai-get-box').hidden = !g.show;
   $('device-only').checked = !!state.deviceOnly;
+}
+
+/** "Get on-device AI" pressed. The engine is called before any await: Chrome downloads a model only right after a click. */
+function onGetAI() {
+  if (!navigator.onLine) { toast(GET_TEXT.offline); return; }
+  rk.engine.getDeviceModel().then((r) => {
+    if (r === 'available') toast(GET_TEXT.done);
+    else if (r === 'offline') toast(GET_TEXT.offline);
+    else if (r === 'failed') toast(GET_TEXT.failed);
+  });
 }
 
 // ---------------------------------------------------------------- kinds
@@ -462,11 +475,13 @@ async function renderReady() {
   const saved = !!rk.packState?.saved;
   const app = await appSaved();
   const d = rk.engine?.state.device;
+  const g = rk.engine ? getView(rk.engine.state, navigator.onLine) : null; // "Get on-device AI": not downloaded yet, or downloading
   const item = (ok, t, x) => el('li', { className: ok === true ? 'ok' : ok === false ? 'no' : 'wait' }, el('strong', { text: t }), ` ${x}`);
   ul.replaceChildren(
     item(saved, 'Travel pack:', saved ? `${pack.places.length} places and ${pack.photos.length} photos saved on this computer.` : 'not saved yet. Press “Save for offline” while online.'),
     item(app, 'App:', app ? 'saved on this computer.' : 'not saved yet.'),
-    item(d ? ['ready', 'warming'].includes(d) || (d === 'checking' ? null : false) : null, 'On-device AI:', !d || d === 'checking' ? 'checking…' : ['ready', 'warming'].includes(d) ? 'available, so answers work offline.' : 'not on this computer. The cloud answers when you are online.'),
+    g?.ready ? item(g.busy ? null : false, 'On-device AI:', g.ready)
+      : item(d ? ['ready', 'warming'].includes(d) || (d === 'checking' ? null : false) : null, 'On-device AI:', !d || d === 'checking' ? 'checking…' : ['ready', 'warming'].includes(d) ? 'available, so answers work offline.' : 'not on this computer. The cloud answers when you are online.'),
   );
 }
 
@@ -651,8 +666,14 @@ async function main() {
     return;
   }
   let lastDevice = null;
-  rk.engine.onState((s) => { renderDevice(s); if (s.device !== lastDevice) { lastDevice = s.device; renderReady(); } });
+  rk.engine.onState((s) => {
+    renderDevice(s);
+    const g = getView(s, navigator.onLine);
+    const key = `${s.device}|${g.show}|${g.busy}|${g.pct}`; // the ready list follows the download percent too
+    if (key !== lastDevice) { lastDevice = key; renderReady(); }
+  });
   $('device-only').addEventListener('change', (e) => rk.engine.setDeviceOnly(e.target.checked));
+  $('ai-get').addEventListener('click', onGetAI);
   await renderReady();
   rk.ready = true;
 }

@@ -83,6 +83,30 @@ the same way for both models (measured on both on 26 Nov 2026; the numbers are i
   letters, then "To do:". The system prompt asks for the meaning as an English sign or menu would say it, never only
   a romanized word.
 
+## Getting the on-device model
+
+Chrome downloads its on-device model only when a page asks for it right after a click. When Chrome says the model
+can be downloaded (`availability()` is `downloadable` or `downloading`), the page shows **Get on-device AI** next to
+the on-device AI pill ("Chrome downloads the model, several GB"), and the ready list says the model is not downloaded
+yet. The page never starts the download by itself.
+
+- Pressing the button calls the engine's `getDeviceModel()`, which calls the Firebase AI Logic SDK's
+  `GenerativeModel.initializeDeviceModel()` (an `ONLY_ON_DEVICE` model on the Firebase app without App Check). The
+  SDK asks `availability()` and, when the model can be downloaded, calls Chrome's `LanguageModel.create()` with a
+  `monitor`; each `downloadprogress` event becomes the percent in the pill ("On-device AI: downloading 42%") and in
+  the ready list. The app itself does not call `LanguageModel.create()` for this.
+- While it downloads, questions are answered as before: by the cloud while online, with "No on-device model"
+  as the reason.
+- When the SDK call returns, the engine asks `availability()` again; at `available` it loads the model as on any
+  start, and the pill turns to "On-device AI: ready" on the same page. From then on answers run on this device,
+  also offline.
+- Offline, pressing the button only says that the download needs an internet connection.
+- No button when the model is there, when Chrome says `unavailable` (the computer does not meet Chrome's
+  requirements), with `?simulate=no-model`, or when the SDK has no `initializeDeviceModel()` (the Android build's
+  stand-in SDK).
+- What the button, the pill and the ready list say is decided in `src/ui/device-get.js` (tested by
+  `test/device-get.test.mjs`).
+
 ## Offline start
 
 - `sw-trip.js` (a service worker for `/trip` only) keeps the app files, the Firebase web settings of this

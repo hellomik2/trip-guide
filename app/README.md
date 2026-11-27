@@ -31,8 +31,11 @@ Developer API) and App Check.
    The `--hosting` way follows `firebase.json`: `/` redirects to `/trip`, `/trip.html` redirects to `/trip`
    (`cleanUrls`), files in `ignore` are not served, and the `headers` rules are applied.
 3. Open `/trip` on that address in Chrome.
-4. While online, press **Save for offline**. Then turn the network off, open `/trip` again (a new tab is fine) and
-   ask a question, or open **Read a Korean sign** and paste one line of Korean.
+4. While online, press **Save for offline**. If the page shows **Get on-device AI** next to the on-device AI pill,
+   Chrome can download its on-device model but has not yet: press it while online (Chrome downloads several GB; the
+   pill shows the percent and turns to "On-device AI: ready" when it is done). Until then the cloud answers.
+   Then turn the network off, open `/trip` again (a new tab is fine) and ask a question, or open
+   **Read a Korean sign** and paste one line of Korean.
 
 ### URL switches
 
@@ -48,6 +51,7 @@ Developer API) and App Check.
 ```sh
 node test/names.test.mjs       # place-name matching
 node test/sign.test.mjs        # reading the sign reader's answers into card lines
+node test/device-get.test.mjs  # when "Get on-device AI" shows and what the pill says while it downloads
 node tools/scan-secrets.mjs    # keys, tokens and direct prompt() calls
 ```
 
@@ -57,7 +61,8 @@ node tools/scan-secrets.mjs    # keys, tokens and direct prompt() calls
 ## How it is put together
 
 - `trip.html` and `src/ui/trip.js` are the page; `src/ui/read.js` is the **Read a Korean sign** tab. The page
-  talks only to the engine, never to Firebase or Chrome's model directly.
+  talks only to the engine, never to Firebase or Chrome's model directly. `src/ui/device-get.js` decides when the
+  **Get on-device AI** button shows and what the pill says while the model downloads (`docs/trip-routing.md`).
 - `src/engine/index.js` decides before every AI request where it runs (on this computer, in the cloud, or not at
   all) and calls Firebase AI Logic with `InferenceMode.PREFER_ON_DEVICE`, `ONLY_ON_DEVICE` or `ONLY_IN_CLOUD`.
   The guide's rule is in `docs/trip-routing.md`.

@@ -55,6 +55,14 @@ choose.
 
 ![A one-line sign read on the computer with no internet](app/docs/shots/read-offline-one-line.png)
 
+### Get the on-device AI
+
+On a computer where Chrome can run its on-device model but has not downloaded it yet, the page shows a
+**Get on-device AI** button next to the on-device AI pill. Nothing is downloaded until you press it. Pressing it
+starts Chrome's model download through Firebase AI Logic; the pill shows "downloading" and then the percent, the
+cloud keeps answering in the meantime, and when the download is done the pill turns to "On-device AI: ready" on the
+same page. The button is not shown when the model is already there or when Chrome says the computer cannot run it.
+
 ## How the hybrid inference works
 
 ### One question to the guide
@@ -112,14 +120,15 @@ For typed text read on this computer, that line shape is held with a regular exp
 |---|---|
 | `app/src/engine/sdk.js:4-5` | Imports `initializeApp`, `getAI`, `getGenerativeModel`, `GoogleAIBackend`, `InferenceMode` from the Firebase JS SDK 13.3.0 (official CDN, no build step) |
 | `app/src/engine/cloud.js:15-28` | Firebase app with App Check (reCAPTCHA Enterprise), then `getAI(app, { backend: new GoogleAIBackend() })` |
-| `app/src/engine/index.js:276-280` | A second Firebase app without App Check for on-device-only requests, so an offline page contacts no one |
-| `app/src/engine/index.js:290`, `:297`, `:300` | Guide: `getGenerativeModel(…)` with `InferenceMode.ONLY_ON_DEVICE`, `PREFER_ON_DEVICE` (`onDeviceParams` and `inCloudParams`) or `ONLY_IN_CLOUD`, all with the same JSON schema |
-| `app/src/engine/index.js:318`, `:324`, `:327` | Sign reader: the same three modes for plain text, with image input declared for photos |
+| `app/src/engine/index.js:325-329` | A second Firebase app without App Check for on-device-only requests, so an offline page contacts no one |
+| `app/src/engine/index.js:339`, `:346`, `:349` | Guide: `getGenerativeModel(…)` with `InferenceMode.ONLY_ON_DEVICE`, `PREFER_ON_DEVICE` (`onDeviceParams` and `inCloudParams`) or `ONLY_IN_CLOUD`, all with the same JSON schema |
+| `app/src/engine/index.js:367`, `:373`, `:376` | Sign reader: the same three modes for plain text, with image input declared for photos |
 | `app/src/engine/index.js:80`, `:100` | `model.generateContentStream(…)` for every question and every sign reading (text, or text and an inline photo) |
-| `app/src/engine/index.js:251` | One short warm-up request through the same SDK call when the page opens and the on-device model is available |
+| `app/src/engine/index.js:300` | One short warm-up request through the same SDK call when the page opens and the on-device model is available |
 | `app/src/engine/index.js:93`, `:115` | Reads `response.inferenceSource` (`on_device` / `in_cloud`) for the badge |
-| `app/src/engine/index.js:346`, `:376`, `:420` | `decide()`, `askOnce()` (reading the question) and `process()` (the whole guide question) |
-| `app/src/engine/index.js:661` | `runText()`: the sign reader's order of tries |
+| `app/src/engine/index.js:242`, `:263` | "Get on-device AI": an `ONLY_ON_DEVICE` model whose `initializeDeviceModel(…)` starts Chrome's model download and reports its progress (`getDeviceModel()` at `:256`) |
+| `app/src/engine/index.js:395`, `:425`, `:469` | `decide()`, `askOnce()` (reading the question) and `process()` (the whole guide question) |
+| `app/src/engine/index.js:710` | `runText()`: the sign reader's order of tries |
 
 On-device output of the guide is held to a JSON schema with `responseConstraint`, with a `maxLength` on every
 free-text field so the model cannot write on and on inside one field; cloud output uses `responseJsonSchema` (the
@@ -127,7 +136,8 @@ same schema without the length limits). The app never sends a prompt to Chrome's
 `prompt()` or `promptStreaming()` call outside the SDK. Outside the SDK it asks `LanguageModel.availability()`,
 measures the input size, and, in `app/src/engine/session-store.js`, prepares one on-device session per set of
 options and hands the SDK clones of it, so the model does not re-read the instructions on every request. The request
-itself, streaming and `inferenceSource` stay inside the SDK; `?store=off` turns the session store off.
+itself, streaming and `inferenceSource` stay inside the SDK; `?store=off` turns the session store off. The model
+download behind "Get on-device AI" is started by the SDK too (`initializeDeviceModel()`), not by a call of ours.
 
 ### Offline start
 
@@ -185,8 +195,8 @@ Since then we changed how questions are read (the "from A to B" order; words suc
 
 New questions written before each fix, network cut: 6/6 "near me / from here" questions with both versions, and
 6/6 questions with a kind of place but no name ("is there an art museum somewhere close by?") with v7 (3/6 before
-the last fix). These two small sets are not part of this repository. The version online now (v9) was measured
-again on these 25 questions; see "Both of Chrome's on-device models" below.
+the last fix). These two small sets are not part of this repository. The engine that is online now (v9, and v10
+with the same answer code) was measured again on these 25 questions; see "Both of Chrome's on-device models" below.
 
 ### Read a Korean sign (24 and 26 Nov 2026)
 
@@ -220,8 +230,9 @@ one field until the app cut it, once it returned mixed-script text), the 25 ques
 signs 15/20. A web page cannot set the sampling (temperature, top-K) of Chrome's model, so we bounded the answers
 instead: a `maxLength` on every free-text field of the JSON schema, a regular expression for the sign reader's
 lines, and one more try on the same device when an answer cannot be used (`app/docs/trip-routing.md`, "Both
-on-device models"). That version, v9 (service worker `trip-app-v9`), is the one online now. We measured it on both
-models with the same questions, network cut, on the local server:
+on-device models"). That version is v9 (service worker `trip-app-v9`). The version online now, v10, answers with the
+same code and adds the "Get on-device AI" button (next section). We measured v9 on both models with the same
+questions, network cut, on the local server:
 
 | Check | Bar | Gemma 4 flag on | Default model |
 |---|---|---|---|
@@ -241,6 +252,37 @@ requests out. Online: 2/2 menu readings and 2/2 route questions with the model s
 browser that had saved v8 kept only `trip-app-v9` after opening the page online and reloading it once; the saved
 travel pack stayed.
 
+### Getting the on-device model with the button (26 Nov 2026)
+
+v10 adds the "Get on-device AI" button. We measured the download once, on the local server, online, in a new Chrome
+158 profile that had no on-device model, with the "Gemma 4 for Built-in AI" flag on (so the model Chrome downloaded
+for the Prompt API was Gemma 4):
+
+| Check | Bar | Result | |
+|---|---|---|---|
+| Nothing downloads by itself | page left open 60 s without pressing: no model file appears | 0 bytes; the pill said "On-device AI not installed" and the button was shown | passed |
+| One press starts the download and shows it | progress visible on the page | "On-device AI: downloading…" 2 s after the press; the percent appeared 6 minutes later and ran from 1% to 89% in under 2 minutes | passed |
+| Questions during the download | the route question is answered by the cloud | 1/1, Cloud AI, 1.7 s | passed |
+| The page switches by itself | pill "On-device AI: ready" without more than one reload | ready 640 s after the press, no reload; Gemma 4 was 2.48 GB on disk | passed |
+| Offline afterwards, network cut | route, sights and one-line sign 3/3 each on the device, 0 requests out | 3/3, 3/3, 3/3, all On-device AI | passed |
+| Nothing else is downloaded | only the Gemma 4 model in the new profile | Chrome also placed its default model (4.27 GB) in the profile a few minutes after Gemma 4 was ready | **not passed** |
+
+About the last row: our code calls only the Prompt API through Firebase AI Logic, and we found no call of ours that
+asks for the second model, so we take it that Chrome fetched it on its own (we did not see the cause). With the flag
+off, the default model is the one the button downloads; we expect a single download there but did not measure it.
+
+The same evening we checked that nothing else had changed, in the profile that already had both models: network cut,
+the video's three questions 5/5 each with the Gemma 4 flag on and 3/3 each with the default model; the 25 guide
+questions 25/25 with the flag on (median 5.2 s); online, 2/2 menu readings and 2/2 route questions with the model
+switched off, by the cloud; and the button was hidden in every one of these runs.
+
+After v10 went online (27 Nov) we ran the video's questions again on the hosted site, in the profile that has both
+models. Network cut: 3/3 for each of the three questions with the Gemma 4 flag on (slowest answer 13.0 s) and 3/3
+each with the default model, all answered on the computer with 0 requests out. Online: 2/2 menu readings and 2/2
+route questions with the model switched off, by the cloud. The button was hidden in all of these runs. A browser that
+had saved v9 kept only `trip-app-v10` after opening the page online and reloading it once; the saved travel pack
+stayed. We did not see the button itself on the hosted site: that needs a browser profile without the model.
+
 ![No on-device model and no internet](app/docs/shots/guide3-nomodel-offline.png)
 
 ## Run it yourself
@@ -252,7 +294,8 @@ travel pack stayed.
   the web, a GPU with more than 4 GB of memory or 16 GB RAM with 4 CPU cores, and 22 GB free on the drive of the
   Chrome profile. We tested Chrome 157 and 158, with the default model and with the flag
   `chrome://flags/#gemma4-for-built-in-ai` set to Enabled (Gemma 4; relaunch Chrome after changing it). Without a
-  model the app still works online through the cloud.
+  model the app still works online through the cloud. If Chrome can run the model but has not downloaded it yet, the
+  page offers **Get on-device AI** (several GB; see "Getting the on-device model with the button" above).
 - Node.js 20 or later (only for the small local server and the checks).
 - Your own Firebase project with Firebase AI Logic (Gemini Developer API) and App Check.
 
@@ -288,6 +331,7 @@ Checks without AI, from the root of this repository:
 ```sh
 node app/test/names.test.mjs     # place-name matching
 node app/test/sign.test.mjs      # reading the sign reader's answers into card lines
+node app/test/device-get.test.mjs  # when "Get on-device AI" shows and what the pill says
 node app/tools/scan-secrets.mjs  # keys, tokens and direct prompt() calls
 ```
 
@@ -329,7 +373,7 @@ in your own Firebase console. Then run `./gradlew assembleDebug` in `app-android
 only: no APK, no `google-services.json`, no token.
 
 **What we measured (26 Nov 2026).** One phone, a Samsung Galaxy S26 FE (model SM-S741N, API level 37) used remotely
-through Samsung's Remote Test Lab, with an APK built from the v8 web code (not the v9 code that is online now and in
+through Samsung's Remote Test Lab, with an APK built from the v8 web code (not the code that is online now and in
 this repository). On that phone the SDK reported no on-device model (`UNAVAILABLE` for both the preview and the
 stable option), so only the cloud path and the behaviour with no internet could be measured.
 
@@ -348,11 +392,13 @@ opened with the 61 places and made no AI request.
   produced an answer labelled "On-device AI" on a phone. Choosing and downloading the Gemini Nano model, asking for
   JSON in the system instruction, and the 4000-token limit are written from the SDK documentation and are untested
   on a device.
-- The v9 engine on a phone. On 26 Nov we rebuilt the Android app with the v9 web code in this repository. The rebuild
-  needed one fix in `app-android/web/sdk.js`: the v9 engine gives the sign reader's on-device request a regular
-  expression as the answer shape, which only Chrome understands. The bridge no longer passes it on, so on Android
-  that shape is not enforced. The PC tests pass (13 tests with a made-up bridge, no phone and no AI call), but this
-  APK has not been installed or run on any phone.
+- The current engine on a phone. On 26 Nov we rebuilt the Android app with the v9 web code, and once more with the
+  v10 code that is in this repository. The v9 rebuild needed one fix in `app-android/web/sdk.js`: the engine gives the
+  sign reader's on-device request a regular expression as the answer shape, which only Chrome understands. The bridge
+  no longer passes it on, so on Android that shape is not enforced. The "Get on-device AI" button is not shown in the
+  Android build, because its stand-in SDK has no `initializeDeviceModel()` (read from the code, not seen on a phone).
+  The PC tests pass (13 tests with a made-up bridge, no phone and no AI call), but these APKs have not been
+  installed or run on any phone.
 - Photos in the sign reader, any other phone or Android version, and battery or memory use.
 
 The scripts that drove the phone, the raw logs and the screen recordings are not in this repository.
@@ -378,11 +424,13 @@ The scripts that drove the phone, the raw logs and the screen recordings are not
 - The guide answers in English. Korean names are shown next to English ones to help match street signs.
 - With no on-device model and no internet, the question cannot be read; the app says so and shows a guess made by
   simple word rules, which the traveller can correct with the menus.
-- The app does not start the on-device model download (several GB); if Chrome reports the model as downloadable,
-  the pill says "On-device AI not installed" and the app uses the cloud while online. Chrome's documentation says
-  the download starts when a page creates a Prompt API session after a user action (`LanguageModel.create()`),
-  for example from the DevTools console; `LanguageModel.availability()` then returns "available" and the pill turns
-  to "ready" after a reload. Our test computer already had both models, so we did not test the download step.
+- Getting the on-device model: the "Get on-device AI" button was measured once, with the Gemma 4 flag on, in a new
+  Chrome profile on our PC, on the local server. We did not measure it with the flag off (the default model), with
+  the connection lost during the download, with the page reloaded during the download, or on the hosted site (the
+  hosted checks ran in a profile that already had the models, where the button is hidden). Chrome decides what it
+  downloads: in our run it also fetched its default model (4.27 GB) after Gemma 4 (2.48 GB), so allow for several
+  GB and for the free disk space Chrome asks for. For the first 6 minutes the page showed "downloading…" without a
+  percent.
 - A question with two parts gets an answer to the first part and a button to ask the second.
 
 ## Privacy
@@ -414,10 +462,10 @@ app/src/engine/session-store.js  Reuse of a prepared on-device session
 app/src/engine/tasks/trip.js     The guide task: reading the question, answer shape
 app/src/engine/tasks/sign.js     The sign reader task: prompts, order of tries, reading the answer into card lines
 app/src/engine/trip/             Code facts: names, routes, hours, picking places, prompts
-app/src/ui/                      Page (trip.js), sign reader (read.js), map and styles
+app/src/ui/                      Page (trip.js), sign reader (read.js), "Get on-device AI" (device-get.js), map and styles
 app/packs/                       Travel pack (JSON) and its 58 photos
 app/docs/                        Pack format, routing rule, screenshots
-app/test/                        Place-name and sign reader tests, and the 25 measured guide questions
+app/test/                        Place-name, sign reader and download-button tests, and the 25 measured guide questions
 app/tools/                       Local server (simple, or like Firebase Hosting) and secret scan
 app/README.md                    Running and deploying the app
 data-src/                        Open data and scripts that build the pack

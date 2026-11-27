@@ -12,11 +12,11 @@
 // The page is kept under its clean address "trip": Firebase Hosting (cleanUrls) answers /trip.html with a
 // redirect to /trip, and a redirected response cannot be used to open a page. Any redirected response is
 // stored as a plain copy for the same reason.
-const APP_CACHE = 'trip-app-v9';
+const APP_CACHE = 'trip-app-v10';
 const SDK_CACHE = 'trip-sdk-13.3.0';
 const APP_FILES = [
   'trip',
-  'src/ui/trip.js', 'src/ui/trip.css', 'src/ui/map.js', 'src/ui/read.js',
+  'src/ui/trip.js', 'src/ui/trip.css', 'src/ui/map.js', 'src/ui/read.js', 'src/ui/device-get.js',
   'src/engine/index.js', 'src/engine/sdk.js', 'src/engine/cloud.js', 'src/engine/session-store.js',
   'src/engine/partial-json.js', 'src/engine/tasks/trip.js', 'src/engine/tasks/sign.js',
   'src/engine/trip/geo.js', 'src/engine/trip/pack.js', 'src/engine/trip/pick.js', 'src/engine/trip/prompts.js',
